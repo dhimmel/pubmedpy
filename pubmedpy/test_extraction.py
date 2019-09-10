@@ -1,6 +1,6 @@
 import os
 
-from .eutilities import pubmed_esummary
+from .eutilities import download_pubmed_ids
 from .xml_to_dates import (extract_articles_from_esummaries,
                            articles_to_dataframe)
 
@@ -25,7 +25,7 @@ def test_esummary():
     Run to recreate data/esummary.xml
     """
     with open(esummary_path, 'wt') as write_file:
-        pubmed_esummary(pubmed_ids, write_file)
+        download_pubmed_ids(pubmed_ids, write_file, endpoint='esummary')
 
 
 def test_extract_articles():

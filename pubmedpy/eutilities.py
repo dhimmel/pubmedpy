@@ -32,27 +32,26 @@ def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
         progress_bar.update(len(add_ids))
         time.sleep(sleep)
     progress_bar.close()
-    return id
+    return ids
 
 
-def pubmed_esummary(ids, write_file, retmax=100, retmin=20, sleep=0.34,
-                    error_sleep=10, tqdm=tqdm.tqdm):
+def download_pubmed_ids(
+        ids, write_file, endpoint='esummary', retmax=100, retmin=20, sleep=0.34,
+        error_sleep=10, tqdm=tqdm.tqdm):
     """
-    Submit an ESummary query for PubMed records and write results as xml
+    Submit an ESummary or EFetch query for PubMed records and write results as xml
     to write_file.
 
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
     """
     # Base URL for PubMed's esummary eutlity
-    url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi'
+    url = f'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{endpoint}.fcgi'
 
     # Set up progress stats
     n_total = len(ids)
     successive_errors = 0
     progress_bar = tqdm(total=n_total, unit='articles')
-
-    # Write first line of XML
-    write_file.write('<eSummaryResult>\n')
+    initialize_xml = True
 
     # Set up queue
     idq = collections.deque()
@@ -89,8 +88,11 @@ def pubmed_esummary(ids, write_file, retmax=100, retmin=20, sleep=0.34,
             continue
 
         # Write XML to file
-        for docsum in tree.getchildren():
-            xml_str = lxml.etree.tostring(docsum, encoding='unicode')
+        if initialize_xml:
+            initialize_xml = False
+            write_file.write(f'<{tree.tag}>\n')
+        for elem in tree.getchildren():
+            xml_str = lxml.etree.tostring(elem, encoding='unicode')
             write_file.write(xml_str.rstrip() + '\n')
 
         # Report progress
@@ -98,4 +100,4 @@ def pubmed_esummary(ids, write_file, retmax=100, retmin=20, sleep=0.34,
 
     progress_bar.close()
     # Write final line of XML
-    write_file.write('</eSummaryResult>\n')
+    write_file.write(f'</{tree.tag}>\n')
