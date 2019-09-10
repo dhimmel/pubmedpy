@@ -1,0 +1,2610 @@
+<PubmedArticleSet>
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">27094199</PMID>
+        <DateCompleted>
+            <Year>2017</Year>
+            <Month>01</Month>
+            <Day>06</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2017</Year>
+            <Month>01</Month>
+            <Day>07</Day>
+        </DateRevised>
+        <Article PubModel="Print">
+            <Journal>
+                <ISSN IssnType="Electronic">1942-3268</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>9</Volume>
+                    <Issue>2</Issue>
+                    <PubDate>
+                        <Year>2016</Year>
+                        <Month>Apr</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Circulation. Cardiovascular genetics</Title>
+                <ISOAbbreviation>Circ Cardiovasc Genet</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Genetic Association-Guided Analysis of Gene Networks for the Study of Complex Traits.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>179-84</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1161/CIRCGENETICS.115.001181</ELocationID>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Greene</LastName>
+                    <ForeName>Casey S</ForeName>
+                    <Initials>CS</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>From the Systems Pharmacology and Translational Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia (C.S.G.); and Biological and Medical Informatics, University of California, San Francisco (D.S.H.). csgreene@upenn.edu.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Himmelstein</LastName>
+                    <ForeName>Daniel S</ForeName>
+                    <Initials>DS</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>From the Systems Pharmacology and Translational Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia (C.S.G.); and Biological and Medical Informatics, University of California, San Francisco (D.S.H.).</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+                <PublicationType UI="D016454">Review</PublicationType>
+            </PublicationTypeList>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Circ Cardiovasc Genet</MedlineTA>
+            <NlmUniqueID>101489144</NlmUniqueID>
+            <ISSNLinking>1942-3268</ISSNLinking>
+        </MedlineJournalInfo>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D015986" MajorTopicYN="N">Confounding Factors (Epidemiology)</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D053263" MajorTopicYN="Y">Gene Regulatory Networks</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D056726" MajorTopicYN="Y">Genetic Association Studies</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D023281" MajorTopicYN="N">Genomics</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D020641" MajorTopicYN="N">Polymorphism, Single Nucleotide</DescriptorName>
+                <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D019655" MajorTopicYN="Y">Quantitative Trait, Heritable</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="N">association studies</Keyword>
+            <Keyword MajorTopicYN="N">bioinformatics</Keyword>
+            <Keyword MajorTopicYN="N">genetics</Keyword>
+            <Keyword MajorTopicYN="N">genomics</Keyword>
+            <Keyword MajorTopicYN="N">network biology</Keyword>
+        </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2015</Year>
+                <Month>09</Month>
+                <Day>11</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2016</Year>
+                <Month>03</Month>
+                <Day>08</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2016</Year>
+                <Month>4</Month>
+                <Day>21</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2016</Year>
+                <Month>4</Month>
+                <Day>21</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2017</Year>
+                <Month>1</Month>
+                <Day>7</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">27094199</ArticleId>
+            <ArticleId IdType="pii">CIRCGENETICS.115.001181</ArticleId>
+            <ArticleId IdType="doi">10.1161/CIRCGENETICS.115.001181</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">26158728</PMID>
+        <DateCompleted>
+            <Year>2016</Year>
+            <Month>03</Month>
+            <Day>22</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>11</Month>
+            <Day>13</Day>
+        </DateRevised>
+        <Article PubModel="Electronic-eCollection">
+            <Journal>
+                <ISSN IssnType="Electronic">1553-7358</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>11</Volume>
+                    <Issue>7</Issue>
+                    <PubDate>
+                        <Year>2015</Year>
+                        <Month>Jul</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>PLoS computational biology</Title>
+                <ISOAbbreviation>PLoS Comput. Biol.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>e1004259</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1371/journal.pcbi.1004259</ELocationID>
+            <Abstract>
+                <AbstractText>The first decade of Genome Wide Association Studies (GWAS) has uncovered a wealth of disease-associated variants. Two important derivations will be the translation of this information into a multiscale understanding of pathogenic variants and leveraging existing data to increase the power of existing and future studies through prioritization. We explore edge prediction on heterogeneous networks--graphs with multiple node and edge types--for accomplishing both tasks. First we constructed a network with 18 node types--genes, diseases, tissues, pathophysiologies, and 14 MSigDB (molecular signatures database) collections--and 19 edge types from high-throughput publicly-available resources. From this network composed of 40,343 nodes and 1,608,168 edges, we extracted features that describe the topology between specific genes and diseases. Next, we trained a model from GWAS associations and predicted the probability of association between each protein-coding gene and each of 29 well-studied complex diseases. The model, which achieved 132-fold enrichment in precision at 10% recall, outperformed any individual domain, highlighting the benefit of integrative approaches. We identified pleiotropy, transcriptional signatures of perturbations, pathways, and protein interactions as influential mechanisms explaining pathogenesis. Our method successfully predicted the results (with AUROC = 0.79) from a withheld multiple sclerosis (MS) GWAS despite starting with only 13 previously associated genes. Finally, we combined our network predictions with statistical evidence of association to propose four novel MS genes, three of which (JAK2, REL, RUNX3) validated on the masked GWAS. Furthermore, our predictions provide biological support highlighting REL as the causal gene within its gene-rich locus. Users can browse all predictions online (http://het.io). Heterogeneous network edge prediction effectively prioritized genetic associations and provides a powerful new approach for data integration across multiple domains.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Himmelstein</LastName>
+                    <ForeName>Daniel S</ForeName>
+                    <Initials>DS</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Biological &amp; Medical Informatics, University of California, San Francisco, San Francisco, California, United States of America.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Baranzini</LastName>
+                    <ForeName>Sergio E</ForeName>
+                    <Initials>SE</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Biological &amp; Medical Informatics, University of California, San Francisco, San Francisco, California, United States of America; Department of Neurology, University of California, San Francisco, San Francisco, California, United States of America; Institute for Human Genetics, University of California, San Francisco, San Francisco, California, United States of America.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <GrantList CompleteYN="Y">
+                <Grant>
+                    <GrantID>T32 EB009383</GrantID>
+                    <Acronym>EB</Acronym>
+                    <Agency>NIBIB NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>T32 GM067547</GrantID>
+                    <Acronym>GM</Acronym>
+                    <Agency>NIGMS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>R01 NS088155</GrantID>
+                    <Acronym>NS</Acronym>
+                    <Agency>NINDS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+            </GrantList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D052061">Research Support, N.I.H., Extramural</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+                <PublicationType UI="D013486">Research Support, U.S. Gov't, Non-P.H.S.</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2015</Year>
+                <Month>07</Month>
+                <Day>09</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>PLoS Comput Biol</MedlineTA>
+            <NlmUniqueID>101238922</NlmUniqueID>
+            <ISSNLinking>1553-734X</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D020543">Proteome</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D000465" MajorTopicYN="N">Algorithms</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000818" MajorTopicYN="N">Animals</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002874" MajorTopicYN="N">Chromosome Mapping</DescriptorName>
+                <QualifierName UI="Q000379" MajorTopicYN="Y">methods</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D057225" MajorTopicYN="N">Data Mining</DescriptorName>
+                <QualifierName UI="Q000379" MajorTopicYN="Y">methods</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D030541" MajorTopicYN="Y">Databases, Genetic</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D020022" MajorTopicYN="N">Genetic Predisposition to Disease</DescriptorName>
+                <QualifierName UI="Q000235" MajorTopicYN="Y">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D055106" MajorTopicYN="N">Genome-Wide Association Study</DescriptorName>
+                <QualifierName UI="Q000379" MajorTopicYN="Y">methods</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D025941" MajorTopicYN="N">Protein Interaction Mapping</DescriptorName>
+                <QualifierName UI="Q000379" MajorTopicYN="N">methods</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D020543" MajorTopicYN="N">Proteome</DescriptorName>
+                <QualifierName UI="Q000235" MajorTopicYN="Y">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D015398" MajorTopicYN="N">Signal Transduction</DescriptorName>
+                <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D018511" MajorTopicYN="N">Systems Integration</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2014</Year>
+                <Month>12</Month>
+                <Day>10</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2015</Year>
+                <Month>03</Month>
+                <Day>26</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2015</Year>
+                <Month>7</Month>
+                <Day>10</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2015</Year>
+                <Month>7</Month>
+                <Day>15</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2016</Year>
+                <Month>3</Month>
+                <Day>24</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>epublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">26158728</ArticleId>
+            <ArticleId IdType="doi">10.1371/journal.pcbi.1004259</ArticleId>
+            <ArticleId IdType="pii">PCOMPBIOL-D-14-02222</ArticleId>
+            <ArticleId IdType="pmc">PMC4497619</ArticleId>
+        </ArticleIdList>
+        <ReferenceList>
+            <Reference>
+                <Citation>Bioinformatics. 2014 Sep 1;30(17):i594-600</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25161252</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2009 Jan;37(Database issue):D619-22</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18981052</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2005 Oct 25;102(43):15545-50</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16199517</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Methods. 2015 Feb;12(2):154-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25532137</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Epigenetics. 2011 May;6(5):593-601</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21436623</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2000 Jan 1;28(1):27-30</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10592173</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 2005 Mar 17;434(7031):338-45</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15735639</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2007 May 22;104(21):8685-90</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17502601</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Rev Genet. 2010 Dec;11(12):843-54</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21085203</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2009 Jul;85(1):13-24</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19539887</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Genet. 2010 Aug;6(8). pii: e1001058. doi: 10.1371/journal.pgen.1001058</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20714348</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Stat Softw. 2010;33(1):1-22</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20808728</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Database (Oxford). 2011;2011:bar036</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21873645</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2012 Jan;40(Database issue):D940-6</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22080554</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Pac Symp Biocomput. 2014;:400-11</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24297565</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2009 Jan;37(Database issue):D885-90</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18940857</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Clin Invest. 2002 Sep;110(6):843-50</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12235116</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2011;6(9):e24171</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21912671</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2010 May 15;26(10):1348-56</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20378557</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Genet. 2011 Aug;7(8):e1002254</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21852963</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>N Engl J Med. 2005 Feb 24;352(8):804-15</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15728813</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2010 Apr;42(4):295-302</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20190752</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2012;7(11):e49634</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23185389</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2006 Jan 1;34(Database issue):D108-10</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16381825</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Rev Genet. 2004 Dec;5(12):889-99</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15573121</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2014 Jan;42(Database issue):D1001-6</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24316577</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2013 Jun 6;92(6):854-65</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23731539</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2011 Jan 1;27(1):95-102</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21045073</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2010 Jul;42(7):551</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20581872</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Bioinformatics. 2008;9:405</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18823568</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hum Genet. 2011 May;129(5):563-71</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21279722</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Rev Genet. 2009 Oct;10(10):681-90</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19763151</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2011 Nov 11;89(5):607-18</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22077970</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Genomics. 2012;13 Suppl 7:S27</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23282070</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Artif Intell Med. 2014 Jun;61(2):63-78</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24726035</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2011 Aug;43(8):761-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21743469</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2011 Jun 15;27(12):1739-40</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21546393</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2004 Apr 20;101(16):6062-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15075390</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Eur J Hum Genet. 2006 May;14(5):535-42</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16493445</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Genet. 2009 Jun;5(6):e1000534</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19557189</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Comput Biol. 2009 Apr;5(4):e1000353</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19360091</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2010 Jul 9;87(1):139-45</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20598278</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Sci Rep. 2013;3:3202</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24232732</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Genet. 2013 Jun;9(6):e1003569</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23818866</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Oncogene. 2004 Mar 25;23(13):2275-86</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14755244</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2011;6(7):e22670</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21829475</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2011 Jan;39(Database issue):D507-13</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21030441</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>N Engl J Med. 2009 Apr 23;360(17):1699-701</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19369661</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Proteomics. 2014 Apr 4;100:44-54</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24480284</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2011;6(2):e17258</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21364756</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2013 Jan;41(Database issue):D545-52</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23161694</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>N Engl J Med. 2009 Apr 23;360(17):1701-3</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19369656</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Biometrics. 1988 Sep;44(3):837-45</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">3203132</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proteins. 2008 Aug 15;72(3):1030-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18300252</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2010 Jul;38(Web Server issue):W214-20</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20576703</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2013 Nov;45(11):1353-60</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24076602</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Immunol. 2012 Feb 1;188(3):1011-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22219326</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2011 Jul;39(Web Server issue):W450-4</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21622961</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2003 Nov 11;100(23):13418-23</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14593198</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2008 Dec 30;105(52):20870-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19104045</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2007 Sep;81(3):559-75</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17701901</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>N Engl J Med. 2009 Apr 23;360(17):1696-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19369660</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 2011 Aug 11;476(7359):214-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21833088</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2004 Oct;36(10):1090-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15448693</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Methods. 2009 Jan;6(1):83-90</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19060904</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2000 May;25(1):25-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10802651</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Pac Symp Biocomput. 2013;:53-64</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23424111</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2010 May 1;26(9):1219-24</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20215462</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Brain. 2008 Dec;131(Pt 12):3118-31</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18490360</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Ann Neurol. 2011 Dec;70(6):897-912</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22190364</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>IEEE Trans Pattern Anal Mach Intell. 2015 Jan;37(1):41-53</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26353207</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Genet. 2011;7(1):e1001273</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21249183</ArticleId>
+                </ArticleIdList>
+            </Reference>
+        </ReferenceList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="PubMed-not-MEDLINE" Owner="NLM">
+        <PMID Version="1">25648772</PMID>
+        <DateCompleted>
+            <Year>2015</Year>
+            <Month>02</Month>
+            <Day>04</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>11</Month>
+            <Day>13</Day>
+        </DateRevised>
+        <Article PubModel="Electronic-eCollection">
+            <Journal>
+                <ISSN IssnType="Print">2167-8359</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>3</Volume>
+                    <PubDate>
+                        <Year>2015</Year>
+                    </PubDate>
+                </JournalIssue>
+                <Title>PeerJ</Title>
+                <ISOAbbreviation>PeerJ</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Lung cancer incidence decreases with elevation: evidence for oxygen as an inhaled carcinogen.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>e705</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.7717/peerj.705</ELocationID>
+            <Abstract>
+                <AbstractText>The level of atmospheric oxygen, a driver of free radical damage and tumorigenesis, decreases sharply with rising elevation. To understand whether ambient oxygen plays a role in human carcinogenesis, we characterized age-adjusted cancer incidence (compiled by the National Cancer Institute from 2005 to 2009) across counties of the elevation-varying Western United States and compared trends displayed by respiratory cancer (lung) and non-respiratory cancers (breast, colorectal, and prostate). To adjust for important demographic and cancer-risk factors, 8-12 covariates were considered for each cancer. We produced regression models that captured known risks. Models demonstrated that elevation is strongly, negatively associated with lung cancer incidence (p &lt; 10(-16)), but not with the incidence of non-respiratory cancers. For every 1,000 m rise in elevation, lung cancer incidence decreased by 7.23 99% CI [5.18-9.29] cases per 100,000 individuals, equivalent to 12.7% of the mean incidence, 56.8. As a predictor of lung cancer incidence, elevation was second only to smoking prevalence in terms of significance and effect size. Furthermore, no evidence of ecological fallacy or of confounding arising from evaluated factors was detected: the lung cancer association was robust to varying regression models, county stratification, and population subgrouping; additionally seven environmental correlates of elevation, such as exposure to sunlight and fine particulate matter, could not capture the association. Overall, our findings suggest the presence of an inhaled carcinogen inherently and inversely tied to elevation, offering epidemiological support for oxygen-driven tumorigenesis. Finally, highlighting the need to consider elevation in studies of lung cancer, we demonstrated that previously reported inverse lung cancer associations with radon and UVB became insignificant after accounting for elevation. </AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y" EqualContrib="Y">
+                    <LastName>Simeonov</LastName>
+                    <ForeName>Kamen P</ForeName>
+                    <Initials>KP</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y" EqualContrib="Y">
+                    <LastName>Himmelstein</LastName>
+                    <ForeName>Daniel S</ForeName>
+                    <Initials>DS</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Biological &amp; Medical Informatics, University of California, San Francisco, CA, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <GrantList CompleteYN="Y">
+                <Grant>
+                    <GrantID>T32 EB009383</GrantID>
+                    <Acronym>EB</Acronym>
+                    <Agency>NIBIB NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+            </GrantList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2015</Year>
+                <Month>01</Month>
+                <Day>13</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>PeerJ</MedlineTA>
+            <NlmUniqueID>101603425</NlmUniqueID>
+            <ISSNLinking>2167-8359</ISSNLinking>
+        </MedlineJournalInfo>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="N">Altitude</Keyword>
+            <Keyword MajorTopicYN="N">Cancer incidence</Keyword>
+            <Keyword MajorTopicYN="N">Elevation</Keyword>
+            <Keyword MajorTopicYN="N">Lung cancer</Keyword>
+            <Keyword MajorTopicYN="N">Oxygen</Keyword>
+        </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2014</Year>
+                <Month>11</Month>
+                <Day>04</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2014</Year>
+                <Month>11</Month>
+                <Day>30</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2015</Year>
+                <Month>2</Month>
+                <Day>5</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2015</Year>
+                <Month>2</Month>
+                <Day>5</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2015</Year>
+                <Month>2</Month>
+                <Day>5</Day>
+                <Hour>6</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>epublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">25648772</ArticleId>
+            <ArticleId IdType="doi">10.7717/peerj.705</ArticleId>
+            <ArticleId IdType="pii">705</ArticleId>
+            <ArticleId IdType="pmc">PMC4304851</ArticleId>
+        </ArticleIdList>
+        <ReferenceList>
+            <Reference>
+                <Citation>Am J Public Health. 2005 May;95(5):838-43</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15855463</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Pediatr Surg. 2003 Jan;38(1):134-7; discussion 134-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12592636</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Clin Chest Med. 2002 Mar;23(1):1-25</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11901905</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Med Hypotheses. 2010 Oct;75(4):378-82</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20403668</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Radiat Res. 1987 Nov;112(2):381-90</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">3685264</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Carcinogenesis. 1982;3(5):461-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">7094209</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Stat Softw. 2010;33(1):1-22</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20808728</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Epidemiol Community Health. 2012 Jul;66(7):e17</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21406589</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>FASEB J. 2003 Jul;17(10):1195-214</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12832285</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Cell Biol. 2003 Aug;5(8):741-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12855956</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Pediatr. 2005 Jul;147(1):27-31</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16027689</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Health Phys. 2004 Mar;86(3):316-8; author reply 318</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14982234</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet. 1992 May 23;339(8804):1268-78</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">1349675</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet. 2005 Nov 19;366(9499):1784-93</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16298215</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Chest. 1985 Dec;88(6):900-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">3905287</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Health Phys. 2003 Oct;85(4):397-403</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">13678279</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Annu Rev Pharmacol Toxicol. 2011;51:311-36</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20936945</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Ann Epidemiol. 2005 Nov;15(10):796-803</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15922628</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMJ. 2003 Sep 6;327(7414):557-60</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12958120</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Int J Cancer. 2002 Mar 10;98(2):241-56</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11857415</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Epidemiol Community Health. 2000 May;54(5):326-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10814650</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Clin Nutr. 2008 Aug;88(2):570S-577S</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18689404</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Cancer. 2006 Nov 10;6:264</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17096841</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 1977 Jun 2;267(5610):423-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">876356</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Biol. 2007 May;5(5):e110</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17472436</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Natl Cancer Inst. 1980 Sep;65(3):515-28</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">6931932</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Clin Biochem. 1999 Nov;32(8):595-603</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10638941</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>CA Cancer J Clin. 2000 Jan-Feb;50(1):7-33</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10735013</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Health Phys. 1995 Feb;68(2):157-74</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">7814250</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Int J Exp Pathol. 2012 Aug;93(4):269-78</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22804763</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Commun. 2010 Apr 12;1:5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20975668</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>CA Cancer J Clin. 2008 Mar-Apr;58(2):71-96</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18287387</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Acta Paediatr. 2002;91(12):1328-33</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12578290</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>CA Cancer J Clin. 2014 Jan-Feb;64(1):9-29</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24399786</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Eur J Cancer. 1975 May;11(5):365-71</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">239848</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Ann N Y Acad Sci. 2003 Dec;1010:405-16</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15033761</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Aging Dis. 2013 Dec 05;5(4):274-80</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25110611</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 1978 Aug 10;274(5671):606-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">353565</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Clin Oncol. 2007 Feb 10;25(5):561-70</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17290066</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Pediatr Int. 2000 Oct;42(5):492-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11059537</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Clin Cancer Res. 2009 Sep 15;15(18):5626-45</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19755391</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Natl Cancer Inst. 1997 Feb 19;89(4):287-93</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">9048832</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2011 May 12;6(5):e19785</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21589870</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Radiat Res. 1974 Nov;60(2):302-6</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10881712</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Epidemiol. 1999 Feb 1;149(3):268-74</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">9927223</ArticleId>
+                </ArticleIdList>
+            </Reference>
+        </ReferenceList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="PubMed-not-MEDLINE" Owner="NLM">
+        <PMID Version="1">21736753</PMID>
+        <DateCompleted>
+            <Year>2011</Year>
+            <Month>11</Month>
+            <Day>10</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>11</Month>
+            <Day>13</Day>
+        </DateRevised>
+        <Article PubModel="Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1756-0381</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>4</Volume>
+                    <Issue>1</Issue>
+                    <PubDate>
+                        <Year>2011</Year>
+                        <Month>Jul</Month>
+                        <Day>07</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>BioData mining</Title>
+                <ISOAbbreviation>BioData Min</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Evolving hard problems: Generating human genetics datasets with a complex etiology.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>21</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1186/1756-0381-4-21</ELocationID>
+            <Abstract>
+                <AbstractText Label="BACKGROUND" NlmCategory="BACKGROUND">A goal of human genetics is to discover genetic factors that influence individuals' susceptibility to common diseases. Most common diseases are thought to result from the joint failure of two or more interacting components instead of single component failures. This greatly complicates both the task of selecting informative genetic variants and the task of modeling interactions between them. We and others have previously developed algorithms to detect and model the relationships between these genetic factors and disease. Previously these methods have been evaluated with datasets simulated according to pre-defined genetic models.</AbstractText>
+                <AbstractText Label="RESULTS" NlmCategory="RESULTS">Here we develop and evaluate a model free evolution strategy to generate datasets which display a complex relationship between individual genotype and disease susceptibility. We show that this model free approach is capable of generating a diverse array of datasets with distinct gene-disease relationships for an arbitrary interaction order and sample size. We specifically generate eight-hundred Pareto fronts; one for each independent run of our algorithm. In each run the predictiveness of single genetic variation and pairs of genetic variants have been minimized, while the predictiveness of third, fourth, or fifth-order combinations is maximized. Two hundred runs of the algorithm are further dedicated to creating datasets with predictive four or five order interactions and minimized lower-level effects.</AbstractText>
+                <AbstractText Label="CONCLUSIONS" NlmCategory="CONCLUSIONS">This method and the resulting datasets will allow the capabilities of novel methods to be tested without pre-specified genetic models. This allows researchers to evaluate which methods will succeed on human genetics problems where the model is not known in advance. We further make freely available to the community the entire Pareto-optimal front of datasets from each run so that novel methods may be rigorously evaluated. These 76,600 datasets are available from http://discovery.dartmouth.edu/model_free_data/.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Himmelstein</LastName>
+                    <ForeName>Daniel S</ForeName>
+                    <Initials>DS</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Genetics, Dartmouth Medical School, One Medical Center Drive, Lebanon, NH 03756, USA. jason.h.moore@dartmouth.edu.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Greene</LastName>
+                    <ForeName>Casey S</ForeName>
+                    <Initials>CS</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Moore</LastName>
+                    <ForeName>Jason H</ForeName>
+                    <Initials>JH</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2011</Year>
+                <Month>07</Month>
+                <Day>07</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>England</Country>
+            <MedlineTA>BioData Min</MedlineTA>
+            <NlmUniqueID>101319161</NlmUniqueID>
+            <ISSNLinking>1756-0381</ISSNLinking>
+        </MedlineJournalInfo>
+        <CommentsCorrectionsList>
+            <CommentsCorrections RefType="ErratumIn">
+                <RefSource>BioData Min. 2016;9:9</RefSource>
+                <PMID Version="1">26848312</PMID>
+            </CommentsCorrections>
+        </CommentsCorrectionsList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2010</Year>
+                <Month>10</Month>
+                <Day>19</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2011</Year>
+                <Month>07</Month>
+                <Day>07</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2011</Year>
+                <Month>7</Month>
+                <Day>9</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2011</Year>
+                <Month>7</Month>
+                <Day>9</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2011</Year>
+                <Month>7</Month>
+                <Day>9</Day>
+                <Hour>6</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>epublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">21736753</ArticleId>
+            <ArticleId IdType="pii">1756-0381-4-21</ArticleId>
+            <ArticleId IdType="doi">10.1186/1756-0381-4-21</ArticleId>
+            <ArticleId IdType="pmc">PMC3154150</ArticleId>
+        </ArticleIdList>
+        <ReferenceList>
+            <Reference>
+                <Citation>Genet Epidemiol. 2007 May;31(4):306-15</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17323372</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>JAMA. 2004 Apr 7;291(13):1642-3</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15069055</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Evol Comput. 2006 Winter;14(4):433-62</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17109606</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Genet Evol Comput Conf. 2002;2002:1150-1155</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23413413</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Eur J Hum Genet. 2004 May;12(5):395-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14872201</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Appl Soft Comput. 2004 Feb 1;4(1):79-86</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20948983</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 2007 Jun 29;316(5833):1840-2</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17600199</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Genet Med. 2002 Mar-Apr;4(2):45-61</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11882781</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hum Hered. 2000 Nov-Dec;50(6):334-49</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10899752</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2001 Jul;69(1):138-47</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11404819</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Mol Ecol Resour. 2011 Jan;11(1):200-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21429123</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Rev Genet. 2008 May;9(5):356-69</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18398418</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Theor Biol. 2006 Jul 21;241(2):252-61</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16457852</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Genet. 2009 Feb;5(2):e1000337</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19197355</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hum Genet. 2002 Dec;111(6):573-4</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12516594</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 2007 Jun 29;316(5833):1840-2</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17605173</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioessays. 2009 Feb;31(2):220-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19204994</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hum Hered. 2003;56(1-3):73-82</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14614241</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2008 Dec 16;105(50):19910-4</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19066216</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2009;4(6):e5639</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19503614</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 2007 Jun 7;447(7145):655-60</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17554299</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioessays. 2005 Jun;27(6):637-46</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15892116</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Genet Epidemiol. 2008 Nov;32(7):600-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18473366</ArticleId>
+                </ArticleIdList>
+            </Reference>
+        </ReferenceList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">25915600</PMID>
+        <DateCompleted>
+            <Year>2015</Year>
+            <Month>08</Month>
+            <Day>07</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>11</Month>
+            <Day>13</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1546-1718</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>47</Volume>
+                    <Issue>6</Issue>
+                    <PubDate>
+                        <Year>2015</Year>
+                        <Month>Jun</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Nature genetics</Title>
+                <ISOAbbreviation>Nat. Genet.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Understanding multicellular function and disease with human tissue-specific networks.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>569-76</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1038/ng.3259</ELocationID>
+            <Abstract>
+                <AbstractText>Tissue and cell-type identity lie at the core of human physiology and disease. Understanding the genetic underpinnings of complex tissues and individual cell lineages is crucial for developing improved diagnostics and therapeutics. We present genome-wide functional interaction networks for 144 human tissues and cell types developed using a data-driven Bayesian methodology that integrates thousands of diverse experiments spanning tissue and disease states. Tissue-specific networks predict lineage-specific responses to perturbation, identify the changing functional roles of genes across tissues and illuminate relationships among diseases. We introduce NetWAS, which combines genes with nominally significant genome-wide association study (GWAS) P values and tissue-specific networks to identify disease-gene associations more accurately than GWAS alone. Our webserver, GIANT, provides an interface to human tissue networks through multi-gene queries, network visualization, analysis tools including NetWAS and downloadable networks. GIANT enables systematic exploration of the landscape of interacting genes that shape specialized cellular functions across more than a hundred human tissues and cell types. </AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Greene</LastName>
+                    <ForeName>Casey S</ForeName>
+                    <Initials>CS</Initials>
+                    <Identifier Source="ORCID">0000000187139213</Identifier>
+                    <AffiliationInfo>
+                        <Affiliation>1] Department of Genetics, Geisel School of Medicine at Dartmouth, Hanover, New Hampshire, USA. [2] Dartmouth-Hitchcock Norris Cotton Cancer Center, Lebanon, New Hampshire, USA. [3] Institute for Quantitative Biomedical Sciences, Dartmouth College, Hanover, New Hampshire, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Krishnan</LastName>
+                    <ForeName>Arjun</ForeName>
+                    <Initials>A</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Lewis-Sigler Institute for Integrative Genomics, Princeton University, Princeton, New Jersey, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Wong</LastName>
+                    <ForeName>Aaron K</ForeName>
+                    <Initials>AK</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Computer Science, Princeton University, Princeton, New Jersey, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ricciotti</LastName>
+                    <ForeName>Emanuela</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>1] Department of Pharmacology, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA. [2] Institute for Translational Medicine and Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Zelaya</LastName>
+                    <ForeName>Rene A</ForeName>
+                    <Initials>RA</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Genetics, Geisel School of Medicine at Dartmouth, Hanover, New Hampshire, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Himmelstein</LastName>
+                    <ForeName>Daniel S</ForeName>
+                    <Initials>DS</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Biology and Medical Informatics, University of California, San Francisco, San Francisco, California, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Zhang</LastName>
+                    <ForeName>Ran</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Molecular Biology, Princeton University, Princeton, New Jersey, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Hartmann</LastName>
+                    <ForeName>Boris M</ForeName>
+                    <Initials>BM</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Neurology, Icahn School of Medicine at Mount Sinai, New York, New York, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Zaslavsky</LastName>
+                    <ForeName>Elena</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Neurology, Icahn School of Medicine at Mount Sinai, New York, New York, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Sealfon</LastName>
+                    <ForeName>Stuart C</ForeName>
+                    <Initials>SC</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Neurology, Icahn School of Medicine at Mount Sinai, New York, New York, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Chasman</LastName>
+                    <ForeName>Daniel I</ForeName>
+                    <Initials>DI</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Preventive Medicine, Brigham and Women's Hospital and Harvard Medical School, Boston, Massachusetts, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>FitzGerald</LastName>
+                    <ForeName>Garret A</ForeName>
+                    <Initials>GA</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>1] Department of Pharmacology, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA. [2] Institute for Translational Medicine and Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Dolinski</LastName>
+                    <ForeName>Kara</ForeName>
+                    <Initials>K</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Lewis-Sigler Institute for Integrative Genomics, Princeton University, Princeton, New Jersey, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Grosser</LastName>
+                    <ForeName>Tilo</ForeName>
+                    <Initials>T</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>1] Department of Pharmacology, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA. [2] Institute for Translational Medicine and Therapeutics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, Pennsylvania, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Troyanskaya</LastName>
+                    <ForeName>Olga G</ForeName>
+                    <Initials>OG</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>1] Lewis-Sigler Institute for Integrative Genomics, Princeton University, Princeton, New Jersey, USA. [2] Department of Computer Science, Princeton University, Princeton, New Jersey, USA. [3] Simons Center for Data Analysis, Simons Foundation, New York, New York, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <DataBankList CompleteYN="Y">
+                <DataBank>
+                    <DataBankName>GEO</DataBankName>
+                    <AccessionNumberList>
+                        <AccessionNumber>GSE59671</AccessionNumber>
+                    </AccessionNumberList>
+                </DataBank>
+            </DataBankList>
+            <GrantList CompleteYN="Y">
+                <Grant>
+                    <GrantID>P20 GM103534</GrantID>
+                    <Acronym>GM</Acronym>
+                    <Agency>NIGMS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>HHSN272201000054C</GrantID>
+                    <Acronym>AI</Acronym>
+                    <Agency>NIAID NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>U54 HL117798</GrantID>
+                    <Acronym>HL</Acronym>
+                    <Agency>NHLBI NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>P30 ES013508</GrantID>
+                    <Acronym>ES</Acronym>
+                    <Agency>NIEHS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>P50 GM071508</GrantID>
+                    <Acronym>GM</Acronym>
+                    <Agency>NIGMS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>R01 GM071966</GrantID>
+                    <Acronym>GM</Acronym>
+                    <Agency>NIGMS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>U19 AI117873</GrantID>
+                    <Acronym>AI</Acronym>
+                    <Agency>NIAID NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>HHSN272201000054C</GrantID>
+                    <Agency>PHS HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>T32 CA009528</GrantID>
+                    <Acronym>CA</Acronym>
+                    <Agency>NCI NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>R24 OD011194</GrantID>
+                    <Acronym>OD</Acronym>
+                    <Agency>NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>R01 HG005998</GrantID>
+                    <Acronym>HG</Acronym>
+                    <Agency>NHGRI NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>T32 HG003284</GrantID>
+                    <Acronym>HG</Acronym>
+                    <Agency>NHGRI NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+            </GrantList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D052061">Research Support, N.I.H., Extramural</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2015</Year>
+                <Month>04</Month>
+                <Day>27</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Nat Genet</MedlineTA>
+            <NlmUniqueID>9216904</NlmUniqueID>
+            <ISSNLinking>1061-4036</ISSNLinking>
+        </MedlineJournalInfo>
+        <CitationSubset>IM</CitationSubset>
+        <CommentsCorrectionsList>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>Nat Biotechnol. 2015 Jul;33(7):720-1</RefSource>
+                <PMID Version="1">26154012</PMID>
+            </CommentsCorrections>
+        </CommentsCorrectionsList>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D000544" MajorTopicYN="N">Alzheimer Disease</DescriptorName>
+                <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+                <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D001499" MajorTopicYN="N">Bayes Theorem</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002478" MajorTopicYN="N">Cells, Cultured</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D005786" MajorTopicYN="N">Gene Expression Regulation</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D063990" MajorTopicYN="N">Gene Ontology</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D053263" MajorTopicYN="Y">Gene Regulatory Networks</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D055106" MajorTopicYN="N">Genome-Wide Association Study</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006973" MajorTopicYN="N">Hypertension</DescriptorName>
+                <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+                <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008954" MajorTopicYN="N">Models, Biological</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D032389" MajorTopicYN="N">Myocytes, Smooth Muscle</DescriptorName>
+                <QualifierName UI="Q000502" MajorTopicYN="N">physiology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D009928" MajorTopicYN="N">Organ Specificity</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D010300" MajorTopicYN="N">Parkinson Disease</DescriptorName>
+                <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+                <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D060066" MajorTopicYN="Y">Protein Interaction Maps</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2014</Year>
+                <Month>12</Month>
+                <Day>10</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2015</Year>
+                <Month>03</Month>
+                <Day>06</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2015</Year>
+                <Month>4</Month>
+                <Day>28</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2015</Year>
+                <Month>4</Month>
+                <Day>29</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2015</Year>
+                <Month>8</Month>
+                <Day>8</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">25915600</ArticleId>
+            <ArticleId IdType="pii">ng.3259</ArticleId>
+            <ArticleId IdType="doi">10.1038/ng.3259</ArticleId>
+            <ArticleId IdType="pmc">PMC4828725</ArticleId>
+            <ArticleId IdType="mid">NIHMS670444</ArticleId>
+        </ArticleIdList>
+        <ReferenceList>
+            <Reference>
+                <Citation>Proc AMIA Symp. 2001;:17-21</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11825149</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 1969 Jul 25;165(3891):349-57</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">5789433</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2005 Oct 25;102(43):15545-50</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16199517</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Development. 2009 Oct;136(19):3205-14</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19736321</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Syst Biol. 2011;5:17</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21269460</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2010 May 1;26(9):1205-10</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20335276</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2007 May 22;104(21):8685-90</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17502601</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Physiol Cell Physiol. 2003 Jan;284(1):C2-15</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12475759</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Mol Cells. 2011 Jul;32(1):67-76</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21544627</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 2014 Mar 27;507(7493):462-70</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24670764</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2010 Jan;42(1):77-82</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19946270</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2006 Jan 1;34(Database issue):D668-72</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16381955</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Blood. 2010 Oct 21;116(16):2975-83</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20595513</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Genomics. 2006;7:187</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16869964</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 2004 Nov 26;306(5701):1555-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15567862</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 1991 Jun 28;252(5014):1813-6</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">2063193</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Rev Nephrol. 2012 Feb;8(2):89-99</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22143329</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2009;4(5):e5438</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19412553</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2008 Apr;82(4):949-58</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18371930</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Bioinformatics. 2006;7:229</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16643658</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Development. 1999 Oct;126(20):4441-53</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10498680</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Zebrafish. 2009 Mar;6(1):49-58</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19374548</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2007 Oct;39(10):1181-6</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17898773</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 2009 Dec 3;462(7273):587-94</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19956253</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Biotechnol. 2010 Dec;28(12):1248-50</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21139605</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2012 Apr 10;109(15):5594-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22447773</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2014 Jan;42(Database issue):D1001-6</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24316577</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>IEEE Trans Vis Comput Graph. 2011 Dec;17(12):2301-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22034350</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Oncogene. 2003 Nov 13;22(51):8370-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14614460</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2003 Jul 8;100(14):8348-53</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12826619</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2003 Jan 22;19(2):185-93</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12538238</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hematol Rep. 2010 Jan 26;2(1):e3</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22184516</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2014 Jan;42(Database issue):D1118-23</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24265219</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 2012 Sep 6;489(7414):57-74</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22955616</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Genome Res. 2009 Jun;19(6):1093-106</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19246570</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 2003 Oct 17;302(5644):449-53</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14564010</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Methods Mol Biol. 2013;1015:311-20</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23824865</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Cell Physiol. 2009 Nov;221(2):480-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19650108</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Cell Biochem. 2006 Apr 1;97(5):969-83</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16267835</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Trends Genet. 2003 Feb;19(2):79-81</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12547515</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2005 Jan 1;33(Database issue):D514-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15608251</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2009 Jan;37(Database issue):D767-72</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18988627</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Dev Biol. 2007 May 1;305(1):90-102</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17335794</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Clin Chem. 2008 Feb;54(2):249-55</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18070814</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2009 Jul;37(Web Server issue):W202-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19458158</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Genet. 2013 Jun;9(6):e1003500</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23754948</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Clin Sci (Lond). 2005 Mar;108(3):205-13</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15540988</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2005;33(20):e175</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16284200</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Comput Biol. 2013;9(3):e1002957</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23516347</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Neoplasia. 2010 Apr;12(4):326-35</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20360943</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 1999 Jan 1;27(1):44-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">9847138</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Stat Appl Genet Mol Biol. 2004;3:Article3</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16646809</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Rev Genet. 2004 Jul;5(7):545-51</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15211356</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Genet. 2013 Apr;45(4):433-9, 439e1-2</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23455636</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2012 Jan;40(Database issue):D841-6</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22121220</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Mol Syst Biol. 2009;5:260</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19357639</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Genome Res. 2013 Nov;23(11):1862-73</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23950145</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet. 1960 May 21;1(7134):1085-93</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14428616</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2011 Jan;39(Database issue):D52-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21115458</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2010 Jul 9;87(1):139-45</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20598278</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nature. 2008 Oct 23;455(7216):1061-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18772890</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Comput Biol. 2009 Mar;5(3):e1000322</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19300515</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Hypertens. 2011 Jan;29(1):62-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21045733</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Genome Res. 2004 Jan;14(1):54-61</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">14707169</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2011 Jan;39(Database issue):D507-13</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21030441</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Curr Opin Nephrol Hypertens. 2008 May;17(3):271-81</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18408478</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Genes Dev. 2010 Oct 15;24(20):2239-63</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20952534</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Gene. 2004 Oct 27;341:19-39</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15474285</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2013 Jan;41(Database issue):D991-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23193258</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Rev Genet. 2012 Sep;13(9):613-26</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22868264</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2008 Dec 30;105(52):20870-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19104045</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Physiol Lung Cell Mol Physiol. 2004 Oct;287(4):L752-63</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15194563</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2013 Jan;41(Database issue):D1104-14</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23093600</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2013 Jan;41(Database issue):D816-23</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23203989</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Immunity. 2000 Jul;13(1):15-24</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10933391</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2014;9(2):e88889</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24523945</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2007 Sep 1;23(17):2322-30</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17599939</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Comput Biol. 2009 Dec;5(12):e1000598</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20011106</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Neuropathol Exp Neurol. 1996 Mar;55(3):259-72</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">8786384</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2010 Jan;38(Database issue):D105-10</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19906716</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Craniofac Surg. 2013 Jan;24(1):130-3</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23348269</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Development. 2006 Nov;133(22):4451-61</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17050627</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2001 Jun;17(6):520-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11395428</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Genome Biol. 2008;9 Suppl 1:S4</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18613948</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Protoc. 2011 Sep;6(9):1429-42</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21886106</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2011 Apr 1;27(7):1017-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21330290</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Genome Biol Evol. 2010;2:393-409</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20624743</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2008 Jul 1;24(13):1559-61</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18499696</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nucleic Acids Res. 2012 Jan;40(Database issue):D857-61</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22096227</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Oncogene. 2006 Dec 4;25(57):7492-504</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17143293</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Med Genet. 2007;8 Suppl 1:S16</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17903298</ArticleId>
+                </ArticleIdList>
+            </Reference>
+        </ReferenceList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">20081222</PMID>
+        <DateCompleted>
+            <Year>2010</Year>
+            <Month>06</Month>
+            <Day>17</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>11</Month>
+            <Day>13</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1367-4811</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>26</Volume>
+                    <Issue>5</Issue>
+                    <PubDate>
+                        <Year>2010</Year>
+                        <Month>Mar</Month>
+                        <Day>01</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Bioinformatics (Oxford, England)</Title>
+                <ISOAbbreviation>Bioinformatics</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Multifactor dimensionality reduction for graphics processing units enables genome-wide testing of epistasis in sporadic ALS.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>694-5</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1093/bioinformatics/btq009</ELocationID>
+            <Abstract>
+                <AbstractText Label="MOTIVATION" NlmCategory="BACKGROUND">Epistasis, the presence of gene-gene interactions, has been hypothesized to be at the root of many common human diseases, but current genome-wide association studies largely ignore its role. Multifactor dimensionality reduction (MDR) is a powerful model-free method for detecting epistatic relationships between genes, but computational costs have made its application to genome-wide data difficult. Graphics processing units (GPUs), the hardware responsible for rendering computer games, are powerful parallel processors. Using GPUs to run MDR on a genome-wide dataset allows for statistically rigorous testing of epistasis.</AbstractText>
+                <AbstractText Label="RESULTS" NlmCategory="RESULTS">The implementation of MDR for GPUs (MDRGPU) includes core features of the widely used Java software package, MDR. This GPU implementation allows for large-scale analysis of epistasis at a dramatically lower cost than the standard CPU-based implementations. As a proof-of-concept, we applied this software to a genome-wide study of sporadic amyotrophic lateral sclerosis (ALS). We discovered a statistically significant two-SNP classifier and subsequently replicated the significance of these two SNPs in an independent study of ALS. MDRGPU makes the large-scale analysis of epistasis tractable and opens the door to statistically rigorous testing of interactions in genome-wide datasets.</AbstractText>
+                <AbstractText Label="AVAILABILITY" NlmCategory="BACKGROUND">MDRGPU is open source and available free of charge from http://www.sourceforge.net/projects/mdr.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Greene</LastName>
+                    <ForeName>Casey S</ForeName>
+                    <Initials>CS</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Genetics, Dartmouth Medical School, Lebanon, NH 03756, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Sinnott-Armstrong</LastName>
+                    <ForeName>Nicholas A</ForeName>
+                    <Initials>NA</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Himmelstein</LastName>
+                    <ForeName>Daniel S</ForeName>
+                    <Initials>DS</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Park</LastName>
+                    <ForeName>Paul J</ForeName>
+                    <Initials>PJ</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Moore</LastName>
+                    <ForeName>Jason H</ForeName>
+                    <Initials>JH</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Harris</LastName>
+                    <ForeName>Brent T</ForeName>
+                    <Initials>BT</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <GrantList CompleteYN="Y">
+                <Grant>
+                    <GrantID>LM009012</GrantID>
+                    <Acronym>LM</Acronym>
+                    <Agency>NLM NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>AI59694</GrantID>
+                    <Acronym>AI</Acronym>
+                    <Agency>NIAID NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>P42 ES007373</GrantID>
+                    <Acronym>ES</Acronym>
+                    <Agency>NIEHS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>ES007373</GrantID>
+                    <Acronym>ES</Acronym>
+                    <Agency>NIEHS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <Agency>Intramural NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>R01 LM010098</GrantID>
+                    <Acronym>LM</Acronym>
+                    <Agency>NLM NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>HD047447</GrantID>
+                    <Acronym>HD</Acronym>
+                    <Agency>NICHD NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>R01 AI059694</GrantID>
+                    <Acronym>AI</Acronym>
+                    <Agency>NIAID NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>R01 LM009012</GrantID>
+                    <Acronym>LM</Acronym>
+                    <Agency>NLM NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>R01 HD047447</GrantID>
+                    <Acronym>HD</Acronym>
+                    <Agency>NICHD NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>LM010098</GrantID>
+                    <Acronym>LM</Acronym>
+                    <Agency>NLM NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+            </GrantList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D052061">Research Support, N.I.H., Extramural</PublicationType>
+                <PublicationType UI="D052060">Research Support, N.I.H., Intramural</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2010</Year>
+                <Month>01</Month>
+                <Day>16</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>England</Country>
+            <MedlineTA>Bioinformatics</MedlineTA>
+            <NlmUniqueID>9808944</NlmUniqueID>
+            <ISSNLinking>1367-4803</ISSNLinking>
+        </MedlineJournalInfo>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D000690" MajorTopicYN="N">Amyotrophic Lateral Sclerosis</DescriptorName>
+                <QualifierName UI="Q000235" MajorTopicYN="Y">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D030541" MajorTopicYN="N">Databases, Genetic</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D004843" MajorTopicYN="Y">Epistasis, Genetic</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D015894" MajorTopicYN="N">Genome, Human</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D055106" MajorTopicYN="N">Genome-Wide Association Study</DescriptorName>
+                <QualifierName UI="Q000379" MajorTopicYN="Y">methods</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D023281" MajorTopicYN="N">Genomics</DescriptorName>
+                <QualifierName UI="Q000379" MajorTopicYN="N">methods</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D020641" MajorTopicYN="N">Polymorphism, Single Nucleotide</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2010</Year>
+                <Month>1</Month>
+                <Day>19</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2010</Year>
+                <Month>1</Month>
+                <Day>19</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2010</Year>
+                <Month>6</Month>
+                <Day>18</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">20081222</ArticleId>
+            <ArticleId IdType="pii">btq009</ArticleId>
+            <ArticleId IdType="doi">10.1093/bioinformatics/btq009</ArticleId>
+            <ArticleId IdType="pmc">PMC2828117</ArticleId>
+        </ArticleIdList>
+        <ReferenceList>
+            <Reference>
+                <Citation>Nat Rev Genet. 2005 Feb;6(2):95-108</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15716906</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet Neurol. 2007 Apr;6(4):322-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17362836</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Res Notes. 2009 Jul 24;2:149</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19630950</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 2007 Jun 29;316(5833):1840-2</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">17600199</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Am J Hum Genet. 2001 Jul;69(1):138-47</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11404819</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Nat Rev Genet. 2005 Feb;6(2):109-18</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15716907</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Bioinformatics. 2005 Jan 15;21(2):263-5</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15297300</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hum Mol Genet. 2008 Mar 1;17(5):768-74</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18057069</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2009;4(6):e5639</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19503614</ArticleId>
+                </ArticleIdList>
+            </Reference>
+        </ReferenceList>
+    </PubmedData>
+</PubmedArticle>
+</PubmedArticleSet>

@@ -17,6 +17,7 @@ pubmed_ids = [
 ]
 
 esummary_path = os.path.join(directory, 'data', 'esummary.xml')
+efetch_path = os.path.join(directory, 'data', 'efetch.xml')
 dates_path = os.path.join(directory, 'data', 'dates.tsv')
 
 
@@ -26,6 +27,14 @@ def test_esummary():
     """
     with open(esummary_path, 'wt') as write_file:
         download_pubmed_ids(pubmed_ids, write_file, endpoint='esummary')
+
+
+def test_efetch():
+    """
+    Run to recreate data/esummary.xml
+    """
+    with open(efetch_path, 'wt') as write_file:
+        download_pubmed_ids(pubmed_ids, write_file, endpoint='efetch')
 
 
 def test_extract_articles():

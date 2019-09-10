@@ -42,14 +42,14 @@
 	</Item>
 	<Item Name="References" Type="List"/>
 	<Item Name="HasAbstract" Type="Integer">0</Item>
-	<Item Name="PmcRefCount" Type="Integer">1</Item>
+	<Item Name="PmcRefCount" Type="Integer">3</Item>
 	<Item Name="FullJournalName" Type="String">Circulation. Cardiovascular genetics</Item>
 	<Item Name="ELocationID" Type="String">doi: 10.1161/CIRCGENETICS.115.001181</Item>
 	<Item Name="SO" Type="String">2016 Apr;9(2):179-84</Item>
 </DocSum>
 <DocSum>
 	<Id>26158728</Id>
-	<Item Name="PubDate" Type="Date">2015 Jul 9</Item>
+	<Item Name="PubDate" Type="Date">2015 Jul</Item>
 	<Item Name="EPubDate" Type="Date">2015 Jul 9</Item>
 	<Item Name="Source" Type="String">PLoS Comput Biol</Item>
 	<Item Name="AuthorList" Type="List">
@@ -71,7 +71,7 @@
 		<Item Name="PubType" Type="String">Journal Article</Item>
 	</Item>
 	<Item Name="RecordStatus" Type="String">PubMed - indexed for MEDLINE</Item>
-	<Item Name="PubStatus" Type="String">epublish</Item>
+	<Item Name="PubStatus" Type="String"/>
 	<Item Name="ArticleIds" Type="List">
 		<Item Name="pubmed" Type="String">26158728</Item>
 		<Item Name="doi" Type="String">10.1371/journal.pcbi.1004259</Item>
@@ -91,14 +91,14 @@
 	</Item>
 	<Item Name="References" Type="List"/>
 	<Item Name="HasAbstract" Type="Integer">1</Item>
-	<Item Name="PmcRefCount" Type="Integer">4</Item>
+	<Item Name="PmcRefCount" Type="Integer">15</Item>
 	<Item Name="FullJournalName" Type="String">PLoS computational biology</Item>
 	<Item Name="ELocationID" Type="String">doi: 10.1371/journal.pcbi.1004259</Item>
-	<Item Name="SO" Type="String">2015 Jul 9;11(7):e1004259</Item>
+	<Item Name="SO" Type="String">2015 Jul;11(7):e1004259</Item>
 </DocSum>
 <DocSum>
 	<Id>25648772</Id>
-	<Item Name="PubDate" Type="Date">2015 Jan 13</Item>
+	<Item Name="PubDate" Type="Date">2015</Item>
 	<Item Name="EPubDate" Type="Date">2015 Jan 13</Item>
 	<Item Name="Source" Type="String">PeerJ</Item>
 	<Item Name="AuthorList" Type="List">
@@ -120,7 +120,7 @@
 		<Item Name="PubType" Type="String">Journal Article</Item>
 	</Item>
 	<Item Name="RecordStatus" Type="String">PubMed</Item>
-	<Item Name="PubStatus" Type="String">epublish</Item>
+	<Item Name="PubStatus" Type="String"/>
 	<Item Name="ArticleIds" Type="List">
 		<Item Name="pubmed" Type="String">25648772</Item>
 		<Item Name="doi" Type="String">10.7717/peerj.705</Item>
@@ -140,10 +140,10 @@
 	</Item>
 	<Item Name="References" Type="List"/>
 	<Item Name="HasAbstract" Type="Integer">1</Item>
-	<Item Name="PmcRefCount" Type="Integer">0</Item>
+	<Item Name="PmcRefCount" Type="Integer">3</Item>
 	<Item Name="FullJournalName" Type="String">PeerJ</Item>
 	<Item Name="ELocationID" Type="String">doi: 10.7717/peerj.705</Item>
-	<Item Name="SO" Type="String">2015 Jan 13;3:e705</Item>
+	<Item Name="SO" Type="String">2015;3:e705</Item>
 </DocSum>
 <DocSum>
 	<Id>21736753</Id>
@@ -192,7 +192,7 @@
 		<Item Name="Erratum in" Type="String">BioData Min. 2016;9:9. PMID: 26848312</Item>
 	</Item>
 	<Item Name="HasAbstract" Type="Integer">1</Item>
-	<Item Name="PmcRefCount" Type="Integer">4</Item>
+	<Item Name="PmcRefCount" Type="Integer">6</Item>
 	<Item Name="FullJournalName" Type="String">BioData mining</Item>
 	<Item Name="ELocationID" Type="String">doi: 10.1186/1756-0381-4-21</Item>
 	<Item Name="SO" Type="String">2011 Jul 7;4(1):21</Item>
@@ -234,7 +234,7 @@
 		<Item Name="PubType" Type="String">Journal Article</Item>
 	</Item>
 	<Item Name="RecordStatus" Type="String">PubMed - indexed for MEDLINE</Item>
-	<Item Name="PubStatus" Type="String">ppublish</Item>
+	<Item Name="PubStatus" Type="String">ppublish+epublish</Item>
 	<Item Name="ArticleIds" Type="List">
 		<Item Name="pubmed" Type="String">25915600</Item>
 		<Item Name="pii" Type="String">ng.3259</Item>
@@ -257,7 +257,7 @@
 		<Item Name="Comment in" Type="String">Nat Biotechnol. 2015 Jul;33(7):720-1. PMID: 26154012</Item>
 	</Item>
 	<Item Name="HasAbstract" Type="Integer">1</Item>
-	<Item Name="PmcRefCount" Type="Integer">56</Item>
+	<Item Name="PmcRefCount" Type="Integer">170</Item>
 	<Item Name="FullJournalName" Type="String">Nature genetics</Item>
 	<Item Name="ELocationID" Type="String">doi: 10.1038/ng.3259</Item>
 	<Item Name="SO" Type="String">2015 Jun;47(6):569-76</Item>
@@ -290,7 +290,7 @@
 		<Item Name="PubType" Type="String">Journal Article</Item>
 	</Item>
 	<Item Name="RecordStatus" Type="String">PubMed - indexed for MEDLINE</Item>
-	<Item Name="PubStatus" Type="String">ppublish</Item>
+	<Item Name="PubStatus" Type="String">ppublish+epublish</Item>
 	<Item Name="ArticleIds" Type="List">
 		<Item Name="pubmed" Type="String">20081222</Item>
 		<Item Name="pii" Type="String">btq009</Item>
@@ -308,7 +308,7 @@
 	</Item>
 	<Item Name="References" Type="List"/>
 	<Item Name="HasAbstract" Type="Integer">1</Item>
-	<Item Name="PmcRefCount" Type="Integer">21</Item>
+	<Item Name="PmcRefCount" Type="Integer">27</Item>
 	<Item Name="FullJournalName" Type="String">Bioinformatics (Oxford, England)</Item>
 	<Item Name="ELocationID" Type="String">doi: 10.1093/bioinformatics/btq009</Item>
 	<Item Name="SO" Type="String">2010 Mar 1;26(5):694-5</Item>
