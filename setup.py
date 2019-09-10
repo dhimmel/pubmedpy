@@ -19,6 +19,9 @@ long_description = readme_path.read_text(encoding='utf-8-sig')
 # dependencies including extra depedencies with an "all" option
 install_requires = [
     'requests',
+    'lxml',
+    'tqdm',
+    'pandas',
 ]
 extras_require = {
     'dev': [
