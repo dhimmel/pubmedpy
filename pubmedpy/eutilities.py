@@ -13,7 +13,7 @@ def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
 
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
     """
-    url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi'
+    url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi'
     payload['rettype'] = 'xml'
     payload['retmax'] = retmax
     payload['retstart'] = 0
@@ -44,7 +44,7 @@ def pubmed_esummary(ids, write_file, retmax=100, retmin=20, sleep=0.34,
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
     """
     # Base URL for PubMed's esummary eutlity
-    url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi'
+    url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi'
 
     # Set up progress stats
     n_total = len(ids)
@@ -57,7 +57,7 @@ def pubmed_esummary(ids, write_file, retmax=100, retmin=20, sleep=0.34,
     # Set up queue
     idq = collections.deque()
     for i in range(0, len(ids), retmax):
-        idq.append(ids[i:i+retmax])
+        idq.append(ids[i:i + retmax])
 
     # Query until the queue is empty
     while idq:
@@ -70,6 +70,7 @@ def pubmed_esummary(ids, write_file, retmax=100, retmin=20, sleep=0.34,
         payload = {'db': 'pubmed', 'id': id_string, 'rettype': 'xml'}
         try:
             response = requests.get(url, params=payload)
+            response.raise_for_status()
             tree = lxml.etree.fromstring(response.content)
             successive_errors = 0
         except Exception as e:
