@@ -1,18 +1,34 @@
+import collections
+import contextlib
 import datetime
-import mimetypes
 import importlib
-import logging
 import itertools
 import locale
-import collections
+import logging
+import mimetypes
 import re
+import threading
 
-import tqdm
 import pandas
+import tqdm
 from lxml import etree
 
-# Ensure datetime.datetime.strptime
-locale.setlocale(locale.LC_ALL, 'en_US.utf8')
+
+locale_lock = threading.Lock()
+
+@contextlib.contextmanager
+def setlocale(name):
+    """
+    Context manager to temporarily set locale for datetime.datetime.strptime
+    https://stackoverflow.com/a/24070673/4651668
+    """
+    with locale_lock:
+        saved = locale.setlocale(locale.LC_ALL)
+        try:
+            yield locale.setlocale(locale.LC_ALL, name)
+        finally:
+            locale.setlocale(locale.LC_ALL, saved)
+
 
 encoding_to_module = {
     'gzip': 'gzip',
@@ -46,7 +62,8 @@ def parse_date_text(text):
     element.
     The time on the date is discarded. A `datetime.date` object is returned
     """
-    return datetime.datetime.strptime(text, '%Y/%m/%d %H:%M').date()
+    with setlocale('C'):
+        return datetime.datetime.strptime(text, '%Y/%m/%d %H:%M').date()
 
 
 def parse_pubdate_text(text):
