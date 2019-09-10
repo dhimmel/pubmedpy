@@ -1,6 +1,6 @@
 name: Python package
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -12,8 +12,9 @@ jobs:
         python-version: [3.6, 3.7]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Checkout git repository
+      uses: actions/checkout@v1
+    - name: Set up Python
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
