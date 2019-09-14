@@ -1,10 +1,7 @@
 import os
 
 from .eutilities import download_pubmed_ids
-from .esummary import (
-    articles_to_dataframe,
-    extract_articles_from_esummaries,
-)
+import pandas
 
 
 directory = os.path.dirname(os.path.abspath(__file__))
@@ -20,7 +17,6 @@ pubmed_ids = [
 
 esummary_path = os.path.join(directory, 'data', 'esummary.xml')
 efetch_path = os.path.join(directory, 'data', 'efetch.xml')
-dates_path = os.path.join(directory, 'data', 'dates.tsv')
 
 
 def test_esummary():
@@ -39,9 +35,24 @@ def test_efetch():
         download_pubmed_ids(pubmed_ids, write_file, endpoint='efetch')
 
 
-def test_extract_articles():
+def test_extract_from_esummary():
+    from .esummary import (
+        articles_to_dataframe,
+        extract_articles_from_esummaries,
+    )
     n_articles = len(pubmed_ids)
     articles = extract_articles_from_esummaries(esummary_path, n_articles)
     assert len(articles) == n_articles
     article_df = articles_to_dataframe(articles)
-    article_df.to_csv(dates_path, index=False, sep='\t')
+    path = os.path.join(directory, 'data', 'esummary.tsv')
+    article_df.to_csv(path, index=False, sep='\t')
+
+
+def test_extract_from_efetch():
+    from .xml import iter_extract_elems
+    from .efetch import extract_all
+    articles = list(iter_extract_elems(efetch_path, 'PubmedArticle'))
+    assert len(articles) > 0
+    article_df = pandas.DataFrame(list(map(extract_all, articles)))
+    path = os.path.join(directory, 'data', 'efetch.tsv')
+    article_df.to_csv(path, index=False, sep='\t')
