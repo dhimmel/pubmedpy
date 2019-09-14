@@ -1,8 +1,10 @@
 import os
 
 from .eutilities import download_pubmed_ids
-from .xml_to_dates import (extract_articles_from_esummaries,
-                           articles_to_dataframe)
+from .esummary import (
+    articles_to_dataframe,
+    extract_articles_from_esummaries,
+)
 
 
 directory = os.path.dirname(os.path.abspath(__file__))

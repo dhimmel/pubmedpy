@@ -1,18 +1,16 @@
 import collections
 import contextlib
 import datetime
-import importlib
 import itertools
 import locale
 import logging
-import mimetypes
 import re
 import threading
 
 import pandas
 import tqdm
-from lxml import etree
 
+from .xml import iter_extract_elems
 
 locale_lock = threading.Lock()
 
@@ -28,32 +26,6 @@ def setlocale(name):
             yield locale.setlocale(locale.LC_ALL, name)
         finally:
             locale.setlocale(locale.LC_ALL, saved)
-
-
-encoding_to_module = {
-    'gzip': 'gzip',
-    'bzip2': 'bz2',
-    'xz': 'lzma',
-}
-
-
-def iterparse(path):
-    """
-    First yield the ElementTree root, then yield elements from an XML file.
-    """
-    # Automatically detect compression
-    type_, encoding = mimetypes.guess_type(path)
-    if encoding is None:
-        opener = open
-    else:
-        module = encoding_to_module[encoding]
-        opener = importlib.import_module(module).open
-
-    # Open file and yield from the element tree
-    with opener(path, 'rb') as read_file:
-        context = etree.iterparse(read_file, events=('start', 'end'))
-        yield next(context)[1]
-        yield from (elem for event, elem in context if event == 'end')
 
 
 def parse_date_text(text):
@@ -155,17 +127,12 @@ def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
     if n_articles is not None:
         progress_bar = tqdm(total=n_articles, unit='articles')
 
-    parser = iterparse(path)
-    root = next(parser)
     articles = list()
-    for elem in parser:
-        if elem.tag != 'DocSum':
-            continue
+    for elem in iter_extract_elems(path, tag='DocSum'):
         article = parse_esummary(elem)
         articles.append(article)
         if n_articles is not None:
             progress_bar.update(1)
-        root.clear()  # Reset element to free memory
 
     if n_articles is not None:
         progress_bar.close()
