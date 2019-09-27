@@ -26,8 +26,9 @@ install_requires = [
 ]
 extras_require = {
     'dev': [
-        'pytest',
         'flake8',
+        'pdoc3',
+        'pytest',
     ],
 }
 extras_require['all'] = list(dict.fromkeys(itertools.chain.from_iterable(extras_require.values())))
