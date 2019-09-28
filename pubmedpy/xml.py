@@ -2,6 +2,7 @@ import contextlib
 import importlib
 import mimetypes
 import os
+import zipfile
 
 from lxml import etree
 
@@ -47,3 +48,16 @@ def iter_extract_elems(path, tag):
         yield elem
         root.clear()
     root.clear()
+
+
+def yield_etrees_from_zip(path):
+    """
+    Read members of a zip file with an `.xml` extension.
+    """
+    with zipfile.ZipFile(path) as zip_file:
+        for name in zip_file.namelist():
+            if not name.endswith('.xml'):
+                continue
+            with zip_file.open(name) as read_file:
+                element_tree = etree.parse(read_file)
+                yield name, element_tree

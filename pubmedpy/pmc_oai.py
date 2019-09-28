@@ -46,3 +46,26 @@ def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):
         xml_str = lxml.etree.tostring(article, encoding='unicode')
         zip_file.writestr(f'{pmcid}.xml', data=xml_str)
     zip_file.close()
+
+
+def extract_authors_from_article(article):
+    """
+    Extract author information from frontmatter XML into a list of dictionaries.
+    """
+    pmcid = article.findtext("{*}front/{*}article-meta/{*}article-id[@pub-id-type='pmcid']")
+    contrib_elems = article.findall("{*}front/{*}article-meta/{*}contrib-group/{*}contrib[@contrib-type='author']")
+    authors = []
+    for i, contrib_elem in enumerate(contrib_elems):
+        corresponding = (
+            contrib_elem.find("{*}xref[@ref-type='corresp']") is not None
+            or contrib_elem.get('corresp', 'no') == 'yes'
+        )
+        authors.append({
+            'pmcid': pmcid,
+            'position': i + 1,
+            'fore_name': contrib_elem.findtext("{*}name/{*}given-names"),
+            'last_name': contrib_elem.findtext("{*}name/{*}surname"),
+            'corresponding': int(corresponding),
+            'reverse_position': len(contrib_elems) - i,
+        })
+    return authors
