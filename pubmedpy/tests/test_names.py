@@ -22,7 +22,7 @@ def test_simplify_fore_name(fore_name, expected):
 
 @pytest.mark.parametrize(('fore_name', 'expected'), [
     (' Daniel ', 'daniel'),
-    ('Mc-Winters', 'mc-Winters'),
+    ('Mc-Winters', 'mc-winters'),
     ('LE', None),
     ('', None),
     (' ', None),
