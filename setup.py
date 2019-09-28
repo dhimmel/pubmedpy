@@ -41,6 +41,7 @@ setuptools.setup(
     project_urls={
         'Source': 'https://github.com/dhimmel/pubmedpy',
         'Tracker': 'https://github.com/dhimmel/pubmedpy/issues',
+        'Documentation': 'https://git.dhimmel.com/pubmedpy/',
     },
     description='Utilities for interacting with NCBI EUtilities relating to PubMed',
     long_description_content_type='text/markdown',
