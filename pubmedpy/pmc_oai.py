@@ -7,7 +7,6 @@ import functools
 import logging
 import zipfile
 
-
 # URL to the OAI endpoint for PMC
 endpoint = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi"
 
@@ -37,12 +36,6 @@ def get_sets_for_pmcid(pmcid):
     sickler = get_sickle()
     record = sickler.GetRecord(identifier=f"oai:pubmedcentral.nih.gov:{pmcid}", metadataPrefix='pmc_fm')
     return record.header.setSpecs
-
-
-def test_get_sets_for_pmcid():
-    set_specs = get_sets_for_pmcid('PMC2092437')
-    assert 'bmcbioi' in set_specs
-    assert 'pmc-open' in set_specs
 
 
 def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):

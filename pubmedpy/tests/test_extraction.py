@@ -1,6 +1,6 @@
 import os
 
-from .eutilities import download_pubmed_ids
+from ..eutilities import download_pubmed_ids
 import pandas
 
 
@@ -36,7 +36,7 @@ def test_efetch():
 
 
 def test_extract_from_esummary():
-    from .esummary import (
+    from ..esummary import (
         articles_to_dataframe,
         extract_articles_from_esummaries,
     )
@@ -49,8 +49,8 @@ def test_extract_from_esummary():
 
 
 def test_extract_from_efetch():
-    from .xml import iter_extract_elems
-    from .efetch import extract_all
+    from ..xml import iter_extract_elems
+    from ..efetch import extract_all
     articles = list(iter_extract_elems(efetch_path, 'PubmedArticle'))
     assert len(articles) > 0
     article_df = pandas.DataFrame(list(map(extract_all, articles)))
