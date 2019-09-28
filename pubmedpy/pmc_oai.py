@@ -27,6 +27,24 @@ def get_sickle():
     return sickle.Sickle(endpoint=endpoint)
 
 
+def get_sets_for_pmcid(pmcid):
+    """
+    Return the OAI sets specified to include the provided PMC identifier.
+    """
+    pmcid = str(pmcid)
+    if pmcid.upper().startswith('PMC'):
+        pmcid = pmcid[3:]
+    sickler = get_sickle()
+    record = sickler.GetRecord(identifier=f"oai:pubmedcentral.nih.gov:{pmcid}", metadataPrefix='pmc_fm')
+    return record.header.setSpecs
+
+
+def test_get_sets_for_pmcid():
+    set_specs = get_sets_for_pmcid('PMC2092437')
+    assert 'bmcbioi' in set_specs
+    assert 'pmc-open' in set_specs
+
+
 def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):
     """
     Download an OAI set to a zipped file specified by path. Each file in the zip archive contains
