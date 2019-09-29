@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.0" />
+<title>pubmedpy.pmc_oai API documentation</title>
+<meta name="description" content="Functions for querying the PubMed Central OAI-PMH service (PMC-OAI).
+More information is available at https://www.ncbi.nlm.nih.gov/pmc/tools/oai/" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pubmedpy.pmc_oai</code></h1>
+</header>
+<section id="section-intro">
+<p>Functions for querying the PubMed Central OAI-PMH service (PMC-OAI).
+More information is available at <a href="https://www.ncbi.nlm.nih.gov/pmc/tools/oai/">https://www.ncbi.nlm.nih.gov/pmc/tools/oai/</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/2a13193c63f24aa01e6ec50cfb09db4b60e74463/pubmedpy/pmc_oai.py#L0-L81" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Functions for querying the PubMed Central OAI-PMH service (PMC-OAI).
+More information is available at https://www.ncbi.nlm.nih.gov/pmc/tools/oai/
+&#34;&#34;&#34;
+
+import functools
+import logging
+import zipfile
+
+# URL to the OAI endpoint for PMC
+endpoint = &#34;https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi&#34;
+
+# Namespaces abbreviations for parsing PMC-OAI XML
+namespaces = {
+    &#34;oai&#34;: &#34;http://www.openarchives.org/OAI/2.0/&#34;,
+    &#34;jats&#34;: &#34;https://jats.nlm.nih.gov/ns/archiving/1.2/&#34;,
+    &#34;dtd&#34;: &#34;https://dtd.nlm.nih.gov/ns/archiving/2.3/&#34;,
+}
+
+@functools.lru_cache()
+def get_sickle():
+    &#34;&#34;&#34;
+    Return a sickle OAI harvester for PMC
+    &#34;&#34;&#34;
+    import sickle
+    return sickle.Sickle(endpoint=endpoint)
+
+
+def get_sets_for_pmcid(pmcid):
+    &#34;&#34;&#34;
+    Return the OAI sets specified to include the provided PMC identifier.
+    &#34;&#34;&#34;
+    pmcid = str(pmcid)
+    if pmcid.upper().startswith(&#39;PMC&#39;):
+        pmcid = pmcid[3:]
+    sickler = get_sickle()
+    record = sickler.GetRecord(identifier=f&#34;oai:pubmedcentral.nih.gov:{pmcid}&#34;, metadataPrefix=&#39;pmc_fm&#39;)
+    return record.header.setSpecs
+
+
+def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):
+    &#34;&#34;&#34;
+    Download an OAI set to a zipped file specified by path. Each file in the zip archive contains
+    frontmatter XML for a single article from the set.
+    &#34;&#34;&#34;
+    import lxml.etree
+    sickler = get_sickle()
+    zip_file = zipfile.ZipFile(path, mode=&#39;w&#39;, compression=zipfile.ZIP_LZMA)
+    records = sickler.ListRecords(metadataPrefix=&#34;pmc_fm&#34;, set=oai_set, ignore_deleted=True)
+    if tqdm is not None:
+        records = tqdm(records, total=n_records, desc=oai_set)
+    for record in records:
+        article = record.xml.find(&#34;oai:metadata/{*}article&#34;, namespaces=namespaces)
+        if article is None:
+            logging.warning(f&#39;failure to extract &lt;article&gt; from\n{record.raw}&#39;)
+        pmcid = article.findtext(&#34;{*}front/{*}article-meta/{*}article-id[@pub-id-type=&#39;pmcid&#39;]&#34;)
+        xml_str = lxml.etree.tostring(article, encoding=&#39;unicode&#39;)
+        zip_file.writestr(f&#39;{pmcid}.xml&#39;, data=xml_str)
+    zip_file.close()
+
+
+def extract_authors_from_article(article):
+    &#34;&#34;&#34;
+    Extract author information from frontmatter XML into a list of dictionaries.
+    &#34;&#34;&#34;
+    pmcid = article.findtext(&#34;{*}front/{*}article-meta/{*}article-id[@pub-id-type=&#39;pmcid&#39;]&#34;)
+    contrib_elems = article.findall(&#34;{*}front/{*}article-meta/{*}contrib-group/{*}contrib[@contrib-type=&#39;author&#39;]&#34;)
+    authors = []
+    for i, contrib_elem in enumerate(contrib_elems):
+        corresponding = (
+            contrib_elem.find(&#34;{*}xref[@ref-type=&#39;corresp&#39;]&#34;) is not None
+            or contrib_elem.get(&#39;corresp&#39;, &#39;no&#39;) == &#39;yes&#39;
+        )
+        authors.append({
+            &#39;pmcid&#39;: pmcid,
+            &#39;position&#39;: i + 1,
+            &#39;fore_name&#39;: contrib_elem.findtext(&#34;{*}name/{*}given-names&#34;),
+            &#39;last_name&#39;: contrib_elem.findtext(&#34;{*}name/{*}surname&#34;),
+            &#39;corresponding&#39;: int(corresponding),
+            &#39;reverse_position&#39;: len(contrib_elems) - i,
+        })
+    return authors</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="pubmedpy.pmc_oai.download_frontmatter_set"><code class="name flex">
+<span>def <span class="ident">download_frontmatter_set</span></span>(<span>oai_set, path, tqdm=None, n_records=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Download an OAI set to a zipped file specified by path. Each file in the zip archive contains
+frontmatter XML for a single article from the set.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/2a13193c63f24aa01e6ec50cfb09db4b60e74463/pubmedpy/pmc_oai.py#L41-L59" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):
+    &#34;&#34;&#34;
+    Download an OAI set to a zipped file specified by path. Each file in the zip archive contains
+    frontmatter XML for a single article from the set.
+    &#34;&#34;&#34;
+    import lxml.etree
+    sickler = get_sickle()
+    zip_file = zipfile.ZipFile(path, mode=&#39;w&#39;, compression=zipfile.ZIP_LZMA)
+    records = sickler.ListRecords(metadataPrefix=&#34;pmc_fm&#34;, set=oai_set, ignore_deleted=True)
+    if tqdm is not None:
+        records = tqdm(records, total=n_records, desc=oai_set)
+    for record in records:
+        article = record.xml.find(&#34;oai:metadata/{*}article&#34;, namespaces=namespaces)
+        if article is None:
+            logging.warning(f&#39;failure to extract &lt;article&gt; from\n{record.raw}&#39;)
+        pmcid = article.findtext(&#34;{*}front/{*}article-meta/{*}article-id[@pub-id-type=&#39;pmcid&#39;]&#34;)
+        xml_str = lxml.etree.tostring(article, encoding=&#39;unicode&#39;)
+        zip_file.writestr(f&#39;{pmcid}.xml&#39;, data=xml_str)
+    zip_file.close()</code></pre>
+</details>
+</dd>
+<dt id="pubmedpy.pmc_oai.extract_authors_from_article"><code class="name flex">
+<span>def <span class="ident">extract_authors_from_article</span></span>(<span>article)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Extract author information from frontmatter XML into a list of dictionaries.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/2a13193c63f24aa01e6ec50cfb09db4b60e74463/pubmedpy/pmc_oai.py#L62-L82" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def extract_authors_from_article(article):
+    &#34;&#34;&#34;
+    Extract author information from frontmatter XML into a list of dictionaries.
+    &#34;&#34;&#34;
+    pmcid = article.findtext(&#34;{*}front/{*}article-meta/{*}article-id[@pub-id-type=&#39;pmcid&#39;]&#34;)
+    contrib_elems = article.findall(&#34;{*}front/{*}article-meta/{*}contrib-group/{*}contrib[@contrib-type=&#39;author&#39;]&#34;)
+    authors = []
+    for i, contrib_elem in enumerate(contrib_elems):
+        corresponding = (
+            contrib_elem.find(&#34;{*}xref[@ref-type=&#39;corresp&#39;]&#34;) is not None
+            or contrib_elem.get(&#39;corresp&#39;, &#39;no&#39;) == &#39;yes&#39;
+        )
+        authors.append({
+            &#39;pmcid&#39;: pmcid,
+            &#39;position&#39;: i + 1,
+            &#39;fore_name&#39;: contrib_elem.findtext(&#34;{*}name/{*}given-names&#34;),
+            &#39;last_name&#39;: contrib_elem.findtext(&#34;{*}name/{*}surname&#34;),
+            &#39;corresponding&#39;: int(corresponding),
+            &#39;reverse_position&#39;: len(contrib_elems) - i,
+        })
+    return authors</code></pre>
+</details>
+</dd>
+<dt id="pubmedpy.pmc_oai.get_sets_for_pmcid"><code class="name flex">
+<span>def <span class="ident">get_sets_for_pmcid</span></span>(<span>pmcid)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Return the OAI sets specified to include the provided PMC identifier.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/2a13193c63f24aa01e6ec50cfb09db4b60e74463/pubmedpy/pmc_oai.py#L29-L38" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_sets_for_pmcid(pmcid):
+    &#34;&#34;&#34;
+    Return the OAI sets specified to include the provided PMC identifier.
+    &#34;&#34;&#34;
+    pmcid = str(pmcid)
+    if pmcid.upper().startswith(&#39;PMC&#39;):
+        pmcid = pmcid[3:]
+    sickler = get_sickle()
+    record = sickler.GetRecord(identifier=f&#34;oai:pubmedcentral.nih.gov:{pmcid}&#34;, metadataPrefix=&#39;pmc_fm&#39;)
+    return record.header.setSpecs</code></pre>
+</details>
+</dd>
+<dt id="pubmedpy.pmc_oai.get_sickle"><code class="name flex">
+<span>def <span class="ident">get_sickle</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Return a sickle OAI harvester for PMC</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/2a13193c63f24aa01e6ec50cfb09db4b60e74463/pubmedpy/pmc_oai.py#L20-L26" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@functools.lru_cache()
+def get_sickle():
+    &#34;&#34;&#34;
+    Return a sickle OAI harvester for PMC
+    &#34;&#34;&#34;
+    import sickle
+    return sickle.Sickle(endpoint=endpoint)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="pubmedpy" href="index.html">pubmedpy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="pubmedpy.pmc_oai.download_frontmatter_set" href="#pubmedpy.pmc_oai.download_frontmatter_set">download_frontmatter_set</a></code></li>
+<li><code><a title="pubmedpy.pmc_oai.extract_authors_from_article" href="#pubmedpy.pmc_oai.extract_authors_from_article">extract_authors_from_article</a></code></li>
+<li><code><a title="pubmedpy.pmc_oai.get_sets_for_pmcid" href="#pubmedpy.pmc_oai.get_sets_for_pmcid">get_sets_for_pmcid</a></code></li>
+<li><code><a title="pubmedpy.pmc_oai.get_sickle" href="#pubmedpy.pmc_oai.get_sickle">get_sickle</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.0</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
