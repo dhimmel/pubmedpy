@@ -1,6 +1,6 @@
 import pytest
 
-from ..names import simplify_fore_name
+from ..names import simplify_fore_name, simplify_last_name
 
 
 @pytest.mark.parametrize(('fore_name', 'expected'), [
@@ -30,3 +30,14 @@ def test_simplify_fore_name(fore_name, expected):
 ])
 def test_simplify_fore_name_lower(fore_name, expected):
     assert simplify_fore_name(fore_name, lower=True) == expected
+
+
+@pytest.mark.parametrize(('last_name', 'expected'), [
+    (' Heavenstone .', 'Heavenstone'),
+    ('Heavenstone', 'Heavenstone'),
+    ('', None),
+    (' ', None),
+    (None, None),
+])
+def test_simplify_last_name(last_name, expected):
+    assert simplify_last_name(last_name) == expected

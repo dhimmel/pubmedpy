@@ -26,3 +26,18 @@ def simplify_fore_name(name, lower=False):
         if lower:
             word = word.lower()
         return word
+
+
+def simplify_last_name(name, lower=False):
+    """
+    Strip punctuation and whitespace (on termini)
+    """
+    if pandas.isna(name):
+        return None
+    assert isinstance(name, str)
+    name = name.strip(string.whitespace + string.punctuation)
+    if not name:
+        return None
+    if lower:
+        name = name.lower()
+    return name
