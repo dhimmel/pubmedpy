@@ -27,7 +27,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'  && !github.event.repository.fork
         uses: peaceiris/actions-gh-pages@v3
         env:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: docs/pubmedpy
           allow_empty_commit: false
