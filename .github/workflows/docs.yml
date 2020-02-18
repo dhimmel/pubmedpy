@@ -24,11 +24,10 @@ jobs:
             --output-dir=docs \
             pubmedpy
       - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: peaceiris/actions-gh-pages@v2
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'  && !github.event.repository.fork
+        uses: peaceiris/actions-gh-pages@v3
         env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: docs/pubmedpy
-        with:
-          emptyCommits: false
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: gh-pages
+          publish_dir: docs/pubmedpy
+          allow_empty_commit: false
