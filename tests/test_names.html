@@ -23,49 +23,58 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_names.py#L0-L42" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_names.py#L0-L51" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import pytest
 
 from ..names import simplify_fore_name, simplify_last_name
 
 
-@pytest.mark.parametrize((&#39;fore_name&#39;, &#39;expected&#39;), [
-    (&#39; Daniel &#39;, &#39;Daniel&#39;),
-    (&#39;AB Chow&#39;, &#39;Chow&#39;),
-    (&#39;A.B. Chow&#39;, &#39;Chow&#39;),
-    (&#39;Mc-Winters&#39;, &#39;Mc-Winters&#39;),
-    (&#39;LE&#39;, None),
-    (&#39;Le&#39;, &#39;Le&#39;),
-    (None, None),
-    (&#39;&#39;, None),
-    (&#39; &#39;, None),
-    (&#39;-&#39;, None),
-    (&#39;-Rafeel!&#39;, &#39;Rafeel&#39;),
-])
+@pytest.mark.parametrize(
+    (&#34;fore_name&#34;, &#34;expected&#34;),
+    [
+        (&#34; Daniel &#34;, &#34;Daniel&#34;),
+        (&#34;AB Chow&#34;, &#34;Chow&#34;),
+        (&#34;A.B. Chow&#34;, &#34;Chow&#34;),
+        (&#34;Mc-Winters&#34;, &#34;Mc-Winters&#34;),
+        (&#34;LE&#34;, None),
+        (&#34;Le&#34;, &#34;Le&#34;),
+        (None, None),
+        (&#34;&#34;, None),
+        (&#34; &#34;, None),
+        (&#34;-&#34;, None),
+        (&#34;-Rafeel!&#34;, &#34;Rafeel&#34;),
+    ],
+)
 def test_simplify_fore_name(fore_name, expected):
     assert simplify_fore_name(fore_name) == expected
 
 
-@pytest.mark.parametrize((&#39;fore_name&#39;, &#39;expected&#39;), [
-    (&#39; Daniel &#39;, &#39;daniel&#39;),
-    (&#39;Mc-Winters&#39;, &#39;mc-winters&#39;),
-    (&#39;LE&#39;, None),
-    (&#39;&#39;, None),
-    (&#39; &#39;, None),
-    (&#39;-&#39;, None),
-])
+@pytest.mark.parametrize(
+    (&#34;fore_name&#34;, &#34;expected&#34;),
+    [
+        (&#34; Daniel &#34;, &#34;daniel&#34;),
+        (&#34;Mc-Winters&#34;, &#34;mc-winters&#34;),
+        (&#34;LE&#34;, None),
+        (&#34;&#34;, None),
+        (&#34; &#34;, None),
+        (&#34;-&#34;, None),
+    ],
+)
 def test_simplify_fore_name_lower(fore_name, expected):
     assert simplify_fore_name(fore_name, lower=True) == expected
 
 
-@pytest.mark.parametrize((&#39;last_name&#39;, &#39;expected&#39;), [
-    (&#39; Heavenstone .&#39;, &#39;Heavenstone&#39;),
-    (&#39;Heavenstone&#39;, &#39;Heavenstone&#39;),
-    (&#39;&#39;, None),
-    (&#39; &#39;, None),
-    (None, None),
-])
+@pytest.mark.parametrize(
+    (&#34;last_name&#34;, &#34;expected&#34;),
+    [
+        (&#34; Heavenstone .&#34;, &#34;Heavenstone&#34;),
+        (&#34;Heavenstone&#34;, &#34;Heavenstone&#34;),
+        (&#34;&#34;, None),
+        (&#34; &#34;, None),
+        (None, None),
+    ],
+)
 def test_simplify_last_name(last_name, expected):
     assert simplify_last_name(last_name) == expected</code></pre>
 </details>
@@ -85,21 +94,24 @@ def test_simplify_last_name(last_name, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_names.py#L6-L20" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_names.py#L6-L23" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">@pytest.mark.parametrize((&#39;fore_name&#39;, &#39;expected&#39;), [
-    (&#39; Daniel &#39;, &#39;Daniel&#39;),
-    (&#39;AB Chow&#39;, &#39;Chow&#39;),
-    (&#39;A.B. Chow&#39;, &#39;Chow&#39;),
-    (&#39;Mc-Winters&#39;, &#39;Mc-Winters&#39;),
-    (&#39;LE&#39;, None),
-    (&#39;Le&#39;, &#39;Le&#39;),
-    (None, None),
-    (&#39;&#39;, None),
-    (&#39; &#39;, None),
-    (&#39;-&#39;, None),
-    (&#39;-Rafeel!&#39;, &#39;Rafeel&#39;),
-])
+<pre><code class="python">@pytest.mark.parametrize(
+    (&#34;fore_name&#34;, &#34;expected&#34;),
+    [
+        (&#34; Daniel &#34;, &#34;Daniel&#34;),
+        (&#34;AB Chow&#34;, &#34;Chow&#34;),
+        (&#34;A.B. Chow&#34;, &#34;Chow&#34;),
+        (&#34;Mc-Winters&#34;, &#34;Mc-Winters&#34;),
+        (&#34;LE&#34;, None),
+        (&#34;Le&#34;, &#34;Le&#34;),
+        (None, None),
+        (&#34;&#34;, None),
+        (&#34; &#34;, None),
+        (&#34;-&#34;, None),
+        (&#34;-Rafeel!&#34;, &#34;Rafeel&#34;),
+    ],
+)
 def test_simplify_fore_name(fore_name, expected):
     assert simplify_fore_name(fore_name) == expected</code></pre>
 </details>
@@ -112,16 +124,19 @@ def test_simplify_fore_name(fore_name, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_names.py#L23-L32" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_names.py#L26-L38" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">@pytest.mark.parametrize((&#39;fore_name&#39;, &#39;expected&#39;), [
-    (&#39; Daniel &#39;, &#39;daniel&#39;),
-    (&#39;Mc-Winters&#39;, &#39;mc-winters&#39;),
-    (&#39;LE&#39;, None),
-    (&#39;&#39;, None),
-    (&#39; &#39;, None),
-    (&#39;-&#39;, None),
-])
+<pre><code class="python">@pytest.mark.parametrize(
+    (&#34;fore_name&#34;, &#34;expected&#34;),
+    [
+        (&#34; Daniel &#34;, &#34;daniel&#34;),
+        (&#34;Mc-Winters&#34;, &#34;mc-winters&#34;),
+        (&#34;LE&#34;, None),
+        (&#34;&#34;, None),
+        (&#34; &#34;, None),
+        (&#34;-&#34;, None),
+    ],
+)
 def test_simplify_fore_name_lower(fore_name, expected):
     assert simplify_fore_name(fore_name, lower=True) == expected</code></pre>
 </details>
@@ -134,15 +149,18 @@ def test_simplify_fore_name_lower(fore_name, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_names.py#L35-L43" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_names.py#L41-L52" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">@pytest.mark.parametrize((&#39;last_name&#39;, &#39;expected&#39;), [
-    (&#39; Heavenstone .&#39;, &#39;Heavenstone&#39;),
-    (&#39;Heavenstone&#39;, &#39;Heavenstone&#39;),
-    (&#39;&#39;, None),
-    (&#39; &#39;, None),
-    (None, None),
-])
+<pre><code class="python">@pytest.mark.parametrize(
+    (&#34;last_name&#34;, &#34;expected&#34;),
+    [
+        (&#34; Heavenstone .&#34;, &#34;Heavenstone&#34;),
+        (&#34;Heavenstone&#34;, &#34;Heavenstone&#34;),
+        (&#34;&#34;, None),
+        (&#34; &#34;, None),
+        (None, None),
+    ],
+)
 def test_simplify_last_name(last_name, expected):
     assert simplify_last_name(last_name) == expected</code></pre>
 </details>

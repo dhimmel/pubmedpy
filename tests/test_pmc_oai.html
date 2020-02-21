@@ -23,15 +23,22 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_pmc_oai.py#L0-L6" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_pmc_oai.py#L0-L13" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">from ..pmc_oai import get_sets_for_pmcid
+<pre><code class="python">import pathlib
+
+import pytest
+
+from ..pmc_oai import get_sets_for_pmcid, extract_authors_from_article
+
+
+directory = pathlib.Path(__file__).parent
 
 
 def test_get_sets_for_pmcid():
-    set_specs = get_sets_for_pmcid(&#39;PMC2092437&#39;)
-    assert &#39;bmcbioi&#39; in set_specs
-    assert &#39;pmc-open&#39; in set_specs</code></pre>
+    set_specs = get_sets_for_pmcid(&#34;PMC2092437&#34;)
+    assert &#34;bmcbioi&#34; in set_specs
+    assert &#34;pmc-open&#34; in set_specs</code></pre>
 </details>
 </section>
 <section>
@@ -49,12 +56,12 @@ def test_get_sets_for_pmcid():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_pmc_oai.py#L4-L7" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_pmc_oai.py#L11-L14" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_get_sets_for_pmcid():
-    set_specs = get_sets_for_pmcid(&#39;PMC2092437&#39;)
-    assert &#39;bmcbioi&#39; in set_specs
-    assert &#39;pmc-open&#39; in set_specs</code></pre>
+    set_specs = get_sets_for_pmcid(&#34;PMC2092437&#34;)
+    assert &#34;bmcbioi&#34; in set_specs
+    assert &#34;pmc-open&#34; in set_specs</code></pre>
 </details>
 </dd>
 </dl>

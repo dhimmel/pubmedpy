@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/xml.py#L0-L62" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/xml.py#L0-L62" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import contextlib
 import importlib
@@ -35,9 +35,9 @@ from lxml import etree
 
 
 _encoding_to_module = {
-    &#39;gzip&#39;: &#39;gzip&#39;,
-    &#39;bzip2&#39;: &#39;bz2&#39;,
-    &#39;xz&#39;: &#39;lzma&#39;,
+    &#34;gzip&#34;: &#34;gzip&#34;,
+    &#34;bzip2&#34;: &#34;bz2&#34;,
+    &#34;xz&#34;: &#34;lzma&#34;,
 }
 
 
@@ -55,10 +55,10 @@ def iterparse_xml(path):
         opener = importlib.import_module(module).open
 
     # Open file and yield from the element tree
-    with opener(path, &#39;rb&#39;) as read_file:
-        context = etree.iterparse(read_file, events=(&#39;start&#39;, &#39;end&#39;))
+    with opener(path, &#34;rb&#34;) as read_file:
+        context = etree.iterparse(read_file, events=(&#34;start&#34;, &#34;end&#34;))
         yield next(context)[1]
-        yield from (elem for event, elem in context if event == &#39;end&#39;)
+        yield from (elem for event, elem in context if event == &#34;end&#34;)
 
 
 def iter_extract_elems(path, tag):
@@ -83,7 +83,7 @@ def yield_etrees_from_zip(path):
     &#34;&#34;&#34;
     with zipfile.ZipFile(path) as zip_file:
         for name in zip_file.namelist():
-            if not name.endswith(&#39;.xml&#39;):
+            if not name.endswith(&#34;.xml&#34;):
                 continue
             with zip_file.open(name) as read_file:
                 element_tree = etree.parse(read_file)
@@ -106,7 +106,7 @@ For memory-efficiency, the XML element tree root is cleared after before yieldin
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/xml.py#L37-L50" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/xml.py#L37-L50" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def iter_extract_elems(path, tag):
     &#34;&#34;&#34;
@@ -132,7 +132,7 @@ For memory-efficiency, the XML element tree root is cleared after before yieldin
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/xml.py#L17-L34" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/xml.py#L17-L34" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def iterparse_xml(path):
     &#34;&#34;&#34;
@@ -148,10 +148,10 @@ For memory-efficiency, the XML element tree root is cleared after before yieldin
         opener = importlib.import_module(module).open
 
     # Open file and yield from the element tree
-    with opener(path, &#39;rb&#39;) as read_file:
-        context = etree.iterparse(read_file, events=(&#39;start&#39;, &#39;end&#39;))
+    with opener(path, &#34;rb&#34;) as read_file:
+        context = etree.iterparse(read_file, events=(&#34;start&#34;, &#34;end&#34;))
         yield next(context)[1]
-        yield from (elem for event, elem in context if event == &#39;end&#39;)</code></pre>
+        yield from (elem for event, elem in context if event == &#34;end&#34;)</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.xml.yield_etrees_from_zip"><code class="name flex">
@@ -162,7 +162,7 @@ For memory-efficiency, the XML element tree root is cleared after before yieldin
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/xml.py#L53-L63" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/xml.py#L53-L63" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def yield_etrees_from_zip(path):
     &#34;&#34;&#34;
@@ -170,7 +170,7 @@ For memory-efficiency, the XML element tree root is cleared after before yieldin
     &#34;&#34;&#34;
     with zipfile.ZipFile(path) as zip_file:
         for name in zip_file.namelist():
-            if not name.endswith(&#39;.xml&#39;):
+            if not name.endswith(&#34;.xml&#34;):
                 continue
             with zip_file.open(name) as read_file:
                 element_tree = etree.parse(read_file)

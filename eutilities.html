@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/eutilities.py#L0-L102" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/eutilities.py#L0-L109" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import time
 import collections
@@ -40,22 +40,22 @@ def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
 
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
     &#34;&#34;&#34;
-    url = &#39;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi&#39;
-    payload[&#39;rettype&#39;] = &#39;xml&#39;
-    payload[&#39;retmax&#39;] = retmax
-    payload[&#39;retstart&#39;] = 0
+    url = &#34;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi&#34;
+    payload[&#34;rettype&#34;] = &#34;xml&#34;
+    payload[&#34;retmax&#34;] = retmax
+    payload[&#34;retstart&#34;] = 0
     ids = list()
     count = 1
     progress_bar = None
-    while payload[&#39;retstart&#39;] &lt; count:
+    while payload[&#34;retstart&#34;] &lt; count:
         response = requests.get(url, params=payload)
         tree = lxml.etree.fromstring(response.content)
-        count = int(tree.findtext(&#39;Count&#39;))
+        count = int(tree.findtext(&#34;Count&#34;))
         if not progress_bar:
-            progress_bar = tqdm(total=count, unit=&#39;ids&#39;)
-        add_ids = [id_.text for id_ in tree.findall(&#39;IdList/Id&#39;)]
+            progress_bar = tqdm(total=count, unit=&#34;ids&#34;)
+        add_ids = [id_.text for id_ in tree.findall(&#34;IdList/Id&#34;)]
         ids += add_ids
-        payload[&#39;retstart&#39;] += retmax
+        payload[&#34;retstart&#34;] += retmax
         progress_bar.update(len(add_ids))
         time.sleep(sleep)
     progress_bar.close()
@@ -63,8 +63,15 @@ def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
 
 
 def download_pubmed_ids(
-        ids, write_file, endpoint=&#39;esummary&#39;, retmax=100, retmin=20, sleep=0.34,
-        error_sleep=10, tqdm=tqdm.tqdm):
+    ids,
+    write_file,
+    endpoint=&#34;esummary&#34;,
+    retmax=100,
+    retmin=20,
+    sleep=0.34,
+    error_sleep=10,
+    tqdm=tqdm.tqdm,
+):
     &#34;&#34;&#34;
     Submit an ESummary or EFetch query for PubMed records and write results as xml
     to write_file.
@@ -72,18 +79,18 @@ def download_pubmed_ids(
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
     &#34;&#34;&#34;
     # Base URL for PubMed&#39;s esummary eutlity
-    url = f&#39;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{endpoint}.fcgi&#39;
+    url = f&#34;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{endpoint}.fcgi&#34;
 
     # Set up progress stats
     n_total = len(ids)
     successive_errors = 0
-    progress_bar = tqdm(total=n_total, unit=&#39;articles&#39;)
+    progress_bar = tqdm(total=n_total, unit=&#34;articles&#34;)
     initialize_xml = True
 
     # Set up queue
     idq = collections.deque()
     for i in range(0, len(ids), retmax):
-        idq.append(ids[i:i + retmax])
+        idq.append(ids[i : i + retmax])
 
     # Query until the queue is empty
     while idq:
@@ -92,8 +99,8 @@ def download_pubmed_ids(
         id_subset_len = len(id_subset)
 
         # Perform eutilities API request
-        id_string = &#39;,&#39;.join(map(str, id_subset))
-        payload = {&#39;db&#39;: &#39;pubmed&#39;, &#39;id&#39;: id_string, &#39;rettype&#39;: &#39;xml&#39;}
+        id_string = &#34;,&#34;.join(map(str, id_subset))
+        payload = {&#34;db&#34;: &#34;pubmed&#34;, &#34;id&#34;: id_string, &#34;rettype&#34;: &#34;xml&#34;}
         try:
             response = requests.get(url, params=payload)
             response.raise_for_status()
@@ -102,8 +109,8 @@ def download_pubmed_ids(
         except Exception as e:
             successive_errors += 1
             logging.warning(
-                f&#39;{successive_errors} successive error: {id_subset_len} IDs&#39;
-                f&#39;[{id_subset[0]} … {id_subset[-1]}] threw {e}&#39;
+                f&#34;{successive_errors} successive error: {id_subset_len} IDs&#34;
+                f&#34;[{id_subset[0]} … {id_subset[-1]}] threw {e}&#34;
             )
             if id_subset_len &gt;= retmin * 2:
                 mid = len(id_subset) // 2
@@ -117,17 +124,17 @@ def download_pubmed_ids(
         # Write XML to file
         if initialize_xml:
             initialize_xml = False
-            write_file.write(f&#39;&lt;{tree.tag}&gt;\n&#39;)
+            write_file.write(f&#34;&lt;{tree.tag}&gt;\n&#34;)
         for elem in tree.getchildren():
-            xml_str = lxml.etree.tostring(elem, encoding=&#39;unicode&#39;)
-            write_file.write(xml_str.rstrip() + &#39;\n&#39;)
+            xml_str = lxml.etree.tostring(elem, encoding=&#34;unicode&#34;)
+            write_file.write(xml_str.rstrip() + &#34;\n&#34;)
 
         # Report progress
         progress_bar.update(id_subset_len)
 
     progress_bar.close()
     # Write final line of XML
-    write_file.write(f&#39;&lt;/{tree.tag}&gt;\n&#39;)</code></pre>
+    write_file.write(f&#34;&lt;/{tree.tag}&gt;\n&#34;)</code></pre>
 </details>
 </section>
 <section>
@@ -147,11 +154,18 @@ to write_file.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/eutilities.py#L38-L103" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/eutilities.py#L38-L110" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def download_pubmed_ids(
-        ids, write_file, endpoint=&#39;esummary&#39;, retmax=100, retmin=20, sleep=0.34,
-        error_sleep=10, tqdm=tqdm.tqdm):
+    ids,
+    write_file,
+    endpoint=&#34;esummary&#34;,
+    retmax=100,
+    retmin=20,
+    sleep=0.34,
+    error_sleep=10,
+    tqdm=tqdm.tqdm,
+):
     &#34;&#34;&#34;
     Submit an ESummary or EFetch query for PubMed records and write results as xml
     to write_file.
@@ -159,18 +173,18 @@ to write_file.</p>
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
     &#34;&#34;&#34;
     # Base URL for PubMed&#39;s esummary eutlity
-    url = f&#39;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{endpoint}.fcgi&#39;
+    url = f&#34;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{endpoint}.fcgi&#34;
 
     # Set up progress stats
     n_total = len(ids)
     successive_errors = 0
-    progress_bar = tqdm(total=n_total, unit=&#39;articles&#39;)
+    progress_bar = tqdm(total=n_total, unit=&#34;articles&#34;)
     initialize_xml = True
 
     # Set up queue
     idq = collections.deque()
     for i in range(0, len(ids), retmax):
-        idq.append(ids[i:i + retmax])
+        idq.append(ids[i : i + retmax])
 
     # Query until the queue is empty
     while idq:
@@ -179,8 +193,8 @@ to write_file.</p>
         id_subset_len = len(id_subset)
 
         # Perform eutilities API request
-        id_string = &#39;,&#39;.join(map(str, id_subset))
-        payload = {&#39;db&#39;: &#39;pubmed&#39;, &#39;id&#39;: id_string, &#39;rettype&#39;: &#39;xml&#39;}
+        id_string = &#34;,&#34;.join(map(str, id_subset))
+        payload = {&#34;db&#34;: &#34;pubmed&#34;, &#34;id&#34;: id_string, &#34;rettype&#34;: &#34;xml&#34;}
         try:
             response = requests.get(url, params=payload)
             response.raise_for_status()
@@ -189,8 +203,8 @@ to write_file.</p>
         except Exception as e:
             successive_errors += 1
             logging.warning(
-                f&#39;{successive_errors} successive error: {id_subset_len} IDs&#39;
-                f&#39;[{id_subset[0]} … {id_subset[-1]}] threw {e}&#39;
+                f&#34;{successive_errors} successive error: {id_subset_len} IDs&#34;
+                f&#34;[{id_subset[0]} … {id_subset[-1]}] threw {e}&#34;
             )
             if id_subset_len &gt;= retmin * 2:
                 mid = len(id_subset) // 2
@@ -204,17 +218,17 @@ to write_file.</p>
         # Write XML to file
         if initialize_xml:
             initialize_xml = False
-            write_file.write(f&#39;&lt;{tree.tag}&gt;\n&#39;)
+            write_file.write(f&#34;&lt;{tree.tag}&gt;\n&#34;)
         for elem in tree.getchildren():
-            xml_str = lxml.etree.tostring(elem, encoding=&#39;unicode&#39;)
-            write_file.write(xml_str.rstrip() + &#39;\n&#39;)
+            xml_str = lxml.etree.tostring(elem, encoding=&#34;unicode&#34;)
+            write_file.write(xml_str.rstrip() + &#34;\n&#34;)
 
         # Report progress
         progress_bar.update(id_subset_len)
 
     progress_bar.close()
     # Write final line of XML
-    write_file.write(f&#39;&lt;/{tree.tag}&gt;\n&#39;)</code></pre>
+    write_file.write(f&#34;&lt;/{tree.tag}&gt;\n&#34;)</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.eutilities.esearch_query"><code class="name flex">
@@ -226,7 +240,7 @@ to write_file.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/eutilities.py#L10-L35" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/eutilities.py#L10-L35" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
     &#34;&#34;&#34;
@@ -234,22 +248,22 @@ to write_file.</p>
 
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
     &#34;&#34;&#34;
-    url = &#39;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi&#39;
-    payload[&#39;rettype&#39;] = &#39;xml&#39;
-    payload[&#39;retmax&#39;] = retmax
-    payload[&#39;retstart&#39;] = 0
+    url = &#34;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi&#34;
+    payload[&#34;rettype&#34;] = &#34;xml&#34;
+    payload[&#34;retmax&#34;] = retmax
+    payload[&#34;retstart&#34;] = 0
     ids = list()
     count = 1
     progress_bar = None
-    while payload[&#39;retstart&#39;] &lt; count:
+    while payload[&#34;retstart&#34;] &lt; count:
         response = requests.get(url, params=payload)
         tree = lxml.etree.fromstring(response.content)
-        count = int(tree.findtext(&#39;Count&#39;))
+        count = int(tree.findtext(&#34;Count&#34;))
         if not progress_bar:
-            progress_bar = tqdm(total=count, unit=&#39;ids&#39;)
-        add_ids = [id_.text for id_ in tree.findall(&#39;IdList/Id&#39;)]
+            progress_bar = tqdm(total=count, unit=&#34;ids&#34;)
+        add_ids = [id_.text for id_ in tree.findall(&#34;IdList/Id&#34;)]
         ids += add_ids
-        payload[&#39;retstart&#39;] += retmax
+        payload[&#34;retstart&#34;] += retmax
         progress_bar.update(len(add_ids))
         time.sleep(sleep)
     progress_bar.close()

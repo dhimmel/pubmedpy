@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L0-L156" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L0-L155" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import collections
 import contextlib
@@ -40,6 +40,7 @@ import tqdm
 from .xml import iter_extract_elems
 
 locale_lock = threading.Lock()
+
 
 @contextlib.contextmanager
 def setlocale(name):
@@ -61,8 +62,8 @@ def parse_date_text(text):
     element.
     The time on the date is discarded. A `datetime.date` object is returned
     &#34;&#34;&#34;
-    with setlocale(&#39;C&#39;):
-        return datetime.datetime.strptime(text, &#39;%Y/%m/%d %H:%M&#39;).date()
+    with setlocale(&#34;C&#34;):
+        return datetime.datetime.strptime(text, &#34;%Y/%m/%d %H:%M&#34;).date()
 
 
 def parse_pubdate_text(text):
@@ -75,7 +76,7 @@ def parse_pubdate_text(text):
     See https://www.nlm.nih.gov/bsd/licensee/elements_article_source.html
     A `datetime.date` object is returned.
     &#34;&#34;&#34;
-    return datetime.datetime.strptime(text, &#39;%Y %b %d&#39;).date()
+    return datetime.datetime.strptime(text, &#34;%Y %b %d&#34;).date()
 
 
 def parse_esummary_history(docsum):
@@ -86,13 +87,12 @@ def parse_esummary_history(docsum):
     date_pairs = list()
     seen = set()
     for item in docsum.findall(&#34;Item[@Name=&#39;History&#39;]/Item[@Type=&#39;Date&#39;]&#34;):
-        name = item.get(&#39;Name&#39;)
+        name = item.get(&#34;Name&#34;)
         try:
             date_ = parse_date_text(item.text)
         except ValueError as e:
-            id_ = int(docsum.findtext(&#39;Id&#39;))
-            msg = (f&#39;article {id_}; name: {name}; &#39;
-                   f&#39;date: {item.text}; error: {e}&#39;)
+            id_ = int(docsum.findtext(&#34;Id&#34;))
+            msg = f&#34;article {id_}; name: {name}; &#34; f&#34;date: {item.text}; error: {e}&#34;
             logging.warning(msg)
             continue
 
@@ -105,7 +105,7 @@ def parse_esummary_history(docsum):
     history = collections.OrderedDict()
     for name, group in itertools.groupby(date_pairs, key=lambda x: x[0]):
         for i, (name, date_) in enumerate(group):
-            history[f&#39;{name}_{i}&#39;] = date_
+            history[f&#34;{name}_{i}&#34;] = date_
     return history
 
 
@@ -114,21 +114,20 @@ def parse_esummary_pubdates(docsum):
     Parse PubDate and EPubDate. Infer first published date.
     &#34;&#34;&#34;
     pubdates = collections.OrderedDict()
-    for key, name in (&#39;pub&#39;, &#39;PubDate&#39;), (&#39;epub&#39;, &#39;EPubDate&#39;):
+    for key, name in (&#34;pub&#34;, &#34;PubDate&#34;), (&#34;epub&#34;, &#34;EPubDate&#34;):
         xpath = f&#34;Item[@Name=&#39;{name}&#39;][@Type=&#39;Date&#39;]&#34;
         text = docsum.findtext(xpath)
         try:
             pubdates[key] = parse_pubdate_text(text)
         except ValueError as e:
-            id_ = int(docsum.findtext(&#39;Id&#39;))
-            msg = (f&#39;article {id_}; name: {key}; &#39;
-                   f&#39;date: {text}; error: {e}&#39;)
+            id_ = int(docsum.findtext(&#34;Id&#34;))
+            msg = f&#34;article {id_}; name: {key}; &#34; f&#34;date: {text}; error: {e}&#34;
             logging.info(msg)
             continue
     dates = set(pubdates.values())
     dates.discard(None)
     if dates:
-        pubdates[&#39;published&#39;] = min(dates)
+        pubdates[&#34;published&#34;] = min(dates)
     return pubdates
 
 
@@ -137,8 +136,8 @@ def parse_esummary(elem):
     Extract pubmed, journal, and date information from an eSummaryResult/DocSum
     &#34;&#34;&#34;
     article = collections.OrderedDict()
-    article[&#39;pubmed_id&#39;] = int(elem.findtext(&#39;Id&#39;))
-    article[&#39;journal_nlm_id&#39;] = elem.findtext(&#34;Item[@Name=&#39;NlmUniqueID&#39;]&#34;)
+    article[&#34;pubmed_id&#34;] = int(elem.findtext(&#34;Id&#34;))
+    article[&#34;journal_nlm_id&#34;] = elem.findtext(&#34;Item[@Name=&#39;NlmUniqueID&#39;]&#34;)
     pubdates = parse_esummary_pubdates(elem)
     article.update(pubdates)
     history = parse_esummary_history(elem)
@@ -152,10 +151,10 @@ def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
     an eSummaryResult XML file. Specify `n_articles` to enable a progress bar.
     &#34;&#34;&#34;
     if n_articles is not None:
-        progress_bar = tqdm(total=n_articles, unit=&#39;articles&#39;)
+        progress_bar = tqdm(total=n_articles, unit=&#34;articles&#34;)
 
     articles = list()
-    for elem in iter_extract_elems(path, tag=&#39;DocSum&#39;):
+    for elem in iter_extract_elems(path, tag=&#34;DocSum&#34;):
         article = parse_esummary(elem)
         articles.append(article)
         if n_articles is not None:
@@ -172,13 +171,13 @@ def articles_to_dataframe(articles):
     into a pandas.DataFrame.
     &#34;&#34;&#34;
     article_df = pandas.DataFrame(articles)
-    article_df = article_df.sort_values(by=&#39;pubmed_id&#39;)
+    article_df = article_df.sort_values(by=&#34;pubmed_id&#34;)
     # Enforce a consistent column ordering
     columns = article_df.columns[2:].tolist()
     columns = (
-        [&#39;pubmed_id&#39;, &#39;journal_nlm_id&#39;] +
-        sorted(x for x in columns if re.search(&#39;pub(?!med)&#39;, x)) +
-        sorted(x for x in columns if re.search(&#39;_[0-9]+$&#39;, x))
+        [&#34;pubmed_id&#34;, &#34;journal_nlm_id&#34;]
+        + sorted(x for x in columns if re.search(&#34;pub(?!med)&#34;, x))
+        + sorted(x for x in columns if re.search(&#34;_[0-9]+$&#34;, x))
     )
     article_df = article_df[columns]
     return article_df</code></pre>
@@ -200,7 +199,7 @@ into a pandas.DataFrame.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L142-L157" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L141-L156" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def articles_to_dataframe(articles):
     &#34;&#34;&#34;
@@ -208,13 +207,13 @@ into a pandas.DataFrame.</p></section>
     into a pandas.DataFrame.
     &#34;&#34;&#34;
     article_df = pandas.DataFrame(articles)
-    article_df = article_df.sort_values(by=&#39;pubmed_id&#39;)
+    article_df = article_df.sort_values(by=&#34;pubmed_id&#34;)
     # Enforce a consistent column ordering
     columns = article_df.columns[2:].tolist()
     columns = (
-        [&#39;pubmed_id&#39;, &#39;journal_nlm_id&#39;] +
-        sorted(x for x in columns if re.search(&#39;pub(?!med)&#39;, x)) +
-        sorted(x for x in columns if re.search(&#39;_[0-9]+$&#39;, x))
+        [&#34;pubmed_id&#34;, &#34;journal_nlm_id&#34;]
+        + sorted(x for x in columns if re.search(&#34;pub(?!med)&#34;, x))
+        + sorted(x for x in columns if re.search(&#34;_[0-9]+$&#34;, x))
     )
     article_df = article_df[columns]
     return article_df</code></pre>
@@ -229,7 +228,7 @@ an eSummaryResult XML file. Specify <code>n_articles</code> to enable a progress
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L122-L139" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L121-L138" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
     &#34;&#34;&#34;
@@ -237,10 +236,10 @@ an eSummaryResult XML file. Specify <code>n_articles</code> to enable a progress
     an eSummaryResult XML file. Specify `n_articles` to enable a progress bar.
     &#34;&#34;&#34;
     if n_articles is not None:
-        progress_bar = tqdm(total=n_articles, unit=&#39;articles&#39;)
+        progress_bar = tqdm(total=n_articles, unit=&#34;articles&#34;)
 
     articles = list()
-    for elem in iter_extract_elems(path, tag=&#39;DocSum&#39;):
+    for elem in iter_extract_elems(path, tag=&#34;DocSum&#34;):
         article = parse_esummary(elem)
         articles.append(article)
         if n_articles is not None:
@@ -261,7 +260,7 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L31-L38" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L32-L39" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_date_text(text):
     &#34;&#34;&#34;
@@ -269,8 +268,8 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
     element.
     The time on the date is discarded. A `datetime.date` object is returned
     &#34;&#34;&#34;
-    with setlocale(&#39;C&#39;):
-        return datetime.datetime.strptime(text, &#39;%Y/%m/%d %H:%M&#39;).date()</code></pre>
+    with setlocale(&#34;C&#34;):
+        return datetime.datetime.strptime(text, &#34;%Y/%m/%d %H:%M&#34;).date()</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.esummary.parse_esummary"><code class="name flex">
@@ -281,15 +280,15 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L108-L119" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L107-L118" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_esummary(elem):
     &#34;&#34;&#34;
     Extract pubmed, journal, and date information from an eSummaryResult/DocSum
     &#34;&#34;&#34;
     article = collections.OrderedDict()
-    article[&#39;pubmed_id&#39;] = int(elem.findtext(&#39;Id&#39;))
-    article[&#39;journal_nlm_id&#39;] = elem.findtext(&#34;Item[@Name=&#39;NlmUniqueID&#39;]&#34;)
+    article[&#34;pubmed_id&#34;] = int(elem.findtext(&#34;Id&#34;))
+    article[&#34;journal_nlm_id&#34;] = elem.findtext(&#34;Item[@Name=&#39;NlmUniqueID&#39;]&#34;)
     pubdates = parse_esummary_pubdates(elem)
     article.update(pubdates)
     history = parse_esummary_history(elem)
@@ -305,7 +304,7 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L54-L82" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L55-L82" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_esummary_history(docsum):
     &#34;&#34;&#34;
@@ -315,13 +314,12 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
     date_pairs = list()
     seen = set()
     for item in docsum.findall(&#34;Item[@Name=&#39;History&#39;]/Item[@Type=&#39;Date&#39;]&#34;):
-        name = item.get(&#39;Name&#39;)
+        name = item.get(&#34;Name&#34;)
         try:
             date_ = parse_date_text(item.text)
         except ValueError as e:
-            id_ = int(docsum.findtext(&#39;Id&#39;))
-            msg = (f&#39;article {id_}; name: {name}; &#39;
-                   f&#39;date: {item.text}; error: {e}&#39;)
+            id_ = int(docsum.findtext(&#34;Id&#34;))
+            msg = f&#34;article {id_}; name: {name}; &#34; f&#34;date: {item.text}; error: {e}&#34;
             logging.warning(msg)
             continue
 
@@ -334,7 +332,7 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
     history = collections.OrderedDict()
     for name, group in itertools.groupby(date_pairs, key=lambda x: x[0]):
         for i, (name, date_) in enumerate(group):
-            history[f&#39;{name}_{i}&#39;] = date_
+            history[f&#34;{name}_{i}&#34;] = date_
     return history</code></pre>
 </details>
 </dd>
@@ -346,28 +344,27 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L85-L105" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L85-L104" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_esummary_pubdates(docsum):
     &#34;&#34;&#34;
     Parse PubDate and EPubDate. Infer first published date.
     &#34;&#34;&#34;
     pubdates = collections.OrderedDict()
-    for key, name in (&#39;pub&#39;, &#39;PubDate&#39;), (&#39;epub&#39;, &#39;EPubDate&#39;):
+    for key, name in (&#34;pub&#34;, &#34;PubDate&#34;), (&#34;epub&#34;, &#34;EPubDate&#34;):
         xpath = f&#34;Item[@Name=&#39;{name}&#39;][@Type=&#39;Date&#39;]&#34;
         text = docsum.findtext(xpath)
         try:
             pubdates[key] = parse_pubdate_text(text)
         except ValueError as e:
-            id_ = int(docsum.findtext(&#39;Id&#39;))
-            msg = (f&#39;article {id_}; name: {key}; &#39;
-                   f&#39;date: {text}; error: {e}&#39;)
+            id_ = int(docsum.findtext(&#34;Id&#34;))
+            msg = f&#34;article {id_}; name: {key}; &#34; f&#34;date: {text}; error: {e}&#34;
             logging.info(msg)
             continue
     dates = set(pubdates.values())
     dates.discard(None)
     if dates:
-        pubdates[&#39;published&#39;] = min(dates)
+        pubdates[&#34;published&#34;] = min(dates)
     return pubdates</code></pre>
 </details>
 </dd>
@@ -383,7 +380,7 @@ A <code>datetime.date</code> object is returned.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L41-L51" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L42-L52" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_pubdate_text(text):
     &#34;&#34;&#34;
@@ -395,7 +392,7 @@ A <code>datetime.date</code> object is returned.</p></section>
     See https://www.nlm.nih.gov/bsd/licensee/elements_article_source.html
     A `datetime.date` object is returned.
     &#34;&#34;&#34;
-    return datetime.datetime.strptime(text, &#39;%Y %b %d&#39;).date()</code></pre>
+    return datetime.datetime.strptime(text, &#34;%Y %b %d&#34;).date()</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.esummary.setlocale"><code class="name flex">
@@ -407,7 +404,7 @@ A <code>datetime.date</code> object is returned.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/esummary.py#L17-L28" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/esummary.py#L18-L29" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">@contextlib.contextmanager
 def setlocale(name):

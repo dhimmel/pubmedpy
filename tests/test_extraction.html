@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_extraction.py#L0-L57" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_extraction.py#L0-L59" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import os
 
@@ -34,32 +34,32 @@ import pandas
 directory = os.path.dirname(os.path.abspath(__file__))
 
 pubmed_ids = [
-    &#39;27094199&#39;,  # Circ Cardiovasc Genet
-    &#39;26158728&#39;,  # PLoS Comput Biol
-    &#39;25648772&#39;,  # PeerJ
-    &#39;21736753&#39;,  # BioData Min
-    &#39;25915600&#39;,  # Nature Genet
-    &#39;20081222&#39;,  # Bioinformatics
+    &#34;27094199&#34;,  # Circ Cardiovasc Genet
+    &#34;26158728&#34;,  # PLoS Comput Biol
+    &#34;25648772&#34;,  # PeerJ
+    &#34;21736753&#34;,  # BioData Min
+    &#34;25915600&#34;,  # Nature Genet
+    &#34;20081222&#34;,  # Bioinformatics
 ]
 
-esummary_path = os.path.join(directory, &#39;data&#39;, &#39;esummary.xml&#39;)
-efetch_path = os.path.join(directory, &#39;data&#39;, &#39;efetch.xml&#39;)
+esummary_path = os.path.join(directory, &#34;data&#34;, &#34;esummary.xml&#34;)
+efetch_path = os.path.join(directory, &#34;data&#34;, &#34;efetch.xml&#34;)
 
 
 def test_esummary():
     &#34;&#34;&#34;
     Run to recreate data/esummary.xml
     &#34;&#34;&#34;
-    with open(esummary_path, &#39;wt&#39;) as write_file:
-        download_pubmed_ids(pubmed_ids, write_file, endpoint=&#39;esummary&#39;)
+    with open(esummary_path, &#34;wt&#34;) as write_file:
+        download_pubmed_ids(pubmed_ids, write_file, endpoint=&#34;esummary&#34;)
 
 
 def test_efetch():
     &#34;&#34;&#34;
     Run to recreate data/esummary.xml
     &#34;&#34;&#34;
-    with open(efetch_path, &#39;wt&#39;) as write_file:
-        download_pubmed_ids(pubmed_ids, write_file, endpoint=&#39;efetch&#39;)
+    with open(efetch_path, &#34;wt&#34;) as write_file:
+        download_pubmed_ids(pubmed_ids, write_file, endpoint=&#34;efetch&#34;)
 
 
 def test_extract_from_esummary():
@@ -67,22 +67,24 @@ def test_extract_from_esummary():
         articles_to_dataframe,
         extract_articles_from_esummaries,
     )
+
     n_articles = len(pubmed_ids)
     articles = extract_articles_from_esummaries(esummary_path, n_articles)
     assert len(articles) == n_articles
     article_df = articles_to_dataframe(articles)
-    path = os.path.join(directory, &#39;data&#39;, &#39;esummary.tsv&#39;)
-    article_df.to_csv(path, index=False, sep=&#39;\t&#39;)
+    path = os.path.join(directory, &#34;data&#34;, &#34;esummary.tsv&#34;)
+    article_df.to_csv(path, index=False, sep=&#34;\t&#34;)
 
 
 def test_extract_from_efetch():
     from ..xml import iter_extract_elems
     from ..efetch import extract_all
-    articles = list(iter_extract_elems(efetch_path, &#39;PubmedArticle&#39;))
+
+    articles = list(iter_extract_elems(efetch_path, &#34;PubmedArticle&#34;))
     assert len(articles) &gt; 0
     article_df = pandas.DataFrame(list(map(extract_all, articles)))
-    path = os.path.join(directory, &#39;data&#39;, &#39;efetch.tsv&#39;)
-    article_df.to_csv(path, index=False, sep=&#39;\t&#39;)</code></pre>
+    path = os.path.join(directory, &#34;data&#34;, &#34;efetch.tsv&#34;)
+    article_df.to_csv(path, index=False, sep=&#34;\t&#34;)</code></pre>
 </details>
 </section>
 <section>
@@ -100,14 +102,14 @@ def test_extract_from_efetch():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_extraction.py#L30-L35" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_extraction.py#L30-L35" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_efetch():
     &#34;&#34;&#34;
     Run to recreate data/esummary.xml
     &#34;&#34;&#34;
-    with open(efetch_path, &#39;wt&#39;) as write_file:
-        download_pubmed_ids(pubmed_ids, write_file, endpoint=&#39;efetch&#39;)</code></pre>
+    with open(efetch_path, &#34;wt&#34;) as write_file:
+        download_pubmed_ids(pubmed_ids, write_file, endpoint=&#34;efetch&#34;)</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.tests.test_extraction.test_esummary"><code class="name flex">
@@ -118,14 +120,14 @@ def test_extract_from_efetch():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_extraction.py#L22-L27" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_extraction.py#L22-L27" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_esummary():
     &#34;&#34;&#34;
     Run to recreate data/esummary.xml
     &#34;&#34;&#34;
-    with open(esummary_path, &#39;wt&#39;) as write_file:
-        download_pubmed_ids(pubmed_ids, write_file, endpoint=&#39;esummary&#39;)</code></pre>
+    with open(esummary_path, &#34;wt&#34;) as write_file:
+        download_pubmed_ids(pubmed_ids, write_file, endpoint=&#34;esummary&#34;)</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.tests.test_extraction.test_extract_from_efetch"><code class="name flex">
@@ -136,16 +138,17 @@ def test_extract_from_efetch():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_extraction.py#L51-L58" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_extraction.py#L52-L60" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_extract_from_efetch():
     from ..xml import iter_extract_elems
     from ..efetch import extract_all
-    articles = list(iter_extract_elems(efetch_path, &#39;PubmedArticle&#39;))
+
+    articles = list(iter_extract_elems(efetch_path, &#34;PubmedArticle&#34;))
     assert len(articles) &gt; 0
     article_df = pandas.DataFrame(list(map(extract_all, articles)))
-    path = os.path.join(directory, &#39;data&#39;, &#39;efetch.tsv&#39;)
-    article_df.to_csv(path, index=False, sep=&#39;\t&#39;)</code></pre>
+    path = os.path.join(directory, &#34;data&#34;, &#34;efetch.tsv&#34;)
+    article_df.to_csv(path, index=False, sep=&#34;\t&#34;)</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.tests.test_extraction.test_extract_from_esummary"><code class="name flex">
@@ -156,19 +159,20 @@ def test_extract_from_efetch():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/tests/test_extraction.py#L38-L48" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_extraction.py#L38-L49" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_extract_from_esummary():
     from ..esummary import (
         articles_to_dataframe,
         extract_articles_from_esummaries,
     )
+
     n_articles = len(pubmed_ids)
     articles = extract_articles_from_esummaries(esummary_path, n_articles)
     assert len(articles) == n_articles
     article_df = articles_to_dataframe(articles)
-    path = os.path.join(directory, &#39;data&#39;, &#39;esummary.tsv&#39;)
-    article_df.to_csv(path, index=False, sep=&#39;\t&#39;)</code></pre>
+    path = os.path.join(directory, &#34;data&#34;, &#34;esummary.tsv&#34;)
+    article_df.to_csv(path, index=False, sep=&#34;\t&#34;)</code></pre>
 </details>
 </dd>
 </dl>

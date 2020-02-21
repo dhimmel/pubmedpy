@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/efetch.py#L0-L107" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/efetch.py#L0-L114" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import collections
 import typing
@@ -37,11 +37,13 @@ def extract_all(elem: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     result = collections.OrderedDict()
     result.update(extract_identifiers(elem))
-    result[&#39;journal&#39;] = elem.findtext(&#34;MedlineCitation/MedlineJournalInfo/MedlineTA&#34;)
-    result[&#39;journal_nlm_id&#39;] = elem.findtext(&#34;MedlineCitation/MedlineJournalInfo/NlmUniqueID&#34;)
-    result[&#39;title&#39;] = elem.findtext(&#34;MedlineCitation/Article/ArticleTitle&#34;)
-    result[&#39;publication_date&#39;] = extract_publication_date(elem)
-    result[&#39;authors&#39;] = extract_authors(elem)
+    result[&#34;journal&#34;] = elem.findtext(&#34;MedlineCitation/MedlineJournalInfo/MedlineTA&#34;)
+    result[&#34;journal_nlm_id&#34;] = elem.findtext(
+        &#34;MedlineCitation/MedlineJournalInfo/NlmUniqueID&#34;
+    )
+    result[&#34;title&#34;] = elem.findtext(&#34;MedlineCitation/Article/ArticleTitle&#34;)
+    result[&#34;publication_date&#34;] = extract_publication_date(elem)
+    result[&#34;authors&#34;] = extract_authors(elem)
     return result
 
 
@@ -51,16 +53,17 @@ def extract_identifiers(elem: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     identifiers = dict()
     renamer = {
-        &#39;pubmed&#39;: &#39;pmid&#39;,
-        &#39;pmc&#39;: &#39;pmcid&#39;,
-        &#39;doi&#39;: &#39;doi&#39;,
+        &#34;pubmed&#34;: &#34;pmid&#34;,
+        &#34;pmc&#34;: &#34;pmcid&#34;,
+        &#34;doi&#34;: &#34;doi&#34;,
     }
     for id_type, id_type_name in renamer.items():
         identifiers[id_type_name] = elem.findtext(
-            f&#34;PubmedData/ArticleIdList/ArticleId[@IdType={id_type!r}]&#34;)
-    if identifiers[&#39;doi&#39;]:
+            f&#34;PubmedData/ArticleIdList/ArticleId[@IdType={id_type!r}]&#34;
+        )
+    if identifiers[&#34;doi&#34;]:
         # convert DOIs to all lowercase for standardization
-        identifiers[&#39;doi&#39;] = identifiers[&#39;doi&#39;].lower()
+        identifiers[&#34;doi&#34;] = identifiers[&#34;doi&#34;].lower()
     return identifiers
 
 
@@ -69,29 +72,29 @@ def extract_publication_date(elem: lxml.etree._Element) -&gt; typing.Optional[st
     Select the publication date from a &lt;PubmedArticle&gt; XML element
     &#34;&#34;&#34;
     dates = [
-        _date_elem_to_str(x) for x in
-        elem.findall(&#34;MedlineCitation/Article/ArticleDate&#34;)
+        _date_elem_to_str(x)
+        for x in elem.findall(&#34;MedlineCitation/Article/ArticleDate&#34;)
     ]
     if dates:
         return sorted(dates)[0]
     else:
         pubdate = elem.find(&#34;MedlineCitation/Article/Journal/JournalIssue/PubDate&#34;)
-        return _date_elem_to_str(pubdate)  
+        return _date_elem_to_str(pubdate)
 
 
 _month_abbrev_to_int = {
-    &#39;Jan&#39;: 1,
-    &#39;Feb&#39;: 2,
-    &#39;Mar&#39;: 3,
-    &#39;Apr&#39;: 4,
-    &#39;May&#39;: 5,
-    &#39;Jun&#39;: 6,
-    &#39;Jul&#39;: 7,
-    &#39;Aug&#39;: 8,
-    &#39;Sep&#39;: 9,
-    &#39;Oct&#39;: 10,
-    &#39;Nov&#39;: 11,
-    &#39;Dec&#39;: 12,
+    &#34;Jan&#34;: 1,
+    &#34;Feb&#34;: 2,
+    &#34;Mar&#34;: 3,
+    &#34;Apr&#34;: 4,
+    &#34;May&#34;: 5,
+    &#34;Jun&#34;: 6,
+    &#34;Jul&#34;: 7,
+    &#34;Aug&#34;: 8,
+    &#34;Sep&#34;: 9,
+    &#34;Oct&#34;: 10,
+    &#34;Nov&#34;: 11,
+    &#34;Dec&#34;: 12,
 }
 
 
@@ -101,18 +104,18 @@ def _date_elem_to_str(elem: lxml.etree._Element) -&gt; typing.Optional[str]:
     &#34;&#34;&#34;
     if elem is None:
         return None
-    year = elem.findtext(&#39;Year&#39;)
+    year = elem.findtext(&#34;Year&#34;)
     try:
         year = int(year)
     except (ValueError, TypeError):
         return None
-    month = elem.findtext(&#39;Month&#39;)
+    month = elem.findtext(&#34;Month&#34;)
     month = _month_abbrev_to_int.get(month, month)
     try:
         month = int(month)
     except (ValueError, TypeError):
         return f&#34;{year:04d}&#34;
-    day = elem.findtext(&#39;Day&#39;)
+    day = elem.findtext(&#34;Day&#34;)
     try:
         day = int(day)
     except (ValueError, TypeError):
@@ -127,11 +130,15 @@ def extract_authors(elem: lxml.etree._Element) -&gt; list:
     authors = list()
     author_elems = elem.findall(&#34;MedlineCitation/Article/AuthorList/Author&#34;)
     for author_elem in author_elems:
-        authors.append({
-            &#34;fore_name&#34;: author_elem.findtext(&#34;ForeName&#34;),
-            &#34;last_name&#34;: author_elem.findtext(&#34;LastName&#34;),
-            &#34;affiliations&#34;: [x.text for x in author_elem.findall(&#34;AffiliationInfo/Affiliation&#34;)],
-        })
+        authors.append(
+            {
+                &#34;fore_name&#34;: author_elem.findtext(&#34;ForeName&#34;),
+                &#34;last_name&#34;: author_elem.findtext(&#34;LastName&#34;),
+                &#34;affiliations&#34;: [
+                    x.text for x in author_elem.findall(&#34;AffiliationInfo/Affiliation&#34;)
+                ],
+            }
+        )
     return authors</code></pre>
 </details>
 </section>
@@ -150,7 +157,7 @@ def extract_authors(elem: lxml.etree._Element) -&gt; list:
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/efetch.py#L7-L18" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/efetch.py#L7-L20" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def extract_all(elem: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
@@ -158,11 +165,13 @@ def extract_authors(elem: lxml.etree._Element) -&gt; list:
     &#34;&#34;&#34;
     result = collections.OrderedDict()
     result.update(extract_identifiers(elem))
-    result[&#39;journal&#39;] = elem.findtext(&#34;MedlineCitation/MedlineJournalInfo/MedlineTA&#34;)
-    result[&#39;journal_nlm_id&#39;] = elem.findtext(&#34;MedlineCitation/MedlineJournalInfo/NlmUniqueID&#34;)
-    result[&#39;title&#39;] = elem.findtext(&#34;MedlineCitation/Article/ArticleTitle&#34;)
-    result[&#39;publication_date&#39;] = extract_publication_date(elem)
-    result[&#39;authors&#39;] = extract_authors(elem)
+    result[&#34;journal&#34;] = elem.findtext(&#34;MedlineCitation/MedlineJournalInfo/MedlineTA&#34;)
+    result[&#34;journal_nlm_id&#34;] = elem.findtext(
+        &#34;MedlineCitation/MedlineJournalInfo/NlmUniqueID&#34;
+    )
+    result[&#34;title&#34;] = elem.findtext(&#34;MedlineCitation/Article/ArticleTitle&#34;)
+    result[&#34;publication_date&#34;] = extract_publication_date(elem)
+    result[&#34;authors&#34;] = extract_authors(elem)
     return result</code></pre>
 </details>
 </dd>
@@ -174,7 +183,7 @@ def extract_authors(elem: lxml.etree._Element) -&gt; list:
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/efetch.py#L96-L108" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/efetch.py#L99-L115" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def extract_authors(elem: lxml.etree._Element) -&gt; list:
     &#34;&#34;&#34;
@@ -183,11 +192,15 @@ def extract_authors(elem: lxml.etree._Element) -&gt; list:
     authors = list()
     author_elems = elem.findall(&#34;MedlineCitation/Article/AuthorList/Author&#34;)
     for author_elem in author_elems:
-        authors.append({
-            &#34;fore_name&#34;: author_elem.findtext(&#34;ForeName&#34;),
-            &#34;last_name&#34;: author_elem.findtext(&#34;LastName&#34;),
-            &#34;affiliations&#34;: [x.text for x in author_elem.findall(&#34;AffiliationInfo/Affiliation&#34;)],
-        })
+        authors.append(
+            {
+                &#34;fore_name&#34;: author_elem.findtext(&#34;ForeName&#34;),
+                &#34;last_name&#34;: author_elem.findtext(&#34;LastName&#34;),
+                &#34;affiliations&#34;: [
+                    x.text for x in author_elem.findall(&#34;AffiliationInfo/Affiliation&#34;)
+                ],
+            }
+        )
     return authors</code></pre>
 </details>
 </dd>
@@ -199,7 +212,7 @@ def extract_authors(elem: lxml.etree._Element) -&gt; list:
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/efetch.py#L21-L37" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/efetch.py#L23-L40" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def extract_identifiers(elem: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
@@ -207,16 +220,17 @@ def extract_authors(elem: lxml.etree._Element) -&gt; list:
     &#34;&#34;&#34;
     identifiers = dict()
     renamer = {
-        &#39;pubmed&#39;: &#39;pmid&#39;,
-        &#39;pmc&#39;: &#39;pmcid&#39;,
-        &#39;doi&#39;: &#39;doi&#39;,
+        &#34;pubmed&#34;: &#34;pmid&#34;,
+        &#34;pmc&#34;: &#34;pmcid&#34;,
+        &#34;doi&#34;: &#34;doi&#34;,
     }
     for id_type, id_type_name in renamer.items():
         identifiers[id_type_name] = elem.findtext(
-            f&#34;PubmedData/ArticleIdList/ArticleId[@IdType={id_type!r}]&#34;)
-    if identifiers[&#39;doi&#39;]:
+            f&#34;PubmedData/ArticleIdList/ArticleId[@IdType={id_type!r}]&#34;
+        )
+    if identifiers[&#34;doi&#34;]:
         # convert DOIs to all lowercase for standardization
-        identifiers[&#39;doi&#39;] = identifiers[&#39;doi&#39;].lower()
+        identifiers[&#34;doi&#34;] = identifiers[&#34;doi&#34;].lower()
     return identifiers</code></pre>
 </details>
 </dd>
@@ -228,21 +242,21 @@ def extract_authors(elem: lxml.etree._Element) -&gt; list:
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/ac412606b57dba30554550a64c140fb7c1f8eae7/pubmedpy/efetch.py#L40-L52" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/efetch.py#L43-L55" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def extract_publication_date(elem: lxml.etree._Element) -&gt; typing.Optional[str]:
     &#34;&#34;&#34;
     Select the publication date from a &lt;PubmedArticle&gt; XML element
     &#34;&#34;&#34;
     dates = [
-        _date_elem_to_str(x) for x in
-        elem.findall(&#34;MedlineCitation/Article/ArticleDate&#34;)
+        _date_elem_to_str(x)
+        for x in elem.findall(&#34;MedlineCitation/Article/ArticleDate&#34;)
     ]
     if dates:
         return sorted(dates)[0]
     else:
         pubdate = elem.find(&#34;MedlineCitation/Article/Journal/JournalIssue/PubDate&#34;)
-        return _date_elem_to_str(pubdate)  </code></pre>
+        return _date_elem_to_str(pubdate)</code></pre>
 </details>
 </dd>
 </dl>
