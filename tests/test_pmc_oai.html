@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_pmc_oai.py#L0-L13" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/4cc6def438d5a4dcb13be018b75a4929d88b18a7/pubmedpy/tests/test_pmc_oai.py#L0-L66" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import pathlib
 
@@ -38,7 +38,60 @@ directory = pathlib.Path(__file__).parent
 def test_get_sets_for_pmcid():
     set_specs = get_sets_for_pmcid(&#34;PMC2092437&#34;)
     assert &#34;bmcbioi&#34; in set_specs
-    assert &#34;pmc-open&#34; in set_specs</code></pre>
+    assert &#34;pmc-open&#34; in set_specs
+
+
+def get_frontmatter_etree(pmcid):
+    from lxml import etree
+
+    frontmatter_dir = directory.joinpath(&#34;data&#34;, &#34;pmc-frontmatter&#34;)
+    with frontmatter_dir.joinpath(f&#34;{pmcid}.xml&#34;).open() as read_file:
+        return etree.parse(read_file)
+
+
+pcmid_to_authors = dict()
+pcmid_to_authors[&#34;PMC65048&#34;] = [
+    {
+        &#34;pmcid&#34;: &#34;PMC65048&#34;,
+        &#34;position&#34;: 1,
+        &#34;fore_name&#34;: &#34;Kevin&#34;,
+        &#34;last_name&#34;: &#34;Truong&#34;,
+        &#34;corresponding&#34;: 0,
+        &#34;reverse_position&#34;: 2,
+    },
+    {
+        &#34;pmcid&#34;: &#34;PMC65048&#34;,
+        &#34;position&#34;: 2,
+        &#34;fore_name&#34;: &#34;Mitsuhiko&#34;,
+        &#34;last_name&#34;: &#34;Ikura&#34;,
+        &#34;corresponding&#34;: 1,
+        &#34;reverse_position&#34;: 1,
+    },
+]
+pcmid_to_authors[&#34;PMC1183515&#34;] = [
+    {
+        &#34;pmcid&#34;: &#34;PMC1183515&#34;,
+        &#34;position&#34;: 1,
+        &#34;fore_name&#34;: &#34;Boris E&#34;,
+        &#34;last_name&#34;: &#34;Shakhnovich&#34;,
+        &#34;corresponding&#34;: 1,
+        &#34;reverse_position&#34;: 1,
+    }
+]
+
+
+@pytest.mark.parametrize(
+    [&#34;pmcid&#34;, &#34;expected&#34;],
+    [
+        pytest.param(pmcid, authors, id=pmcid)
+        for pmcid, authors in pcmid_to_authors.items()
+    ],
+)
+def test_extract_authors_from_article(pmcid, expected):
+    article = get_frontmatter_etree(pmcid)
+    authors = extract_authors_from_article(article)
+    print(authors)
+    assert authors == expected</code></pre>
 </details>
 </section>
 <section>
@@ -48,6 +101,48 @@ def test_get_sets_for_pmcid():
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="pubmedpy.tests.test_pmc_oai.get_frontmatter_etree"><code class="name flex">
+<span>def <span class="ident">get_frontmatter_etree</span></span>(<span>pmcid)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/4cc6def438d5a4dcb13be018b75a4929d88b18a7/pubmedpy/tests/test_pmc_oai.py#L17-L22" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_frontmatter_etree(pmcid):
+    from lxml import etree
+
+    frontmatter_dir = directory.joinpath(&#34;data&#34;, &#34;pmc-frontmatter&#34;)
+    with frontmatter_dir.joinpath(f&#34;{pmcid}.xml&#34;).open() as read_file:
+        return etree.parse(read_file)</code></pre>
+</details>
+</dd>
+<dt id="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article"><code class="name flex">
+<span>def <span class="ident">test_extract_authors_from_article</span></span>(<span>pmcid, expected)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/4cc6def438d5a4dcb13be018b75a4929d88b18a7/pubmedpy/tests/test_pmc_oai.py#L56-L67" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@pytest.mark.parametrize(
+    [&#34;pmcid&#34;, &#34;expected&#34;],
+    [
+        pytest.param(pmcid, authors, id=pmcid)
+        for pmcid, authors in pcmid_to_authors.items()
+    ],
+)
+def test_extract_authors_from_article(pmcid, expected):
+    article = get_frontmatter_etree(pmcid)
+    authors = extract_authors_from_article(article)
+    print(authors)
+    assert authors == expected</code></pre>
+</details>
+</dd>
 <dt id="pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid"><code class="name flex">
 <span>def <span class="ident">test_get_sets_for_pmcid</span></span>(<span>)</span>
 </code></dt>
@@ -56,7 +151,7 @@ def test_get_sets_for_pmcid():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/6c1ef7fa0b96dc899ebbcedefc35a41ad49a8242/pubmedpy/tests/test_pmc_oai.py#L11-L14" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/4cc6def438d5a4dcb13be018b75a4929d88b18a7/pubmedpy/tests/test_pmc_oai.py#L11-L14" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_get_sets_for_pmcid():
     set_specs = get_sets_for_pmcid(&#34;PMC2092437&#34;)
@@ -82,6 +177,8 @@ def test_get_sets_for_pmcid():
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
+<li><code><a title="pubmedpy.tests.test_pmc_oai.get_frontmatter_etree" href="#pubmedpy.tests.test_pmc_oai.get_frontmatter_etree">get_frontmatter_etree</a></code></li>
+<li><code><a title="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article" href="#pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article">test_extract_authors_from_article</a></code></li>
 <li><code><a title="pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid" href="#pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid">test_get_sets_for_pmcid</a></code></li>
 </ul>
 </li>
