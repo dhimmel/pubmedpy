@@ -1,0 +1,261 @@
+<article xmlns="https://jats.nlm.nih.gov/ns/archiving/1.2/" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0/" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.2/ https://jats.nlm.nih.gov/archiving/1.2/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Bioinformatics</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Bioinformatics</journal-id>
+      <journal-id journal-id-type="publisher-id">bioinformatics</journal-id>
+      <journal-title-group>
+        <journal-title>Bioinformatics</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1367-4803</issn>
+      <issn pub-type="epub">1367-4811</issn>
+      <publisher>
+        <publisher-name>Oxford University Press</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC5870622</article-id>
+      <article-id pub-id-type="pmcid">PMC5870622</article-id>
+      <article-id pub-id-type="pmc-uid">5870622</article-id>
+      <article-id pub-id-type="pmid">29036577</article-id>
+      <article-id pub-id-type="pmid">29036577</article-id>
+      <article-id pub-id-type="doi">10.1093/bioinformatics/btx478</article-id>
+      <article-id pub-id-type="publisher-id">btx478</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Original Papers</subject>
+          <subj-group subj-group-type="category-toc-heading">
+            <subject>Databases and Ontologies</subject>
+          </subj-group>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>
+BiobankUniverse: automatic matchmaking between datasets for biobank data discovery and integration
+        </article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Pang</surname>
+            <given-names>Chao</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+          <xref ref-type="aff" rid="btx478-aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Kelpin</surname>
+            <given-names>Fleur</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>van Enckevort</surname>
+            <given-names>David</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Eklund</surname>
+            <given-names>Niina</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Silander</surname>
+            <given-names>Kaisa</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hendriksen</surname>
+            <given-names>Dennis</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>de Haan</surname>
+            <given-names>Mark</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Jetten</surname>
+            <given-names>Jonathan</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>de Boer</surname>
+            <given-names>Tommy</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Charbon</surname>
+            <given-names>Bart</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Holub</surname>
+            <given-names>Petr</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff4">4</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hillege</surname>
+            <given-names>Hans</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Swertz</surname>
+            <given-names>Morris A</given-names>
+          </name>
+          <xref ref-type="aff" rid="btx478-aff1">1</xref>
+          <xref ref-type="aff" rid="btx478-aff2">2</xref>
+          <xref ref-type="corresp" rid="btx478-cor1"/>
+          <!-- <email>m.a.swertz@rug.nl</email> -->
+        </contrib>
+      </contrib-group>
+      <contrib-group>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Wren</surname>
+            <given-names>Jonathan</given-names>
+          </name>
+          <role>Associate Editor</role>
+        </contrib>
+      </contrib-group>
+      <aff id="btx478-aff1">
+        <label>1</label>
+Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands
+      </aff>
+      <aff id="btx478-aff2">
+        <label>2</label>
+Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands
+      </aff>
+      <aff id="btx478-aff3">
+        <label>3</label>
+Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland
+      </aff>
+      <aff id="btx478-aff4">
+        <label>4</label>
+Biobanking and BioMolecular Resources Research Infrastructure (BBMRI-ERIC), Graz, Austria
+      </aff>
+      <author-notes>
+        <corresp id="btx478-cor1">
+To whom correspondence should be addressed. Email:
+          <email>m.a.swertz@rug.nl</email>
+        </corresp>
+      </author-notes>
+      <pub-date pub-type="ppub">
+        <day>15</day>
+        <month>11</month>
+        <year>2017</year>
+      </pub-date>
+      <pub-date pub-type="epub" iso-8601-date="2017-08-02">
+        <day>02</day>
+        <month>8</month>
+        <year>2017</year>
+      </pub-date>
+      <pub-date pub-type="pmc-release">
+        <day>02</day>
+        <month>8</month>
+        <year>2017</year>
+      </pub-date>
+      <!--
+ PMC Release delay is 0 months and 0 days and was based on the <pub-date pub-type="epub"/>. 
+-->
+      <volume>33</volume>
+      <issue>22</issue>
+      <fpage>3627</fpage>
+      <lpage>3634</lpage>
+      <history>
+        <date date-type="received">
+          <day>21</day>
+          <month>4</month>
+          <year>2017</year>
+        </date>
+        <date date-type="rev-recd">
+          <day>04</day>
+          <month>7</month>
+          <year>2017</year>
+        </date>
+        <date date-type="accepted">
+          <day>22</day>
+          <month>7</month>
+          <year>2017</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>
+© The Author 2017. Published by Oxford University Press.
+        </copyright-statement>
+        <copyright-year>2017</copyright-year>
+        <license license-type="cc-by-nc" xlink:href="http://creativecommons.org/licenses/by-nc/4.0/">
+          <license-p>
+This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (
+            <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by-nc/4.0/">http://creativecommons.org/licenses/by-nc/4.0/</ext-link>
+), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact journals.permissions@oup.com
+          </license-p>
+        </license>
+      </permissions>
+      <self-uri xlink:href="btx478.pdf"/>
+      <abstract>
+        <title>Abstract</title>
+        <sec id="s1">
+          <title>Motivation</title>
+          <p>
+Biobanks are indispensable for large-scale genetic/epidemiological studies, yet it remains difficult for researchers to determine which biobanks contain data matching their research questions.
+          </p>
+        </sec>
+        <sec id="s2">
+          <title>Results</title>
+          <p>
+To overcome this, we developed a new matching algorithm that identifies pairs of related data elements between biobanks and research variables with high precision and recall. It integrates lexical comparison, Unified Medical Language System ontology tagging and semantic query expansion. The result is BiobankUniverse, a fast matchmaking service for biobanks and researchers. Biobankers upload their data elements and researchers their desired study variables, BiobankUniverse automatically shortlists matching attributes between them. Users can quickly explore matching potential and search for biobanks/data elements matching their research. They can also curate matches and define personalized data-universes.
+          </p>
+        </sec>
+        <sec id="s3">
+          <title>Availability and implementation</title>
+          <p>
+BiobankUniverse is available at
+            <ext-link ext-link-type="uri" xlink:href="http://biobankuniverse.com">http://biobankuniverse.com</ext-link>
+or can be downloaded as part of the open source MOLGENIS suite at
+            <ext-link ext-link-type="uri" xlink:href="http://github.com/molgenis/molgenis">http://github.com/molgenis/molgenis</ext-link>
+.
+          </p>
+        </sec>
+        <sec id="s5">
+          <title>Supplementary information</title>
+          <p>
+            <xref ref-type="supplementary-material" rid="sup1">Supplementary data</xref>
+are available at
+            <italic>Bioinformatics</italic>
+online.
+          </p>
+        </sec>
+      </abstract>
+      <counts>
+        <page-count count="8"/>
+      </counts>
+    </article-meta>
+  </front>
+</article>
