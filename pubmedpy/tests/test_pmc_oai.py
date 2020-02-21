@@ -18,8 +18,8 @@ def get_frontmatter_etree(pmcid):
     from lxml import etree
 
     frontmatter_dir = directory.joinpath("data", "pmc-frontmatter")
-    with frontmatter_dir.joinpath(f"{pmcid}.xml").open() as read_file:
-        return etree.parse(read_file)
+    text = frontmatter_dir.joinpath(f"{pmcid}.xml").read_text(encoding='utf-8-sig')
+    return etree.fromstring(text)
 
 
 pcmid_to_authors = dict()
