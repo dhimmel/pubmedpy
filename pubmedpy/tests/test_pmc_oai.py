@@ -18,7 +18,7 @@ def get_frontmatter_etree(pmcid):
     from lxml import etree
 
     frontmatter_dir = directory.joinpath("data", "pmc-frontmatter")
-    text = frontmatter_dir.joinpath(f"{pmcid}.xml").read_text(encoding='utf-8-sig')
+    text = frontmatter_dir.joinpath(f"{pmcid}.xml").read_text(encoding="utf-8-sig")
     return etree.fromstring(text)
 
 
@@ -31,6 +31,9 @@ pcmid_to_authors["PMC65048"] = [
         "last_name": "Truong",
         "corresponding": 0,
         "reverse_position": 2,
+        "affiliations": [
+            "Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada"
+        ],
     },
     {
         "pmcid": "PMC65048",
@@ -39,6 +42,9 @@ pcmid_to_authors["PMC65048"] = [
         "last_name": "Ikura",
         "corresponding": 1,
         "reverse_position": 1,
+        "affiliations": [
+            "Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada"
+        ],
     },
 ]
 pcmid_to_authors["PMC1183515"] = [
@@ -49,6 +55,9 @@ pcmid_to_authors["PMC1183515"] = [
         "last_name": "Shakhnovich",
         "corresponding": 1,
         "reverse_position": 1,
+        "affiliations": [
+            "Bioinformatics Program, Boston University, Boston, Massachusetts, United States of America"
+        ],
     }
 ]
 pcmid_to_authors["PMC5870622"] = [
@@ -59,6 +68,10 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Pang",
         "corresponding": 0,
         "reverse_position": 13,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
+            "Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -67,6 +80,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Kelpin",
         "corresponding": 0,
         "reverse_position": 12,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -75,6 +91,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "van Enckevort",
         "corresponding": 0,
         "reverse_position": 11,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -83,6 +102,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Eklund",
         "corresponding": 0,
         "reverse_position": 10,
+        "affiliations": [
+            "Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -91,6 +113,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Silander",
         "corresponding": 0,
         "reverse_position": 9,
+        "affiliations": [
+            "Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -99,6 +124,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Hendriksen",
         "corresponding": 0,
         "reverse_position": 8,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -107,6 +135,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "de Haan",
         "corresponding": 0,
         "reverse_position": 7,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -115,6 +146,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Jetten",
         "corresponding": 0,
         "reverse_position": 6,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -123,6 +157,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "de Boer",
         "corresponding": 0,
         "reverse_position": 5,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -131,6 +168,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Charbon",
         "corresponding": 0,
         "reverse_position": 4,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -139,6 +179,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Holub",
         "corresponding": 0,
         "reverse_position": 3,
+        "affiliations": [
+            "Biobanking and BioMolecular Resources Research Infrastructure (BBMRI-ERIC), Graz, Austria"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -147,6 +190,9 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Hillege",
         "corresponding": 0,
         "reverse_position": 2,
+        "affiliations": [
+            "Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+        ],
     },
     {
         "pmcid": "PMC5870622",
@@ -155,6 +201,10 @@ pcmid_to_authors["PMC5870622"] = [
         "last_name": "Swertz",
         "corresponding": 1,
         "reverse_position": 1,
+        "affiliations": [
+            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
+            "Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
+        ],
     },
 ]
 

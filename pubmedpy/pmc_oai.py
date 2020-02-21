@@ -74,6 +74,16 @@ def _contrib_elem_is_corresp(contrib_elem):
     return contrib_elem.get("corresp", "no") == "yes"
 
 
+def _get_id_to_affiliation(article) -> dict:
+    aff_elems = article.findall("{*}front/{*}article-meta/{*}aff")
+    id_to_affiliation = dict()
+    for elem in aff_elems:
+        texts = [elem.text, *(child.tail for child in elem), elem.tail]
+        affiliation = "".join(x.strip() for x in texts)
+        id_to_affiliation[elem.get("id")] = affiliation
+    return id_to_affiliation
+
+
 def extract_authors_from_article(article):
     """
     Extract author information from frontmatter XML into a list of dictionaries.
@@ -84,8 +94,12 @@ def extract_authors_from_article(article):
     contrib_elems = article.findall(
         "{*}front/{*}article-meta/{*}contrib-group/{*}contrib[@contrib-type='author']"
     )
+    id_to_affiliation = _get_id_to_affiliation(article)
     authors = []
     for i, contrib_elem in enumerate(contrib_elems):
+        aff_ids = [
+            aff.get("rid") for aff in contrib_elem.findall("{*}xref[@ref-type='aff']")
+        ]
         authors.append(
             {
                 "pmcid": pmcid,
@@ -94,6 +108,7 @@ def extract_authors_from_article(article):
                 "last_name": contrib_elem.findtext("{*}name/{*}surname"),
                 "corresponding": int(_contrib_elem_is_corresp(contrib_elem)),
                 "reverse_position": len(contrib_elems) - i,
+                "affiliations": [id_to_affiliation[aff_id] for aff_id in aff_ids],
             }
         )
     return authors
