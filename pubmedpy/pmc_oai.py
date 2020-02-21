@@ -104,8 +104,8 @@ def extract_authors_from_article(article):
             {
                 "pmcid": pmcid,
                 "position": i + 1,
-                "fore_name": contrib_elem.findtext("{*}name/{*}given-names"),
-                "last_name": contrib_elem.findtext("{*}name/{*}surname"),
+                "fore_name": contrib_elem.findtext("{*}name/{*}given-names").strip(),
+                "last_name": contrib_elem.findtext("{*}name/{*}surname").strip(),
                 "corresponding": int(_contrib_elem_is_corresp(contrib_elem)),
                 "reverse_position": len(contrib_elems) - i,
                 "affiliations": [id_to_affiliation[aff_id] for aff_id in aff_ids],
