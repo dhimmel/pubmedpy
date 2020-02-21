@@ -91,7 +91,7 @@
 	</Item>
 	<Item Name="References" Type="List"/>
 	<Item Name="HasAbstract" Type="Integer">1</Item>
-	<Item Name="PmcRefCount" Type="Integer">15</Item>
+	<Item Name="PmcRefCount" Type="Integer">16</Item>
 	<Item Name="FullJournalName" Type="String">PLoS computational biology</Item>
 	<Item Name="ELocationID" Type="String">doi: 10.1371/journal.pcbi.1004259</Item>
 	<Item Name="SO" Type="String">2015 Jul;11(7):e1004259</Item>
@@ -257,7 +257,7 @@
 		<Item Name="Comment in" Type="String">Nat Biotechnol. 2015 Jul;33(7):720-1. PMID: 26154012</Item>
 	</Item>
 	<Item Name="HasAbstract" Type="Integer">1</Item>
-	<Item Name="PmcRefCount" Type="Integer">170</Item>
+	<Item Name="PmcRefCount" Type="Integer">196</Item>
 	<Item Name="FullJournalName" Type="String">Nature genetics</Item>
 	<Item Name="ELocationID" Type="String">doi: 10.1038/ng.3259</Item>
 	<Item Name="SO" Type="String">2015 Jun;47(6):569-76</Item>

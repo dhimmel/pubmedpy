@@ -1,0 +1,141 @@
+<article xmlns="https://jats.nlm.nih.gov/ns/archiving/1.2/" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0/" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.2/ https://jats.nlm.nih.gov/archiving/1.2/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">PLoS Comput Biol</journal-id>
+      <journal-id journal-id-type="iso-abbrev">PLoS Comput. Biol</journal-id>
+      <journal-id journal-id-type="publisher-id">pcbi</journal-id>
+      <journal-id journal-id-type="publisher-id">plcb</journal-id>
+      <journal-id journal-id-type="pmc">ploscomp</journal-id>
+      <journal-title-group>
+        <journal-title>PLoS Computational Biology</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1553-734X</issn>
+      <issn pub-type="epub">1553-7358</issn>
+      <publisher>
+        <publisher-name>Public Library of Science</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC1183515</article-id>
+      <article-id pub-id-type="pmcid">PMC1183515</article-id>
+      <article-id pub-id-type="pmc-uid">1183515</article-id>
+      <article-id pub-id-type="pmid">16103910</article-id>
+      <article-id pub-id-type="pmid">16103910</article-id>
+      <article-id pub-id-type="doi">10.1371/journal.pcbi.0010009</article-id>
+      <article-id pub-id-type="publisher-id">05-PLCB-RA-0038R2</article-id>
+      <article-id pub-id-type="sici">plcb-01-01-09</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="Discipline">
+          <subject>Bioinformatics - Computational Biology</subject>
+          <subject>Genetics/Functional Genomics</subject>
+          <subject>Molecular Biology - Structural Biology</subject>
+        </subj-group>
+        <subj-group subj-group-type="System Taxonomy">
+          <subject>Structural Genomics</subject>
+          <subject>PDUG</subject>
+          <subject>Structure-Function</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>
+Improving the Precision of the Structure–Function Relationship by Considering Phylogenetic Context
+        </article-title>
+        <alt-title alt-title-type="running-head">Structure-Function Relationship in Context</alt-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Shakhnovich</surname>
+            <given-names>Boris E</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1"/>
+          <xref ref-type="corresp" rid="cor1"/>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1">
+Bioinformatics Program, Boston University, Boston, Massachusetts, United States of America
+      </aff>
+      <contrib-group>...</contrib-group>
+      <aff id="edit1">
+University of California at San Diego, United States of America
+      </aff>
+      <author-notes>
+        <corresp id="cor1">
+E-mail:
+          <email>borya@acs.bu.edu</email>
+        </corresp>
+      </author-notes>
+      <pub-date pub-type="ppub">
+        <month>6</month>
+        <year>2005</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>24</day>
+        <month>6</month>
+        <year>2005</year>
+      </pub-date>
+      <volume>1</volume>
+      <issue>1</issue>
+      <elocation-id>e9</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>28</day>
+          <month>2</month>
+          <year>2005</year>
+        </date>
+        <date date-type="accepted">
+          <day>23</day>
+          <month>5</month>
+          <year>2005</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Copyright: © 2005 Boris E. Shakhnovich.</copyright-statement>
+        <copyright-year>2005</copyright-year>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>
+This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are properly credited.
+          </license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>
+Understanding the relationship between protein structure and function is one of the foremost challenges in post-genomic biology. Higher conservation of structure could, in principle, allow researchers to extend current limitations of annotation. However, despite significant research in the area, a precise and quantitative relationship between biochemical function and protein structure has been elusive. Attempts to draw an unambiguous link have often been complicated by pleiotropy, variable transcriptional control, and adaptations to genomic context, all of which adversely affect simple definitions of function. In this paper, I report that integrating genomic information can be used to clarify the link between protein structure and function. First, I present a novel measure of functional proximity between protein structures (F-score). Then, using F-score and other entirely automatic methods measuring structure and phylogenetic similarity, I present a three-dimensional landscape describing their inter-relationship. The result is a “well-shaped” landscape that demonstrates the added value of considering genomic context in inferring function from structural homology. A generalization of methodology presented in this paper can be used to improve the precision of annotation of genes in current and newly sequenced genomes.
+        </p>
+      </abstract>
+      <abstract abstract-type="synopsis">
+        <title>Synopsis</title>
+        <sec id="st1">
+          <title/>
+          <p>
+The author provides a novel perspective on a key problem of structural biology: the structure–function relationship in proteins. While relatedness in protein structure correlates with general description of function, attempts to use this relationship predictively are often complicated by its ambiguous nature. A structure encoded by a family of sequences may be implicated in a set of diverse functions across a variety of organisms. The author outlines an innovative approach that underlines the importance of considering genomic context when using structure-comparison methods for functional prediction.
+          </p>
+          <p>
+First, the author defines two distance measures: in genomic space and in function space. Then, the author describes a landscape of functional distance based on both structural and phylogenetic relatedness.
+          </p>
+          <p>
+It turns out that this landscape forms a “functional well” where proximity occurs when the structures are similar and occur in the same set of genomes. This result may have implications in future research into functional prediction. With the increasing pace of sequence deposition into databanks, this result suggests a simple way to improve functional prediction via structure homology by complementing existing methods with emerging techniques from comparative genomics.
+          </p>
+        </sec>
+      </abstract>
+      <counts>
+        <page-count count="4"/>
+      </counts>
+      <custom-meta-group>
+        <custom-meta>
+          <meta-name>Citation:</meta-name>
+          <meta-value>
+Shakhnovich BE (2005) Improving the precision of the structure–function relationship by considering phylogenetic context. PLoS Comput Biol 1(1): e9.
+          </meta-value>
+        </custom-meta>
+      </custom-meta-group>
+    </article-meta>
+  </front>
+</article>

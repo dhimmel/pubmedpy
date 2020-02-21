@@ -8,9 +8,9 @@
             <Day>06</Day>
         </DateCompleted>
         <DateRevised>
-            <Year>2017</Year>
-            <Month>01</Month>
-            <Day>07</Day>
+            <Year>2019</Year>
+            <Month>12</Month>
+            <Day>10</Day>
         </DateRevised>
         <Article PubModel="Print">
             <Journal>
@@ -65,7 +65,7 @@
         <CitationSubset>IM</CitationSubset>
         <MeshHeadingList>
             <MeshHeading>
-                <DescriptorName UI="D015986" MajorTopicYN="N">Confounding Factors (Epidemiology)</DescriptorName>
+                <DescriptorName UI="D015986" MajorTopicYN="N">Confounding Factors, Epidemiologic</DescriptorName>
             </MeshHeading>
             <MeshHeading>
                 <DescriptorName UI="D053263" MajorTopicYN="Y">Gene Regulatory Networks</DescriptorName>
@@ -146,9 +146,9 @@
             <Day>22</Day>
         </DateCompleted>
         <DateRevised>
-            <Year>2018</Year>
+            <Year>2019</Year>
             <Month>11</Month>
-            <Day>13</Day>
+            <Day>26</Day>
         </DateRevised>
         <Article PubModel="Electronic-eCollection">
             <Journal>
@@ -193,6 +193,12 @@
             <Language>eng</Language>
             <GrantList CompleteYN="Y">
                 <Grant>
+                    <GrantID>R01 NS088155</GrantID>
+                    <Acronym>NS</Acronym>
+                    <Agency>NINDS NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+                <Grant>
                     <GrantID>T32 EB009383</GrantID>
                     <Acronym>EB</Acronym>
                     <Agency>NIBIB NIH HHS</Agency>
@@ -202,12 +208,6 @@
                     <GrantID>T32 GM067547</GrantID>
                     <Acronym>GM</Acronym>
                     <Agency>NIGMS NIH HHS</Agency>
-                    <Country>United States</Country>
-                </Grant>
-                <Grant>
-                    <GrantID>R01 NS088155</GrantID>
-                    <Acronym>NS</Acronym>
-                    <Agency>NINDS NIH HHS</Agency>
                     <Country>United States</Country>
                 </Grant>
             </GrantList>

@@ -69,7 +69,7 @@ def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):
 
 
 def _contrib_elem_is_corresp(contrib_elem):
-    if contrib_elem.find("{*}xref[@ref-type='corresp']"):
+    if contrib_elem.find("{*}xref[@ref-type='corresp']") is not None:
         return True
     return contrib_elem.get("corresp", "no") == "yes"
 

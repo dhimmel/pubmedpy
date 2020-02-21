@@ -1,0 +1,113 @@
+<article xmlns="https://jats.nlm.nih.gov/ns/archiving/1.2/" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.2/ https://jats.nlm.nih.gov/archiving/1.2/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">BMC Bioinformatics</journal-id>
+      <journal-title-group>
+        <journal-title>BMC Bioinformatics</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">1471-2105</issn>
+      <publisher>
+        <publisher-name>BioMed Central</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC65048</article-id>
+      <article-id pub-id-type="pmcid">PMC65048</article-id>
+      <article-id pub-id-type="pmc-uid">65048</article-id>
+      <article-id pub-id-type="pmid">11818024</article-id>
+      <article-id pub-id-type="publisher-id">1471-2105-3-1</article-id>
+      <article-id pub-id-type="pmid">11818024</article-id>
+      <article-id pub-id-type="doi">10.1186/1471-2105-3-1</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Methodology article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>
+Identification and characterization of subfamily-specific signatures in a large protein superfamily by a hidden Markov model approach
+        </article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="A1">
+          <name>
+            <surname>Truong</surname>
+            <given-names>Kevin</given-names>
+          </name>
+          <xref ref-type="aff" rid="I1">1</xref>
+          <email>ktruong@uhnres.utoronto.ca</email>
+        </contrib>
+        <contrib contrib-type="author" corresp="yes" id="A2">
+          <name>
+            <surname>Ikura</surname>
+            <given-names>Mitsuhiko</given-names>
+          </name>
+          <xref ref-type="aff" rid="I1">1</xref>
+          <email>mikura@uhnres.utoronto.ca</email>
+        </contrib>
+      </contrib-group>
+      <aff id="I1">
+        <label>1</label>
+Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada
+      </aff>
+      <pub-date pub-type="collection">
+        <year>2002</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>10</day>
+        <month>1</month>
+        <year>2002</year>
+      </pub-date>
+      <volume>3</volume>
+      <fpage>1</fpage>
+      <lpage>1</lpage>
+      <history>
+        <date date-type="received">
+          <day>17</day>
+          <month>8</month>
+          <year>2001</year>
+        </date>
+        <date date-type="accepted">
+          <day>10</day>
+          <month>1</month>
+          <year>2002</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>
+Copyright ©2002 Truong and Ikura; licensee BioMed Central Ltd. This is an Open Access article: verbatim copying and redistribution of this article are permitted in all media for any purpose, provided this notice is preserved along with the article's original URL.
+        </copyright-statement>
+        <copyright-year>2002</copyright-year>
+        <copyright-holder>
+Truong and Ikura; licensee BioMed Central Ltd. This is an Open Access article: verbatim copying and redistribution of this article are permitted in all media for any purpose, provided this notice is preserved along with the article's original URL.
+        </copyright-holder>
+      </permissions>
+      <self-uri xlink:href="http://www.biomedcentral.com/1471-2105/3/1"/>
+      <abstract>
+        <sec>
+          <title>Background</title>
+          <p>
+Most profile and motif databases strive to classify protein sequences into a broad spectrum of protein families. The next step of such database studies should include the development of classification systems capable of distinguishing between subfamilies within a structurally and functionally diverse superfamily. This would be helpful in elucidating sequence-structure-function relationships of proteins.
+          </p>
+        </sec>
+        <sec>
+          <title>Results</title>
+          <p>
+Here, we present a method to diagnose sequences into subfamilies by employing hidden Markov models (HMMs) to find windows of residues that are distinct among subfamilies (called signatures). The method starts with a multiple sequence alignment (MSA) of the subfamily. Then, we build a HMM database representing all sliding windows of the MSA of a fixed size. Finally, we construct a HMM histogram of the matches of each sliding window in the entire superfamily. To illustrate the efficacy of the method, we have applied the analysis to find subfamily signatures in two well-studied superfamilies: the cadherin and the EF-hand protein superfamilies. As a corollary, the HMM histograms of the analyzed subfamilies revealed information about their Ca
+            <sup>2+</sup>
+binding sites and loops.
+          </p>
+        </sec>
+        <sec>
+          <title>Conclusions</title>
+          <p>
+The method is used to create HMM databases to diagnose subfamilies of protein superfamilies that complement broad profile and motif databases such as BLOCKS, PROSITE, Pfam, SMART, PRINTS and InterPro.
+          </p>
+        </sec>
+      </abstract>
+    </article-meta>
+  </front>
+</article>
