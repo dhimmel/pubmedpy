@@ -8,9 +8,9 @@ from lxml import etree
 
 
 _encoding_to_module = {
-    'gzip': 'gzip',
-    'bzip2': 'bz2',
-    'xz': 'lzma',
+    "gzip": "gzip",
+    "bzip2": "bz2",
+    "xz": "lzma",
 }
 
 
@@ -28,10 +28,10 @@ def iterparse_xml(path):
         opener = importlib.import_module(module).open
 
     # Open file and yield from the element tree
-    with opener(path, 'rb') as read_file:
-        context = etree.iterparse(read_file, events=('start', 'end'))
+    with opener(path, "rb") as read_file:
+        context = etree.iterparse(read_file, events=("start", "end"))
         yield next(context)[1]
-        yield from (elem for event, elem in context if event == 'end')
+        yield from (elem for event, elem in context if event == "end")
 
 
 def iter_extract_elems(path, tag):
@@ -56,7 +56,7 @@ def yield_etrees_from_zip(path):
     """
     with zipfile.ZipFile(path) as zip_file:
         for name in zip_file.namelist():
-            if not name.endswith('.xml'):
+            if not name.endswith(".xml"):
                 continue
             with zip_file.open(name) as read_file:
                 element_tree = etree.parse(read_file)

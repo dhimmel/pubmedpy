@@ -17,12 +17,14 @@ namespaces = {
     "dtd": "https://dtd.nlm.nih.gov/ns/archiving/2.3/",
 }
 
+
 @functools.lru_cache()
 def get_sickle():
     """
     Return a sickle OAI harvester for PMC
     """
     import sickle
+
     return sickle.Sickle(endpoint=endpoint)
 
 
@@ -31,10 +33,12 @@ def get_sets_for_pmcid(pmcid):
     Return the OAI sets specified to include the provided PMC identifier.
     """
     pmcid = str(pmcid)
-    if pmcid.upper().startswith('PMC'):
+    if pmcid.upper().startswith("PMC"):
         pmcid = pmcid[3:]
     sickler = get_sickle()
-    record = sickler.GetRecord(identifier=f"oai:pubmedcentral.nih.gov:{pmcid}", metadataPrefix='pmc_fm')
+    record = sickler.GetRecord(
+        identifier=f"oai:pubmedcentral.nih.gov:{pmcid}", metadataPrefix="pmc_fm"
+    )
     return record.header.setSpecs
 
 
@@ -44,39 +48,52 @@ def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):
     frontmatter XML for a single article from the set.
     """
     import lxml.etree
+
     sickler = get_sickle()
-    zip_file = zipfile.ZipFile(path, mode='w', compression=zipfile.ZIP_LZMA)
-    records = sickler.ListRecords(metadataPrefix="pmc_fm", set=oai_set, ignore_deleted=True)
+    zip_file = zipfile.ZipFile(path, mode="w", compression=zipfile.ZIP_LZMA)
+    records = sickler.ListRecords(
+        metadataPrefix="pmc_fm", set=oai_set, ignore_deleted=True
+    )
     if tqdm is not None:
         records = tqdm(records, total=n_records, desc=oai_set)
     for record in records:
         article = record.xml.find("oai:metadata/{*}article", namespaces=namespaces)
         if article is None:
-            logging.warning(f'failure to extract <article> from\n{record.raw}')
-        pmcid = article.findtext("{*}front/{*}article-meta/{*}article-id[@pub-id-type='pmcid']")
-        xml_str = lxml.etree.tostring(article, encoding='unicode')
-        zip_file.writestr(f'{pmcid}.xml', data=xml_str)
+            logging.warning(f"failure to extract <article> from\n{record.raw}")
+        pmcid = article.findtext(
+            "{*}front/{*}article-meta/{*}article-id[@pub-id-type='pmcid']"
+        )
+        xml_str = lxml.etree.tostring(article, encoding="unicode")
+        zip_file.writestr(f"{pmcid}.xml", data=xml_str)
     zip_file.close()
+
+
+def _contrib_elem_is_corresp(contrib_elem):
+    if contrib_elem.find("{*}xref[@ref-type='corresp']"):
+        return True
+    return contrib_elem.get("corresp", "no") == "yes"
 
 
 def extract_authors_from_article(article):
     """
     Extract author information from frontmatter XML into a list of dictionaries.
     """
-    pmcid = article.findtext("{*}front/{*}article-meta/{*}article-id[@pub-id-type='pmcid']")
-    contrib_elems = article.findall("{*}front/{*}article-meta/{*}contrib-group/{*}contrib[@contrib-type='author']")
+    pmcid = article.findtext(
+        "{*}front/{*}article-meta/{*}article-id[@pub-id-type='pmcid']"
+    )
+    contrib_elems = article.findall(
+        "{*}front/{*}article-meta/{*}contrib-group/{*}contrib[@contrib-type='author']"
+    )
     authors = []
     for i, contrib_elem in enumerate(contrib_elems):
-        corresponding = (
-            contrib_elem.find("{*}xref[@ref-type='corresp']") is not None
-            or contrib_elem.get('corresp', 'no') == 'yes'
+        authors.append(
+            {
+                "pmcid": pmcid,
+                "position": i + 1,
+                "fore_name": contrib_elem.findtext("{*}name/{*}given-names"),
+                "last_name": contrib_elem.findtext("{*}name/{*}surname"),
+                "corresponding": int(_contrib_elem_is_corresp(contrib_elem)),
+                "reverse_position": len(contrib_elems) - i,
+            }
         )
-        authors.append({
-            'pmcid': pmcid,
-            'position': i + 1,
-            'fore_name': contrib_elem.findtext("{*}name/{*}given-names"),
-            'last_name': contrib_elem.findtext("{*}name/{*}surname"),
-            'corresponding': int(corresponding),
-            'reverse_position': len(contrib_elems) - i,
-        })
     return authors

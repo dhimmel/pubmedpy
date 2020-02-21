@@ -15,7 +15,7 @@ def simplify_fore_name(name, lower=False):
     if pandas.isna(name):
         return None
     assert isinstance(name, str)
-    name_ = name.replace('.', ' ')
+    name_ = name.replace(".", " ")
     words = name_.split()
     for word in words:
         word = word.strip(string.punctuation)
