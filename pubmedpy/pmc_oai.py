@@ -100,7 +100,7 @@ def extract_authors_from_article(article):
         fore_name = contrib_elem.findtext("{*}name/{*}given-names")
         last_name = contrib_elem.findtext("{*}name/{*}surname")
         aff_ids = [
-            aff.get("rid") for aff in contrib_elem.findall("{*}xref[@ref-type='aff']")
+            aff.attrib["rid"] for aff in contrib_elem.findall("{*}xref[@rid][@ref-type='aff']")
         ]
         authors.append(
             {
