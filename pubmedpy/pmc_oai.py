@@ -75,7 +75,7 @@ def _contrib_elem_is_corresp(contrib_elem):
 
 
 def _get_id_to_affiliation(article) -> dict:
-    aff_elems = article.findall("{*}front/{*}article-meta/{*}aff")
+    aff_elems = article.findall("{*}front/{*}article-meta//{*}aff")
     id_to_affiliation = dict()
     for elem in aff_elems:
         texts = [elem.text, *(child.tail for child in elem), elem.tail]

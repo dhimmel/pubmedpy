@@ -1,5 +1,7 @@
 import pathlib
 
+from lxml import etree
+import requests
 import pytest
 
 from ..pmc_oai import get_sets_for_pmcid, extract_authors_from_article
@@ -15,11 +17,17 @@ def test_get_sets_for_pmcid():
 
 
 def get_frontmatter_etree(pmcid):
-    from lxml import etree
-
     frontmatter_dir = directory.joinpath("data", "pmc-frontmatter")
     text = frontmatter_dir.joinpath(f"{pmcid}.xml").read_text(encoding="utf-8-sig")
     return etree.fromstring(text)
+
+
+def get_frontmatter_etree_via_api(pmcid):
+    url = f"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:{pmcid[3:]}&metadataPrefix=pmc_fm"
+    response = requests.get(url)
+    tree = etree.fromstring(response.content)
+    article = tree.find("{*}GetRecord/{*}record/{*}metadata/{*}article")
+    return article
 
 
 pcmid_to_authors = dict()
@@ -225,3 +233,14 @@ def test_extract_authors_from_article(pmcid, expected):
     authors = extract_authors_from_article(article)
     print(authors)
     assert authors == expected
+
+
+def test_extract_authors_from_article_PMC3003546():
+    """
+    aff is a child of contrib-group rather than article-meta for PMC3003546
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3003546&metadataPrefix=pmc_fm
+    """
+    pmcid = "PMC3003546"
+    article = get_frontmatter_etree_via_api(pmcid)
+    authors = extract_authors_from_article(article)
+    assert "University of California San Diego" in authors[0]['affiliations'][0]
