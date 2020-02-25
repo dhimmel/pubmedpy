@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/b5d7c8cd15da9dfb8cb4be00486a68424e24dfb1/pubmedpy/tests/test_pmc_oai.py#L0-L222" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/tests/test_pmc_oai.py#L0-L226" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import pathlib
 
@@ -244,6 +244,10 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
     ],
 )
 def test_extract_authors_from_article(pmcid, expected):
+    &#34;&#34;&#34;
+    NOTE: PMC2373917 is an example of where affiliations are encoded in a non-semantic way.
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:2373917&amp;metadataPrefix=pmc_fm
+    &#34;&#34;&#34;
     article = get_frontmatter_etree(pmcid)
     authors = extract_authors_from_article(article)
     print(authors)
@@ -265,7 +269,7 @@ def test_extract_authors_from_article(pmcid, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/b5d7c8cd15da9dfb8cb4be00486a68424e24dfb1/pubmedpy/tests/test_pmc_oai.py#L17-L22" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/tests/test_pmc_oai.py#L17-L22" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def get_frontmatter_etree(pmcid):
     from lxml import etree
@@ -279,11 +283,12 @@ def test_extract_authors_from_article(pmcid, expected):
 <span>def <span class="ident">test_extract_authors_from_article</span></span>(<span>pmcid, expected)</span>
 </code></dt>
 <dd>
-<section class="desc"></section>
+<section class="desc"><p>NOTE: PMC2373917 is an example of where affiliations are encoded in a non-semantic way.
+<a href="https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:2373917&amp;metadataPrefix=pmc_fm">https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:2373917&amp;metadataPrefix=pmc_fm</a></p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/b5d7c8cd15da9dfb8cb4be00486a68424e24dfb1/pubmedpy/tests/test_pmc_oai.py#L212-L223" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/tests/test_pmc_oai.py#L212-L227" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">@pytest.mark.parametrize(
     [&#34;pmcid&#34;, &#34;expected&#34;],
@@ -293,6 +298,10 @@ def test_extract_authors_from_article(pmcid, expected):
     ],
 )
 def test_extract_authors_from_article(pmcid, expected):
+    &#34;&#34;&#34;
+    NOTE: PMC2373917 is an example of where affiliations are encoded in a non-semantic way.
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:2373917&amp;metadataPrefix=pmc_fm
+    &#34;&#34;&#34;
     article = get_frontmatter_etree(pmcid)
     authors = extract_authors_from_article(article)
     print(authors)
@@ -307,7 +316,7 @@ def test_extract_authors_from_article(pmcid, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/b5d7c8cd15da9dfb8cb4be00486a68424e24dfb1/pubmedpy/tests/test_pmc_oai.py#L11-L14" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/tests/test_pmc_oai.py#L11-L14" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_get_sets_for_pmcid():
     set_specs = get_sets_for_pmcid(&#34;PMC2092437&#34;)
