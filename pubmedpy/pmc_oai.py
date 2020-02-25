@@ -79,7 +79,7 @@ def _get_id_to_affiliation(article) -> dict:
     id_to_affiliation = dict()
     for elem in aff_elems:
         texts = [elem.text, *(child.tail for child in elem), elem.tail]
-        affiliation = "".join(x.strip() for x in texts)
+        affiliation = "".join(x.strip() for x in texts if x)
         id_to_affiliation[elem.get("id")] = affiliation
     return id_to_affiliation
 
@@ -97,6 +97,8 @@ def extract_authors_from_article(article):
     id_to_affiliation = _get_id_to_affiliation(article)
     authors = []
     for i, contrib_elem in enumerate(contrib_elems):
+        fore_name = contrib_elem.findtext("{*}name/{*}given-names")
+        last_name = contrib_elem.findtext("{*}name/{*}surname")
         aff_ids = [
             aff.get("rid") for aff in contrib_elem.findall("{*}xref[@ref-type='aff']")
         ]
@@ -104,11 +106,18 @@ def extract_authors_from_article(article):
             {
                 "pmcid": pmcid,
                 "position": i + 1,
-                "fore_name": contrib_elem.findtext("{*}name/{*}given-names").strip(),
-                "last_name": contrib_elem.findtext("{*}name/{*}surname").strip(),
+                "fore_name": _strip_str(fore_name),
+                "last_name": _strip_str(last_name),
                 "corresponding": int(_contrib_elem_is_corresp(contrib_elem)),
                 "reverse_position": len(contrib_elems) - i,
                 "affiliations": [id_to_affiliation[aff_id] for aff_id in aff_ids],
             }
         )
     return authors
+
+
+def _strip_str(value):
+    """Strip whitespace if value is a string."""
+    if isinstance(value, str):
+        value = value.strip()
+    return value

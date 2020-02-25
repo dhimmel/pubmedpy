@@ -217,6 +217,10 @@ pcmid_to_authors["PMC5870622"] = [
     ],
 )
 def test_extract_authors_from_article(pmcid, expected):
+    """
+    NOTE: PMC2373917 is an example of where affiliations are encoded in a non-semantic way.
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:2373917&metadataPrefix=pmc_fm
+    """
     article = get_frontmatter_etree(pmcid)
     authors = extract_authors_from_article(article)
     print(authors)
