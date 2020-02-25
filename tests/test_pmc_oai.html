@@ -23,10 +23,12 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/tests/test_pmc_oai.py#L0-L226" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/tests/test_pmc_oai.py#L0-L245" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import pathlib
 
+from lxml import etree
+import requests
 import pytest
 
 from ..pmc_oai import get_sets_for_pmcid, extract_authors_from_article
@@ -42,11 +44,17 @@ def test_get_sets_for_pmcid():
 
 
 def get_frontmatter_etree(pmcid):
-    from lxml import etree
-
     frontmatter_dir = directory.joinpath(&#34;data&#34;, &#34;pmc-frontmatter&#34;)
     text = frontmatter_dir.joinpath(f&#34;{pmcid}.xml&#34;).read_text(encoding=&#34;utf-8-sig&#34;)
     return etree.fromstring(text)
+
+
+def get_frontmatter_etree_via_api(pmcid):
+    url = f&#34;https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:{pmcid[3:]}&amp;metadataPrefix=pmc_fm&#34;
+    response = requests.get(url)
+    tree = etree.fromstring(response.content)
+    article = tree.find(&#34;{*}GetRecord/{*}record/{*}metadata/{*}article&#34;)
+    return article
 
 
 pcmid_to_authors = dict()
@@ -251,7 +259,18 @@ def test_extract_authors_from_article(pmcid, expected):
     article = get_frontmatter_etree(pmcid)
     authors = extract_authors_from_article(article)
     print(authors)
-    assert authors == expected</code></pre>
+    assert authors == expected
+
+
+def test_extract_authors_from_article_PMC3003546():
+    &#34;&#34;&#34;
+    aff is a child of contrib-group rather than article-meta for PMC3003546
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:3003546&amp;metadataPrefix=pmc_fm
+    &#34;&#34;&#34;
+    pmcid = &#34;PMC3003546&#34;
+    article = get_frontmatter_etree_via_api(pmcid)
+    authors = extract_authors_from_article(article)
+    assert &#34;University of California San Diego&#34; in authors[0][&#39;affiliations&#39;][0]</code></pre>
 </details>
 </section>
 <section>
@@ -269,14 +288,30 @@ def test_extract_authors_from_article(pmcid, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/tests/test_pmc_oai.py#L17-L22" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/tests/test_pmc_oai.py#L19-L22" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def get_frontmatter_etree(pmcid):
-    from lxml import etree
-
     frontmatter_dir = directory.joinpath(&#34;data&#34;, &#34;pmc-frontmatter&#34;)
     text = frontmatter_dir.joinpath(f&#34;{pmcid}.xml&#34;).read_text(encoding=&#34;utf-8-sig&#34;)
     return etree.fromstring(text)</code></pre>
+</details>
+</dd>
+<dt id="pubmedpy.tests.test_pmc_oai.get_frontmatter_etree_via_api"><code class="name flex">
+<span>def <span class="ident">get_frontmatter_etree_via_api</span></span>(<span>pmcid)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/tests/test_pmc_oai.py#L25-L30" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_frontmatter_etree_via_api(pmcid):
+    url = f&#34;https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:{pmcid[3:]}&amp;metadataPrefix=pmc_fm&#34;
+    response = requests.get(url)
+    tree = etree.fromstring(response.content)
+    article = tree.find(&#34;{*}GetRecord/{*}record/{*}metadata/{*}article&#34;)
+    return article</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article"><code class="name flex">
@@ -288,7 +323,7 @@ def test_extract_authors_from_article(pmcid, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/tests/test_pmc_oai.py#L212-L227" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/tests/test_pmc_oai.py#L220-L235" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">@pytest.mark.parametrize(
     [&#34;pmcid&#34;, &#34;expected&#34;],
@@ -308,6 +343,28 @@ def test_extract_authors_from_article(pmcid, expected):
     assert authors == expected</code></pre>
 </details>
 </dd>
+<dt id="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article_PMC3003546"><code class="name flex">
+<span>def <span class="ident">test_extract_authors_from_article_PMC3003546</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>aff is a child of contrib-group rather than article-meta for PMC3003546
+<a href="https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:3003546&amp;metadataPrefix=pmc_fm">https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:3003546&amp;metadataPrefix=pmc_fm</a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/tests/test_pmc_oai.py#L238-L246" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def test_extract_authors_from_article_PMC3003546():
+    &#34;&#34;&#34;
+    aff is a child of contrib-group rather than article-meta for PMC3003546
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:3003546&amp;metadataPrefix=pmc_fm
+    &#34;&#34;&#34;
+    pmcid = &#34;PMC3003546&#34;
+    article = get_frontmatter_etree_via_api(pmcid)
+    authors = extract_authors_from_article(article)
+    assert &#34;University of California San Diego&#34; in authors[0][&#39;affiliations&#39;][0]</code></pre>
+</details>
+</dd>
 <dt id="pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid"><code class="name flex">
 <span>def <span class="ident">test_get_sets_for_pmcid</span></span>(<span>)</span>
 </code></dt>
@@ -316,7 +373,7 @@ def test_extract_authors_from_article(pmcid, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/tests/test_pmc_oai.py#L11-L14" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/tests/test_pmc_oai.py#L13-L16" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_get_sets_for_pmcid():
     set_specs = get_sets_for_pmcid(&#34;PMC2092437&#34;)
@@ -343,7 +400,9 @@ def test_extract_authors_from_article(pmcid, expected):
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
 <li><code><a title="pubmedpy.tests.test_pmc_oai.get_frontmatter_etree" href="#pubmedpy.tests.test_pmc_oai.get_frontmatter_etree">get_frontmatter_etree</a></code></li>
+<li><code><a title="pubmedpy.tests.test_pmc_oai.get_frontmatter_etree_via_api" href="#pubmedpy.tests.test_pmc_oai.get_frontmatter_etree_via_api">get_frontmatter_etree_via_api</a></code></li>
 <li><code><a title="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article" href="#pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article">test_extract_authors_from_article</a></code></li>
+<li><code><a title="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article_PMC3003546" href="#pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article_PMC3003546">test_extract_authors_from_article_PMC3003546</a></code></li>
 <li><code><a title="pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid" href="#pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid">test_get_sets_for_pmcid</a></code></li>
 </ul>
 </li>

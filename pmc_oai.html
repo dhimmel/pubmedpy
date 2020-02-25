@@ -26,7 +26,7 @@ More information is available at <a href="https://www.ncbi.nlm.nih.gov/pmc/tools
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/pmc_oai.py#L0-L122" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/pmc_oai.py#L0-L122" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
 Functions for querying the PubMed Central OAI-PMH service (PMC-OAI).
@@ -105,7 +105,7 @@ def _contrib_elem_is_corresp(contrib_elem):
 
 
 def _get_id_to_affiliation(article) -&gt; dict:
-    aff_elems = article.findall(&#34;{*}front/{*}article-meta/{*}aff&#34;)
+    aff_elems = article.findall(&#34;{*}front/{*}article-meta//{*}aff&#34;)
     id_to_affiliation = dict()
     for elem in aff_elems:
         texts = [elem.text, *(child.tail for child in elem), elem.tail]
@@ -169,7 +169,7 @@ frontmatter XML for a single article from the set.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/pmc_oai.py#L45-L68" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/pmc_oai.py#L45-L68" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):
     &#34;&#34;&#34;
@@ -205,7 +205,7 @@ frontmatter XML for a single article from the set.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/pmc_oai.py#L87-L116" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/pmc_oai.py#L87-L116" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def extract_authors_from_article(article):
     &#34;&#34;&#34;
@@ -247,7 +247,7 @@ frontmatter XML for a single article from the set.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/pmc_oai.py#L31-L42" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/pmc_oai.py#L31-L42" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def get_sets_for_pmcid(pmcid):
     &#34;&#34;&#34;
@@ -271,7 +271,7 @@ frontmatter XML for a single article from the set.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/76d006d0c1ba26886d997d2fc9083c988cdc9655/pubmedpy/pmc_oai.py#L21-L28" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/92e542e17da863c395aa4892ad63fda131373845/pubmedpy/pmc_oai.py#L21-L28" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">@functools.lru_cache()
 def get_sickle():
