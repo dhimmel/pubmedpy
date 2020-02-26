@@ -26,7 +26,7 @@ More information is available at <a href="https://www.ncbi.nlm.nih.gov/pmc/tools
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/pmc_oai.py#L0-L122" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/pmc_oai.py#L0-L123" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
 Functions for querying the PubMed Central OAI-PMH service (PMC-OAI).
@@ -108,8 +108,8 @@ def _get_id_to_affiliation(article) -&gt; dict:
     aff_elems = article.findall(&#34;{*}front/{*}article-meta//{*}aff&#34;)
     id_to_affiliation = dict()
     for elem in aff_elems:
-        texts = [elem.text, *(child.tail for child in elem), elem.tail]
-        affiliation = &#34;&#34;.join(x.strip() for x in texts if x)
+        affiliation = &#34; &#34;.join(elem.itertext())
+        affiliation = &#34; &#34;.join(affiliation.split())  # standardize whitespace
         id_to_affiliation[elem.get(&#34;id&#34;)] = affiliation
     return id_to_affiliation
 
@@ -130,7 +130,8 @@ def extract_authors_from_article(article):
         fore_name = contrib_elem.findtext(&#34;{*}name/{*}given-names&#34;)
         last_name = contrib_elem.findtext(&#34;{*}name/{*}surname&#34;)
         aff_ids = [
-            aff.attrib[&#34;rid&#34;] for aff in contrib_elem.findall(&#34;{*}xref[@rid][@ref-type=&#39;aff&#39;]&#34;)
+            aff.attrib[&#34;rid&#34;]
+            for aff in contrib_elem.findall(&#34;{*}xref[@rid][@ref-type=&#39;aff&#39;]&#34;)
         ]
         authors.append(
             {
@@ -169,7 +170,7 @@ frontmatter XML for a single article from the set.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/pmc_oai.py#L45-L68" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/pmc_oai.py#L45-L68" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def download_frontmatter_set(oai_set, path, tqdm=None, n_records=None):
     &#34;&#34;&#34;
@@ -205,7 +206,7 @@ frontmatter XML for a single article from the set.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/pmc_oai.py#L87-L116" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/pmc_oai.py#L87-L117" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def extract_authors_from_article(article):
     &#34;&#34;&#34;
@@ -223,7 +224,8 @@ frontmatter XML for a single article from the set.</p></section>
         fore_name = contrib_elem.findtext(&#34;{*}name/{*}given-names&#34;)
         last_name = contrib_elem.findtext(&#34;{*}name/{*}surname&#34;)
         aff_ids = [
-            aff.attrib[&#34;rid&#34;] for aff in contrib_elem.findall(&#34;{*}xref[@rid][@ref-type=&#39;aff&#39;]&#34;)
+            aff.attrib[&#34;rid&#34;]
+            for aff in contrib_elem.findall(&#34;{*}xref[@rid][@ref-type=&#39;aff&#39;]&#34;)
         ]
         authors.append(
             {
@@ -247,7 +249,7 @@ frontmatter XML for a single article from the set.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/pmc_oai.py#L31-L42" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/pmc_oai.py#L31-L42" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def get_sets_for_pmcid(pmcid):
     &#34;&#34;&#34;
@@ -271,7 +273,7 @@ frontmatter XML for a single article from the set.</p></section>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/pmc_oai.py#L21-L28" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/pmc_oai.py#L21-L28" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">@functools.lru_cache()
 def get_sickle():

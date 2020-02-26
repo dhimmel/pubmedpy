@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/tests/test_pmc_oai.py#L0-L245" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/tests/test_pmc_oai.py#L0-L256" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import pathlib
 
@@ -67,7 +67,7 @@ pcmid_to_authors[&#34;PMC65048&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 2,
         &#34;affiliations&#34;: [
-            &#34;Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada&#34;
+            &#34;1 Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada&#34;
         ],
     },
     {
@@ -78,7 +78,7 @@ pcmid_to_authors[&#34;PMC65048&#34;] = [
         &#34;corresponding&#34;: 1,
         &#34;reverse_position&#34;: 1,
         &#34;affiliations&#34;: [
-            &#34;Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada&#34;
+            &#34;1 Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada&#34;
         ],
     },
 ]
@@ -104,8 +104,8 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 13,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;,
-            &#34;Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;,
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;,
+            &#34;2 Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;,
         ],
     },
     {
@@ -116,7 +116,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 12,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
         ],
     },
     {
@@ -127,7 +127,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 11,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
         ],
     },
     {
@@ -138,7 +138,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 10,
         &#34;affiliations&#34;: [
-            &#34;Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland&#34;
+            &#34;3 Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland&#34;
         ],
     },
     {
@@ -149,7 +149,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 9,
         &#34;affiliations&#34;: [
-            &#34;Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland&#34;
+            &#34;3 Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland&#34;
         ],
     },
     {
@@ -160,7 +160,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 8,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
         ],
     },
     {
@@ -171,7 +171,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 7,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
         ],
     },
     {
@@ -182,7 +182,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 6,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
         ],
     },
     {
@@ -193,7 +193,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 5,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
         ],
     },
     {
@@ -204,7 +204,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 4,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
         ],
     },
     {
@@ -215,7 +215,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 3,
         &#34;affiliations&#34;: [
-            &#34;Biobanking and BioMolecular Resources Research Infrastructure (BBMRI-ERIC), Graz, Austria&#34;
+            &#34;4 Biobanking and BioMolecular Resources Research Infrastructure (BBMRI-ERIC), Graz, Austria&#34;
         ],
     },
     {
@@ -226,7 +226,7 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 0,
         &#34;reverse_position&#34;: 2,
         &#34;affiliations&#34;: [
-            &#34;Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
+            &#34;2 Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;
         ],
     },
     {
@@ -237,8 +237,8 @@ pcmid_to_authors[&#34;PMC5870622&#34;] = [
         &#34;corresponding&#34;: 1,
         &#34;reverse_position&#34;: 1,
         &#34;affiliations&#34;: [
-            &#34;Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;,
-            &#34;Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;,
+            &#34;1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;,
+            &#34;2 Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands&#34;,
         ],
     },
 ]
@@ -270,7 +270,18 @@ def test_extract_authors_from_article_PMC3003546():
     pmcid = &#34;PMC3003546&#34;
     article = get_frontmatter_etree_via_api(pmcid)
     authors = extract_authors_from_article(article)
-    assert &#34;University of California San Diego&#34; in authors[0][&#39;affiliations&#39;][0]</code></pre>
+    assert &#34;University of California San Diego&#34; in authors[0][&#34;affiliations&#34;][0]
+
+
+def test_extract_authors_from_article_PMC4372613():
+    &#34;&#34;&#34;
+    Affiliation name is under &lt;aff&gt;&lt;addr-line&gt; for PMC4372613.
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:4372613&amp;metadataPrefix=pmc_fm
+    &#34;&#34;&#34;
+    pmcid = &#34;PMC4372613&#34;
+    article = get_frontmatter_etree_via_api(pmcid)
+    authors = extract_authors_from_article(article)
+    assert &#34;California Institute of Technology&#34; in authors[0][&#34;affiliations&#34;][0]</code></pre>
 </details>
 </section>
 <section>
@@ -288,7 +299,7 @@ def test_extract_authors_from_article_PMC3003546():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/tests/test_pmc_oai.py#L19-L22" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/tests/test_pmc_oai.py#L19-L22" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def get_frontmatter_etree(pmcid):
     frontmatter_dir = directory.joinpath(&#34;data&#34;, &#34;pmc-frontmatter&#34;)
@@ -304,7 +315,7 @@ def test_extract_authors_from_article_PMC3003546():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/tests/test_pmc_oai.py#L25-L30" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/tests/test_pmc_oai.py#L25-L30" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def get_frontmatter_etree_via_api(pmcid):
     url = f&#34;https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:{pmcid[3:]}&amp;metadataPrefix=pmc_fm&#34;
@@ -323,7 +334,7 @@ def test_extract_authors_from_article_PMC3003546():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/tests/test_pmc_oai.py#L220-L235" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/tests/test_pmc_oai.py#L220-L235" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">@pytest.mark.parametrize(
     [&#34;pmcid&#34;, &#34;expected&#34;],
@@ -352,7 +363,7 @@ def test_extract_authors_from_article(pmcid, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/tests/test_pmc_oai.py#L238-L246" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/tests/test_pmc_oai.py#L238-L246" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_extract_authors_from_article_PMC3003546():
     &#34;&#34;&#34;
@@ -362,7 +373,29 @@ def test_extract_authors_from_article(pmcid, expected):
     pmcid = &#34;PMC3003546&#34;
     article = get_frontmatter_etree_via_api(pmcid)
     authors = extract_authors_from_article(article)
-    assert &#34;University of California San Diego&#34; in authors[0][&#39;affiliations&#39;][0]</code></pre>
+    assert &#34;University of California San Diego&#34; in authors[0][&#34;affiliations&#34;][0]</code></pre>
+</details>
+</dd>
+<dt id="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article_PMC4372613"><code class="name flex">
+<span>def <span class="ident">test_extract_authors_from_article_PMC4372613</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Affiliation name is under <aff><addr-line> for PMC4372613.
+<a href="https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:4372613&amp;metadataPrefix=pmc_fm">https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:4372613&amp;metadataPrefix=pmc_fm</a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/tests/test_pmc_oai.py#L249-L257" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def test_extract_authors_from_article_PMC4372613():
+    &#34;&#34;&#34;
+    Affiliation name is under &lt;aff&gt;&lt;addr-line&gt; for PMC4372613.
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&amp;identifier=oai:pubmedcentral.nih.gov:4372613&amp;metadataPrefix=pmc_fm
+    &#34;&#34;&#34;
+    pmcid = &#34;PMC4372613&#34;
+    article = get_frontmatter_etree_via_api(pmcid)
+    authors = extract_authors_from_article(article)
+    assert &#34;California Institute of Technology&#34; in authors[0][&#34;affiliations&#34;][0]</code></pre>
 </details>
 </dd>
 <dt id="pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid"><code class="name flex">
@@ -373,7 +406,7 @@ def test_extract_authors_from_article(pmcid, expected):
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/4e716ac51c5550b33eff550cf47074b99f774b5e/pubmedpy/tests/test_pmc_oai.py#L13-L16" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/tests/test_pmc_oai.py#L13-L16" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_get_sets_for_pmcid():
     set_specs = get_sets_for_pmcid(&#34;PMC2092437&#34;)
@@ -403,6 +436,7 @@ def test_extract_authors_from_article(pmcid, expected):
 <li><code><a title="pubmedpy.tests.test_pmc_oai.get_frontmatter_etree_via_api" href="#pubmedpy.tests.test_pmc_oai.get_frontmatter_etree_via_api">get_frontmatter_etree_via_api</a></code></li>
 <li><code><a title="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article" href="#pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article">test_extract_authors_from_article</a></code></li>
 <li><code><a title="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article_PMC3003546" href="#pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article_PMC3003546">test_extract_authors_from_article_PMC3003546</a></code></li>
+<li><code><a title="pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article_PMC4372613" href="#pubmedpy.tests.test_pmc_oai.test_extract_authors_from_article_PMC4372613">test_extract_authors_from_article_PMC4372613</a></code></li>
 <li><code><a title="pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid" href="#pubmedpy.tests.test_pmc_oai.test_get_sets_for_pmcid">test_get_sets_for_pmcid</a></code></li>
 </ul>
 </li>
