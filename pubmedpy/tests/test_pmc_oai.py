@@ -40,7 +40,7 @@ pcmid_to_authors["PMC65048"] = [
         "corresponding": 0,
         "reverse_position": 2,
         "affiliations": [
-            "Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada"
+            "1 Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada"
         ],
     },
     {
@@ -51,7 +51,7 @@ pcmid_to_authors["PMC65048"] = [
         "corresponding": 1,
         "reverse_position": 1,
         "affiliations": [
-            "Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada"
+            "1 Division of Molecular and Structural Biology, Ontario Cancer Institute and Department of Medical Biophysics, University of Toronto, Toronto, Ontario, Canada"
         ],
     },
 ]
@@ -77,8 +77,8 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 13,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
-            "Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
+            "2 Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
         ],
     },
     {
@@ -89,7 +89,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 12,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
         ],
     },
     {
@@ -100,7 +100,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 11,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
         ],
     },
     {
@@ -111,7 +111,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 10,
         "affiliations": [
-            "Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland"
+            "3 Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland"
         ],
     },
     {
@@ -122,7 +122,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 9,
         "affiliations": [
-            "Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland"
+            "3 Department of Public Health Solutions, National Institute for Health and Welfare, Helsinki, Finland"
         ],
     },
     {
@@ -133,7 +133,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 8,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
         ],
     },
     {
@@ -144,7 +144,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 7,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
         ],
     },
     {
@@ -155,7 +155,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 6,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
         ],
     },
     {
@@ -166,7 +166,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 5,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
         ],
     },
     {
@@ -177,7 +177,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 4,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
         ],
     },
     {
@@ -188,7 +188,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 3,
         "affiliations": [
-            "Biobanking and BioMolecular Resources Research Infrastructure (BBMRI-ERIC), Graz, Austria"
+            "4 Biobanking and BioMolecular Resources Research Infrastructure (BBMRI-ERIC), Graz, Austria"
         ],
     },
     {
@@ -199,7 +199,7 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 0,
         "reverse_position": 2,
         "affiliations": [
-            "Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
+            "2 Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands"
         ],
     },
     {
@@ -210,8 +210,8 @@ pcmid_to_authors["PMC5870622"] = [
         "corresponding": 1,
         "reverse_position": 1,
         "affiliations": [
-            "Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
-            "Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
+            "1 Department of Genetics, Genomics Coordination Center, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
+            "2 Department of Epidemiology, University Medical Center Groningen, University of Groningen, Groningen, The Netherlands",
         ],
     },
 ]
@@ -243,4 +243,15 @@ def test_extract_authors_from_article_PMC3003546():
     pmcid = "PMC3003546"
     article = get_frontmatter_etree_via_api(pmcid)
     authors = extract_authors_from_article(article)
-    assert "University of California San Diego" in authors[0]['affiliations'][0]
+    assert "University of California San Diego" in authors[0]["affiliations"][0]
+
+
+def test_extract_authors_from_article_PMC4372613():
+    """
+    Affiliation name is under <aff><addr-line> for PMC4372613.
+    https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:4372613&metadataPrefix=pmc_fm
+    """
+    pmcid = "PMC4372613"
+    article = get_frontmatter_etree_via_api(pmcid)
+    authors = extract_authors_from_article(article)
+    assert "California Institute of Technology" in authors[0]["affiliations"][0]

@@ -78,8 +78,8 @@ def _get_id_to_affiliation(article) -> dict:
     aff_elems = article.findall("{*}front/{*}article-meta//{*}aff")
     id_to_affiliation = dict()
     for elem in aff_elems:
-        texts = [elem.text, *(child.tail for child in elem), elem.tail]
-        affiliation = "".join(x.strip() for x in texts if x)
+        affiliation = " ".join(elem.itertext())
+        affiliation = " ".join(affiliation.split())  # standardize whitespace
         id_to_affiliation[elem.get("id")] = affiliation
     return id_to_affiliation
 
@@ -100,7 +100,8 @@ def extract_authors_from_article(article):
         fore_name = contrib_elem.findtext("{*}name/{*}given-names")
         last_name = contrib_elem.findtext("{*}name/{*}surname")
         aff_ids = [
-            aff.attrib["rid"] for aff in contrib_elem.findall("{*}xref[@rid][@ref-type='aff']")
+            aff.attrib["rid"]
+            for aff in contrib_elem.findall("{*}xref[@rid][@ref-type='aff']")
         ]
         authors.append(
             {
