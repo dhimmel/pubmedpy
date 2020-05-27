@@ -104,17 +104,30 @@ def parse_esummary_pubdates(docsum):
     return pubdates
 
 
-def parse_esummary(elem):
+def parse_esummary_article_info(elem):
     """
-    Extract pubmed, journal, and date information from an eSummaryResult/DocSum
+    Extract general article informaiton
     """
     article = collections.OrderedDict()
     article["pubmed_id"] = int(elem.findtext("Id"))
     article["journal_nlm_id"] = elem.findtext("Item[@Name='NlmUniqueID']")
-    pubdates = parse_esummary_pubdates(elem)
-    article.update(pubdates)
-    history = parse_esummary_history(elem)
-    article.update(history)
+    article["journal"] = elem.findtext("Item[@Name='Source']")
+    article["title"] = elem.findtext("Item[@Name='Title']")
+    article["doi"] = elem.findtext("Item[@Name='DOI']")
+    # https://www.ncbi.nlm.nih.gov/books/NBK3827/table/pubmedhelp.T.publication_types/
+    article["publication_types"] = " | ".join(
+        x.text for x in elem.findall("Item[@Name='PubTypeList']/Item[@Name='PubType']")
+    )
+    return article
+
+
+def parse_esummary(elem):
+    """
+    Extract pubmed, journal, and date information from an eSummaryResult/DocSum
+    """
+    article = parse_esummary_article_info(elem)
+    article.update(parse_esummary_pubdates(elem))
+    article.update(parse_esummary_history(elem))
     return article
 
 
@@ -147,10 +160,14 @@ def articles_to_dataframe(articles):
     article_df = article_df.sort_values(by="pubmed_id")
     # Enforce a consistent column ordering
     columns = article_df.columns[2:].tolist()
-    columns = (
-        ["pubmed_id", "journal_nlm_id"]
-        + sorted(x for x in columns if re.search("pub(?!med)", x))
-        + sorted(x for x in columns if re.search("_[0-9]+$", x))
-    )
+    columns = [
+        "pubmed_id",
+        "journal_nlm_id",
+        "journal",
+        "doi",
+        *sorted(x for x in columns if re.search("pub(?!med)", x)),
+        *sorted(x for x in columns if re.search("_[0-9]+$", x)),
+        "title",
+    ]
     article_df = article_df[columns]
     return article_df
