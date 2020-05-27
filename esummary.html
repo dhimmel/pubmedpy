@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.7.4" />
+<meta name="generator" content="pdoc 0.8.1" />
 <title>pubmedpy.esummary API documentation</title>
 <meta name="description" content="" />
 <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
 <link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
 </head>
 <body>
@@ -23,7 +23,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L0-L155" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L0-L172" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import collections
 import contextlib
@@ -131,17 +131,30 @@ def parse_esummary_pubdates(docsum):
     return pubdates
 
 
-def parse_esummary(elem):
+def parse_esummary_article_info(elem):
     &#34;&#34;&#34;
-    Extract pubmed, journal, and date information from an eSummaryResult/DocSum
+    Extract general article informaiton
     &#34;&#34;&#34;
     article = collections.OrderedDict()
     article[&#34;pubmed_id&#34;] = int(elem.findtext(&#34;Id&#34;))
     article[&#34;journal_nlm_id&#34;] = elem.findtext(&#34;Item[@Name=&#39;NlmUniqueID&#39;]&#34;)
-    pubdates = parse_esummary_pubdates(elem)
-    article.update(pubdates)
-    history = parse_esummary_history(elem)
-    article.update(history)
+    article[&#34;journal&#34;] = elem.findtext(&#34;Item[@Name=&#39;Source&#39;]&#34;)
+    article[&#34;title&#34;] = elem.findtext(&#34;Item[@Name=&#39;Title&#39;]&#34;)
+    article[&#34;doi&#34;] = elem.findtext(&#34;Item[@Name=&#39;DOI&#39;]&#34;)
+    # https://www.ncbi.nlm.nih.gov/books/NBK3827/table/pubmedhelp.T.publication_types/
+    article[&#34;publication_types&#34;] = &#34; | &#34;.join(
+        x.text for x in elem.findall(&#34;Item[@Name=&#39;PubTypeList&#39;]/Item[@Name=&#39;PubType&#39;]&#34;)
+    )
+    return article
+
+
+def parse_esummary(elem):
+    &#34;&#34;&#34;
+    Extract pubmed, journal, and date information from an eSummaryResult/DocSum
+    &#34;&#34;&#34;
+    article = parse_esummary_article_info(elem)
+    article.update(parse_esummary_pubdates(elem))
+    article.update(parse_esummary_history(elem))
     return article
 
 
@@ -174,11 +187,15 @@ def articles_to_dataframe(articles):
     article_df = article_df.sort_values(by=&#34;pubmed_id&#34;)
     # Enforce a consistent column ordering
     columns = article_df.columns[2:].tolist()
-    columns = (
-        [&#34;pubmed_id&#34;, &#34;journal_nlm_id&#34;]
-        + sorted(x for x in columns if re.search(&#34;pub(?!med)&#34;, x))
-        + sorted(x for x in columns if re.search(&#34;_[0-9]+$&#34;, x))
-    )
+    columns = [
+        &#34;pubmed_id&#34;,
+        &#34;journal_nlm_id&#34;,
+        &#34;journal&#34;,
+        &#34;doi&#34;,
+        *sorted(x for x in columns if re.search(&#34;pub(?!med)&#34;, x)),
+        *sorted(x for x in columns if re.search(&#34;_[0-9]+$&#34;, x)),
+        &#34;title&#34;,
+    ]
     article_df = article_df[columns]
     return article_df</code></pre>
 </details>
@@ -194,12 +211,12 @@ def articles_to_dataframe(articles):
 <span>def <span class="ident">articles_to_dataframe</span></span>(<span>articles)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Convert a list of articles created by <a title="pubmedpy.esummary.extract_articles_from_esummaries" href="#pubmedpy.esummary.extract_articles_from_esummaries"><code>extract_articles_from_esummaries()</code></a>
-into a pandas.DataFrame.</p></section>
+<div class="desc"><p>Convert a list of articles created by <code><a title="pubmedpy.esummary.extract_articles_from_esummaries" href="#pubmedpy.esummary.extract_articles_from_esummaries">extract_articles_from_esummaries()</a></code>
+into a pandas.DataFrame.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L141-L156" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L154-L173" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def articles_to_dataframe(articles):
     &#34;&#34;&#34;
@@ -210,11 +227,15 @@ into a pandas.DataFrame.</p></section>
     article_df = article_df.sort_values(by=&#34;pubmed_id&#34;)
     # Enforce a consistent column ordering
     columns = article_df.columns[2:].tolist()
-    columns = (
-        [&#34;pubmed_id&#34;, &#34;journal_nlm_id&#34;]
-        + sorted(x for x in columns if re.search(&#34;pub(?!med)&#34;, x))
-        + sorted(x for x in columns if re.search(&#34;_[0-9]+$&#34;, x))
-    )
+    columns = [
+        &#34;pubmed_id&#34;,
+        &#34;journal_nlm_id&#34;,
+        &#34;journal&#34;,
+        &#34;doi&#34;,
+        *sorted(x for x in columns if re.search(&#34;pub(?!med)&#34;, x)),
+        *sorted(x for x in columns if re.search(&#34;_[0-9]+$&#34;, x)),
+        &#34;title&#34;,
+    ]
     article_df = article_df[columns]
     return article_df</code></pre>
 </details>
@@ -223,12 +244,12 @@ into a pandas.DataFrame.</p></section>
 <span>def <span class="ident">extract_articles_from_esummaries</span></span>(<span>path, n_articles=None, tqdm=tqdm.std.tqdm)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Extract a list of articles (dictionaries with date information) from a
-an eSummaryResult XML file. Specify <code>n_articles</code> to enable a progress bar.</p></section>
+<div class="desc"><p>Extract a list of articles (dictionaries with date information) from a
+an eSummaryResult XML file. Specify <code>n_articles</code> to enable a progress bar.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L121-L138" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L134-L151" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
     &#34;&#34;&#34;
@@ -254,13 +275,13 @@ an eSummaryResult XML file. Specify <code>n_articles</code> to enable a progress
 <span>def <span class="ident">parse_date_text</span></span>(<span>text)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Parse an <code>eSummaryResult/DocSum/Item[@Name='History']/Item[@Type='Date']</code>
+<div class="desc"><p>Parse an <code>eSummaryResult/DocSum/Item[@Name='History']/Item[@Type='Date']</code>
 element.
-The time on the date is discarded. A <code>datetime.date</code> object is returned</p></section>
+The time on the date is discarded. A <code>datetime.date</code> object is returned</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L32-L39" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L32-L39" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_date_text(text):
     &#34;&#34;&#34;
@@ -276,23 +297,46 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <span>def <span class="ident">parse_esummary</span></span>(<span>elem)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Extract pubmed, journal, and date information from an eSummaryResult/DocSum</p></section>
+<div class="desc"><p>Extract pubmed, journal, and date information from an eSummaryResult/DocSum</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L107-L118" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L124-L131" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_esummary(elem):
     &#34;&#34;&#34;
     Extract pubmed, journal, and date information from an eSummaryResult/DocSum
     &#34;&#34;&#34;
+    article = parse_esummary_article_info(elem)
+    article.update(parse_esummary_pubdates(elem))
+    article.update(parse_esummary_history(elem))
+    return article</code></pre>
+</details>
+</dd>
+<dt id="pubmedpy.esummary.parse_esummary_article_info"><code class="name flex">
+<span>def <span class="ident">parse_esummary_article_info</span></span>(<span>elem)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract general article informaiton</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L107-L121" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def parse_esummary_article_info(elem):
+    &#34;&#34;&#34;
+    Extract general article informaiton
+    &#34;&#34;&#34;
     article = collections.OrderedDict()
     article[&#34;pubmed_id&#34;] = int(elem.findtext(&#34;Id&#34;))
     article[&#34;journal_nlm_id&#34;] = elem.findtext(&#34;Item[@Name=&#39;NlmUniqueID&#39;]&#34;)
-    pubdates = parse_esummary_pubdates(elem)
-    article.update(pubdates)
-    history = parse_esummary_history(elem)
-    article.update(history)
+    article[&#34;journal&#34;] = elem.findtext(&#34;Item[@Name=&#39;Source&#39;]&#34;)
+    article[&#34;title&#34;] = elem.findtext(&#34;Item[@Name=&#39;Title&#39;]&#34;)
+    article[&#34;doi&#34;] = elem.findtext(&#34;Item[@Name=&#39;DOI&#39;]&#34;)
+    # https://www.ncbi.nlm.nih.gov/books/NBK3827/table/pubmedhelp.T.publication_types/
+    article[&#34;publication_types&#34;] = &#34; | &#34;.join(
+        x.text for x in elem.findall(&#34;Item[@Name=&#39;PubTypeList&#39;]/Item[@Name=&#39;PubType&#39;]&#34;)
+    )
     return article</code></pre>
 </details>
 </dd>
@@ -300,11 +344,11 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <span>def <span class="ident">parse_esummary_history</span></span>(<span>docsum)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>docsum is an xml Element.</p></section>
+<div class="desc"><p>docsum is an xml Element.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L55-L82" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L55-L82" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_esummary_history(docsum):
     &#34;&#34;&#34;
@@ -340,11 +384,11 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <span>def <span class="ident">parse_esummary_pubdates</span></span>(<span>docsum)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Parse PubDate and EPubDate. Infer first published date.</p></section>
+<div class="desc"><p>Parse PubDate and EPubDate. Infer first published date.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L85-L104" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L85-L104" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_esummary_pubdates(docsum):
     &#34;&#34;&#34;
@@ -372,15 +416,15 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <span>def <span class="ident">parse_pubdate_text</span></span>(<span>text)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Parse the text contained by the following elements:</p>
+<div class="desc"><p>Parse the text contained by the following elements:</p>
 <p><code>eSummaryResult/DocSum/Item[@Name='PubDate' @Type='Date']</code>
 <code>eSummaryResult/DocSum/Item[@Name='EPubDate' @Type='Date']</code></p>
 <p>See <a href="https://www.nlm.nih.gov/bsd/licensee/elements_article_source.html">https://www.nlm.nih.gov/bsd/licensee/elements_article_source.html</a>
-A <code>datetime.date</code> object is returned.</p></section>
+A <code>datetime.date</code> object is returned.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L42-L52" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L42-L52" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def parse_pubdate_text(text):
     &#34;&#34;&#34;
@@ -399,12 +443,12 @@ A <code>datetime.date</code> object is returned.</p></section>
 <span>def <span class="ident">setlocale</span></span>(<span>name)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Context manager to temporarily set locale for datetime.datetime.strptime
-<a href="https://stackoverflow.com/a/24070673/4651668">https://stackoverflow.com/a/24070673/4651668</a></p></section>
+<div class="desc"><p>Context manager to temporarily set locale for datetime.datetime.strptime
+<a href="https://stackoverflow.com/a/24070673/4651668">https://stackoverflow.com/a/24070673/4651668</a></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/f262385e7246e7214380aa2bee81c600f8dc6377/pubmedpy/esummary.py#L18-L29" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/91024067f530f68886d3fbc14b6647afbc19941e/pubmedpy/esummary.py#L18-L29" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">@contextlib.contextmanager
 def setlocale(name):
@@ -442,6 +486,7 @@ def setlocale(name):
 <li><code><a title="pubmedpy.esummary.extract_articles_from_esummaries" href="#pubmedpy.esummary.extract_articles_from_esummaries">extract_articles_from_esummaries</a></code></li>
 <li><code><a title="pubmedpy.esummary.parse_date_text" href="#pubmedpy.esummary.parse_date_text">parse_date_text</a></code></li>
 <li><code><a title="pubmedpy.esummary.parse_esummary" href="#pubmedpy.esummary.parse_esummary">parse_esummary</a></code></li>
+<li><code><a title="pubmedpy.esummary.parse_esummary_article_info" href="#pubmedpy.esummary.parse_esummary_article_info">parse_esummary_article_info</a></code></li>
 <li><code><a title="pubmedpy.esummary.parse_esummary_history" href="#pubmedpy.esummary.parse_esummary_history">parse_esummary_history</a></code></li>
 <li><code><a title="pubmedpy.esummary.parse_esummary_pubdates" href="#pubmedpy.esummary.parse_esummary_pubdates">parse_esummary_pubdates</a></code></li>
 <li><code><a title="pubmedpy.esummary.parse_pubdate_text" href="#pubmedpy.esummary.parse_pubdate_text">parse_pubdate_text</a></code></li>
@@ -452,7 +497,7 @@ def setlocale(name):
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.4</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.1</a>.</p>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad()</script>
