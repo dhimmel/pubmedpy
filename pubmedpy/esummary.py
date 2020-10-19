@@ -118,6 +118,8 @@ def parse_esummary_article_info(elem):
     article["publication_types"] = " | ".join(
         x.text for x in elem.findall("Item[@Name='PubTypeList']/Item[@Name='PubType']")
     )
+    pmc_cited_by_count = elem.findtext("Item[@Name='PmcRefCount']")
+    article["pmc_cited_by_count"] = int(pmc_cited_by_count) if pmc_cited_by_count.isdigit() else None
     return article
 
 
