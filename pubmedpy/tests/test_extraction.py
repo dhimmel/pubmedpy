@@ -58,3 +58,9 @@ def test_extract_from_efetch():
     article_df = pandas.DataFrame(list(map(extract_all, articles)))
     path = os.path.join(directory, "data", "efetch.tsv")
     article_df.to_csv(path, index=False, sep="\t")
+
+
+def test_iterparse_xml():
+    from ..xml import iterparse_xml
+
+    ret = iterparse_xml(esummary_path)

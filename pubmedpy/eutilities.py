@@ -1,13 +1,16 @@
 import time
 import collections
 import logging
+from typing import IO
 
 import requests
 import lxml.etree
 import tqdm
 
 
-def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
+def esearch_query(
+    payload: dict, retmax: int = 10000, sleep: float = 0.34, tqdm=tqdm.tqdm
+):
     """
     Return identifiers using the ESearch E-utility.
 
@@ -36,13 +39,13 @@ def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
 
 
 def download_pubmed_ids(
-    ids,
-    write_file,
-    endpoint="esummary",
-    retmax=100,
-    retmin=20,
-    sleep=0.34,
-    error_sleep=10,
+    ids: list,
+    write_file: IO,
+    endpoint: str = "esummary",
+    retmax: int = 100,
+    retmin: int = 20,
+    sleep: float = 0.34,
+    error_sleep: float = 10,
     tqdm=tqdm.tqdm,
 ):
     """

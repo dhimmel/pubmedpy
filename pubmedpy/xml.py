@@ -3,8 +3,11 @@ import importlib
 import mimetypes
 import os
 import zipfile
+from typing import Iterable, Tuple
 
 from lxml import etree
+
+from .utils import PathType
 
 
 _encoding_to_module = {
@@ -14,7 +17,7 @@ _encoding_to_module = {
 }
 
 
-def iterparse_xml(path):
+def iterparse_xml(path: PathType) -> Iterable[etree._Element]:
     """
     First yield the ElementTree root, then yield elements from an XML file.
     """
@@ -34,12 +37,12 @@ def iterparse_xml(path):
         yield from (elem for event, elem in context if event == "end")
 
 
-def iter_extract_elems(path, tag):
+def iter_extract_elems(path: PathType, tag: str) -> Iterable[etree._Element]:
     """
     Return elements of the specified tag from XML produced by pubmedpy.eutilities.download_pubmed_ids.
     For memory-efficiency, the XML element tree root is cleared after before yielding the next element.
     """
-    path = str(path)
+    path = os.fspath(path)
     parser = iterparse_xml(path)
     root = next(parser)
     for elem in parser:
@@ -50,7 +53,7 @@ def iter_extract_elems(path, tag):
     root.clear()
 
 
-def yield_etrees_from_zip(path):
+def yield_etrees_from_zip(path: PathType) -> Iterable[Tuple[str, etree.ElementTree]]:
     """
     Read members of a zip file with an `.xml` extension.
     """

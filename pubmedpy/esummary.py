@@ -6,17 +6,20 @@ import locale
 import logging
 import re
 import threading
+from typing import List, Optional
 
 import pandas
 import tqdm
+import lxml.etree
 
 from .xml import iter_extract_elems
+from .utils import PathType
 
 locale_lock = threading.Lock()
 
 
 @contextlib.contextmanager
-def setlocale(name):
+def setlocale(name: str):
     """
     Context manager to temporarily set locale for datetime.datetime.strptime
     https://stackoverflow.com/a/24070673/4651668
@@ -29,7 +32,7 @@ def setlocale(name):
             locale.setlocale(locale.LC_ALL, saved)
 
 
-def parse_date_text(text):
+def parse_date_text(text: str) -> datetime.date:
     """
     Parse an `eSummaryResult/DocSum/Item[@Name='History']/Item[@Type='Date']`
     element.
@@ -39,7 +42,7 @@ def parse_date_text(text):
         return datetime.datetime.strptime(text, "%Y/%m/%d %H:%M").date()
 
 
-def parse_pubdate_text(text):
+def parse_pubdate_text(text: str) -> datetime.date:
     """
     Parse the text contained by the following elements:
 
@@ -52,7 +55,7 @@ def parse_pubdate_text(text):
     return datetime.datetime.strptime(text, "%Y %b %d").date()
 
 
-def parse_esummary_history(docsum):
+def parse_esummary_history(docsum: lxml.etree._Element) -> dict:
     """
     docsum is an xml Element.
     """
@@ -82,7 +85,7 @@ def parse_esummary_history(docsum):
     return history
 
 
-def parse_esummary_pubdates(docsum):
+def parse_esummary_pubdates(docsum: lxml.etree._Element) -> dict:
     """
     Parse PubDate and EPubDate. Infer first published date.
     """
@@ -104,7 +107,7 @@ def parse_esummary_pubdates(docsum):
     return pubdates
 
 
-def parse_esummary_article_info(elem):
+def parse_esummary_article_info(elem: lxml.etree._Element) -> dict:
     """
     Extract general article information
     """
@@ -128,7 +131,7 @@ def parse_esummary_article_info(elem):
     return article
 
 
-def parse_esummary(elem):
+def parse_esummary(elem: lxml.etree._Element) -> dict:
     """
     Extract pubmed, journal, and date information from an eSummaryResult/DocSum
     """
@@ -138,7 +141,9 @@ def parse_esummary(elem):
     return article
 
 
-def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
+def extract_articles_from_esummaries(
+    path: PathType, n_articles: Optional[int] = None, tqdm=tqdm.tqdm
+) -> List[dict]:
     """
     Extract a list of articles (dictionaries with date information) from a
     an eSummaryResult XML file. Specify `n_articles` to enable a progress bar.
@@ -158,7 +163,7 @@ def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
     return articles
 
 
-def articles_to_dataframe(articles):
+def articles_to_dataframe(articles: List[dict]) -> pandas.DataFrame:
     """
     Convert a list of articles created by `extract_articles_from_esummaries`
     into a pandas.DataFrame.

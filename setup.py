@@ -25,7 +25,11 @@ install_requires = [
     "tqdm",
 ]
 extras_require = {
-    "dev": ["flake8", "pdoc3", "pytest",],
+    "dev": [
+        "flake8",
+        "pdoc3",
+        "pytest",
+    ],
 }
 extras_require["all"] = list(
     dict.fromkeys(itertools.chain.from_iterable(extras_require.values()))
