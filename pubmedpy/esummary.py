@@ -170,6 +170,7 @@ def articles_to_dataframe(articles):
         *sorted(x for x in columns if re.search("pub(?!med)", x)),
         *sorted(x for x in columns if re.search("_[0-9]+$", x)),
         "title",
+        "pmc_cited_by_count",
     ]
     article_df = article_df[columns]
     return article_df
