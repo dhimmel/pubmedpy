@@ -25,18 +25,21 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/eutilities.py#L0-L109" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/eutilities.py#L0-L112" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import time
 import collections
 import logging
+from typing import IO
 
 import requests
 import lxml.etree
 import tqdm
 
 
-def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
+def esearch_query(
+    payload: dict, retmax: int = 10000, sleep: float = 0.34, tqdm=tqdm.tqdm
+):
     &#34;&#34;&#34;
     Return identifiers using the ESearch E-utility.
 
@@ -65,13 +68,13 @@ def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
 
 
 def download_pubmed_ids(
-    ids,
-    write_file,
-    endpoint=&#34;esummary&#34;,
-    retmax=100,
-    retmin=20,
-    sleep=0.34,
-    error_sleep=10,
+    ids: list,
+    write_file: IO,
+    endpoint: str = &#34;esummary&#34;,
+    retmax: int = 100,
+    retmin: int = 20,
+    sleep: float = 0.34,
+    error_sleep: float = 10,
     tqdm=tqdm.tqdm,
 ):
     &#34;&#34;&#34;
@@ -147,7 +150,7 @@ def download_pubmed_ids(
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="pubmedpy.eutilities.download_pubmed_ids"><code class="name flex">
-<span>def <span class="ident">download_pubmed_ids</span></span>(<span>ids, write_file, endpoint='esummary', retmax=100, retmin=20, sleep=0.34, error_sleep=10, tqdm=tqdm.std.tqdm)</span>
+<span>def <span class="ident">download_pubmed_ids</span></span>(<span>ids: list, write_file: <class 'IO'>, endpoint: str = 'esummary', retmax: int = 100, retmin: int = 20, sleep: float = 0.34, error_sleep: float = 10, tqdm=tqdm.std.tqdm)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Submit an ESummary or EFetch query for PubMed records and write results as xml
@@ -156,16 +159,16 @@ to write_file.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/eutilities.py#L38-L110" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/eutilities.py#L41-L113" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def download_pubmed_ids(
-    ids,
-    write_file,
-    endpoint=&#34;esummary&#34;,
-    retmax=100,
-    retmin=20,
-    sleep=0.34,
-    error_sleep=10,
+    ids: list,
+    write_file: IO,
+    endpoint: str = &#34;esummary&#34;,
+    retmax: int = 100,
+    retmin: int = 20,
+    sleep: float = 0.34,
+    error_sleep: float = 10,
     tqdm=tqdm.tqdm,
 ):
     &#34;&#34;&#34;
@@ -234,7 +237,7 @@ to write_file.</p>
 </details>
 </dd>
 <dt id="pubmedpy.eutilities.esearch_query"><code class="name flex">
-<span>def <span class="ident">esearch_query</span></span>(<span>payload, retmax=10000, sleep=0.34, tqdm=tqdm.std.tqdm)</span>
+<span>def <span class="ident">esearch_query</span></span>(<span>payload: dict, retmax: int = 10000, sleep: float = 0.34, tqdm=tqdm.std.tqdm)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return identifiers using the ESearch E-utility.</p>
@@ -242,9 +245,11 @@ to write_file.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/eutilities.py#L10-L35" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/eutilities.py#L11-L38" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def esearch_query(payload, retmax=10000, sleep=0.34, tqdm=tqdm.tqdm):
+<pre><code class="python">def esearch_query(
+    payload: dict, retmax: int = 10000, sleep: float = 0.34, tqdm=tqdm.tqdm
+):
     &#34;&#34;&#34;
     Return identifiers using the ESearch E-utility.
 

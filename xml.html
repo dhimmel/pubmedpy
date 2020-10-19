@@ -25,15 +25,18 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/xml.py#L0-L62" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/xml.py#L0-L65" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import contextlib
 import importlib
 import mimetypes
 import os
 import zipfile
+from typing import Iterable, Tuple
 
 from lxml import etree
+
+from .utils import PathType
 
 
 _encoding_to_module = {
@@ -43,7 +46,7 @@ _encoding_to_module = {
 }
 
 
-def iterparse_xml(path):
+def iterparse_xml(path: PathType) -&gt; Iterable[etree._Element]:
     &#34;&#34;&#34;
     First yield the ElementTree root, then yield elements from an XML file.
     &#34;&#34;&#34;
@@ -63,12 +66,12 @@ def iterparse_xml(path):
         yield from (elem for event, elem in context if event == &#34;end&#34;)
 
 
-def iter_extract_elems(path, tag):
+def iter_extract_elems(path: PathType, tag: str) -&gt; Iterable[etree._Element]:
     &#34;&#34;&#34;
     Return elements of the specified tag from XML produced by pubmedpy.eutilities.download_pubmed_ids.
     For memory-efficiency, the XML element tree root is cleared after before yielding the next element.
     &#34;&#34;&#34;
-    path = str(path)
+    path = os.fspath(path)
     parser = iterparse_xml(path)
     root = next(parser)
     for elem in parser:
@@ -79,7 +82,7 @@ def iter_extract_elems(path, tag):
     root.clear()
 
 
-def yield_etrees_from_zip(path):
+def yield_etrees_from_zip(path: PathType) -&gt; Iterable[Tuple[str, etree.ElementTree]]:
     &#34;&#34;&#34;
     Read members of a zip file with an `.xml` extension.
     &#34;&#34;&#34;
@@ -100,7 +103,7 @@ def yield_etrees_from_zip(path):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="pubmedpy.xml.iter_extract_elems"><code class="name flex">
-<span>def <span class="ident">iter_extract_elems</span></span>(<span>path, tag)</span>
+<span>def <span class="ident">iter_extract_elems</span></span>(<span>path: Union[os.PathLike, str], tag: str) ‑> Iterable[lxml.etree._Element]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return elements of the specified tag from XML produced by pubmedpy.eutilities.download_pubmed_ids.
@@ -108,14 +111,14 @@ For memory-efficiency, the XML element tree root is cleared after before yieldin
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/xml.py#L37-L50" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/xml.py#L40-L53" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def iter_extract_elems(path, tag):
+<pre><code class="python">def iter_extract_elems(path: PathType, tag: str) -&gt; Iterable[etree._Element]:
     &#34;&#34;&#34;
     Return elements of the specified tag from XML produced by pubmedpy.eutilities.download_pubmed_ids.
     For memory-efficiency, the XML element tree root is cleared after before yielding the next element.
     &#34;&#34;&#34;
-    path = str(path)
+    path = os.fspath(path)
     parser = iterparse_xml(path)
     root = next(parser)
     for elem in parser:
@@ -127,16 +130,16 @@ For memory-efficiency, the XML element tree root is cleared after before yieldin
 </details>
 </dd>
 <dt id="pubmedpy.xml.iterparse_xml"><code class="name flex">
-<span>def <span class="ident">iterparse_xml</span></span>(<span>path)</span>
+<span>def <span class="ident">iterparse_xml</span></span>(<span>path: Union[os.PathLike, str]) ‑> Iterable[lxml.etree._Element]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>First yield the ElementTree root, then yield elements from an XML file.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/xml.py#L17-L34" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/xml.py#L20-L37" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def iterparse_xml(path):
+<pre><code class="python">def iterparse_xml(path: PathType) -&gt; Iterable[etree._Element]:
     &#34;&#34;&#34;
     First yield the ElementTree root, then yield elements from an XML file.
     &#34;&#34;&#34;
@@ -157,16 +160,16 @@ For memory-efficiency, the XML element tree root is cleared after before yieldin
 </details>
 </dd>
 <dt id="pubmedpy.xml.yield_etrees_from_zip"><code class="name flex">
-<span>def <span class="ident">yield_etrees_from_zip</span></span>(<span>path)</span>
+<span>def <span class="ident">yield_etrees_from_zip</span></span>(<span>path: Union[os.PathLike, str]) ‑> Iterable[Tuple[str, <cyfunction ElementTree at 0x7fb433da0bb0>]]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Read members of a zip file with an <code>.xml</code> extension.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/xml.py#L53-L63" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/xml.py#L56-L66" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def yield_etrees_from_zip(path):
+<pre><code class="python">def yield_etrees_from_zip(path: PathType) -&gt; Iterable[Tuple[str, etree.ElementTree]]:
     &#34;&#34;&#34;
     Read members of a zip file with an `.xml` extension.
     &#34;&#34;&#34;

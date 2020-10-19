@@ -25,7 +25,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L0-L180" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L0-L185" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import collections
 import contextlib
@@ -35,17 +35,20 @@ import locale
 import logging
 import re
 import threading
+from typing import List, Optional
 
 import pandas
 import tqdm
+import lxml.etree
 
 from .xml import iter_extract_elems
+from .utils import PathType
 
 locale_lock = threading.Lock()
 
 
 @contextlib.contextmanager
-def setlocale(name):
+def setlocale(name: str):
     &#34;&#34;&#34;
     Context manager to temporarily set locale for datetime.datetime.strptime
     https://stackoverflow.com/a/24070673/4651668
@@ -58,7 +61,7 @@ def setlocale(name):
             locale.setlocale(locale.LC_ALL, saved)
 
 
-def parse_date_text(text):
+def parse_date_text(text: str) -&gt; datetime.date:
     &#34;&#34;&#34;
     Parse an `eSummaryResult/DocSum/Item[@Name=&#39;History&#39;]/Item[@Type=&#39;Date&#39;]`
     element.
@@ -68,7 +71,7 @@ def parse_date_text(text):
         return datetime.datetime.strptime(text, &#34;%Y/%m/%d %H:%M&#34;).date()
 
 
-def parse_pubdate_text(text):
+def parse_pubdate_text(text: str) -&gt; datetime.date:
     &#34;&#34;&#34;
     Parse the text contained by the following elements:
 
@@ -81,7 +84,7 @@ def parse_pubdate_text(text):
     return datetime.datetime.strptime(text, &#34;%Y %b %d&#34;).date()
 
 
-def parse_esummary_history(docsum):
+def parse_esummary_history(docsum: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     docsum is an xml Element.
     &#34;&#34;&#34;
@@ -111,7 +114,7 @@ def parse_esummary_history(docsum):
     return history
 
 
-def parse_esummary_pubdates(docsum):
+def parse_esummary_pubdates(docsum: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     Parse PubDate and EPubDate. Infer first published date.
     &#34;&#34;&#34;
@@ -133,7 +136,7 @@ def parse_esummary_pubdates(docsum):
     return pubdates
 
 
-def parse_esummary_article_info(elem):
+def parse_esummary_article_info(elem: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     Extract general article information
     &#34;&#34;&#34;
@@ -157,7 +160,7 @@ def parse_esummary_article_info(elem):
     return article
 
 
-def parse_esummary(elem):
+def parse_esummary(elem: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     Extract pubmed, journal, and date information from an eSummaryResult/DocSum
     &#34;&#34;&#34;
@@ -167,7 +170,9 @@ def parse_esummary(elem):
     return article
 
 
-def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
+def extract_articles_from_esummaries(
+    path: PathType, n_articles: Optional[int] = None, tqdm=tqdm.tqdm
+) -&gt; List[dict]:
     &#34;&#34;&#34;
     Extract a list of articles (dictionaries with date information) from a
     an eSummaryResult XML file. Specify `n_articles` to enable a progress bar.
@@ -187,7 +192,7 @@ def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
     return articles
 
 
-def articles_to_dataframe(articles):
+def articles_to_dataframe(articles: List[dict]) -&gt; pandas.DataFrame:
     &#34;&#34;&#34;
     Convert a list of articles created by `extract_articles_from_esummaries`
     into a pandas.DataFrame.
@@ -218,7 +223,7 @@ def articles_to_dataframe(articles):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="pubmedpy.esummary.articles_to_dataframe"><code class="name flex">
-<span>def <span class="ident">articles_to_dataframe</span></span>(<span>articles)</span>
+<span>def <span class="ident">articles_to_dataframe</span></span>(<span>articles: List[dict]) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Convert a list of articles created by <code><a title="pubmedpy.esummary.extract_articles_from_esummaries" href="#pubmedpy.esummary.extract_articles_from_esummaries">extract_articles_from_esummaries()</a></code>
@@ -226,9 +231,9 @@ into a pandas.DataFrame.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L161-L181" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L166-L186" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def articles_to_dataframe(articles):
+<pre><code class="python">def articles_to_dataframe(articles: List[dict]) -&gt; pandas.DataFrame:
     &#34;&#34;&#34;
     Convert a list of articles created by `extract_articles_from_esummaries`
     into a pandas.DataFrame.
@@ -252,7 +257,7 @@ into a pandas.DataFrame.</p></div>
 </details>
 </dd>
 <dt id="pubmedpy.esummary.extract_articles_from_esummaries"><code class="name flex">
-<span>def <span class="ident">extract_articles_from_esummaries</span></span>(<span>path, n_articles=None, tqdm=tqdm.std.tqdm)</span>
+<span>def <span class="ident">extract_articles_from_esummaries</span></span>(<span>path: Union[os.PathLike, str], n_articles: Union[int, NoneType] = None, tqdm=tqdm.std.tqdm) ‑> List[dict]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Extract a list of articles (dictionaries with date information) from a
@@ -260,9 +265,11 @@ an eSummaryResult XML file. Specify <code>n_articles</code> to enable a progress
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L141-L158" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L144-L163" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def extract_articles_from_esummaries(path, n_articles=None, tqdm=tqdm.tqdm):
+<pre><code class="python">def extract_articles_from_esummaries(
+    path: PathType, n_articles: Optional[int] = None, tqdm=tqdm.tqdm
+) -&gt; List[dict]:
     &#34;&#34;&#34;
     Extract a list of articles (dictionaries with date information) from a
     an eSummaryResult XML file. Specify `n_articles` to enable a progress bar.
@@ -283,7 +290,7 @@ an eSummaryResult XML file. Specify <code>n_articles</code> to enable a progress
 </details>
 </dd>
 <dt id="pubmedpy.esummary.parse_date_text"><code class="name flex">
-<span>def <span class="ident">parse_date_text</span></span>(<span>text)</span>
+<span>def <span class="ident">parse_date_text</span></span>(<span>text: str) ‑> datetime.date</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Parse an <code>eSummaryResult/DocSum/Item[@Name='History']/Item[@Type='Date']</code>
@@ -292,9 +299,9 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L32-L39" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L35-L42" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def parse_date_text(text):
+<pre><code class="python">def parse_date_text(text: str) -&gt; datetime.date:
     &#34;&#34;&#34;
     Parse an `eSummaryResult/DocSum/Item[@Name=&#39;History&#39;]/Item[@Type=&#39;Date&#39;]`
     element.
@@ -305,16 +312,16 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 </details>
 </dd>
 <dt id="pubmedpy.esummary.parse_esummary"><code class="name flex">
-<span>def <span class="ident">parse_esummary</span></span>(<span>elem)</span>
+<span>def <span class="ident">parse_esummary</span></span>(<span>elem: lxml.etree._Element) ‑> dict</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Extract pubmed, journal, and date information from an eSummaryResult/DocSum</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L131-L138" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L134-L141" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def parse_esummary(elem):
+<pre><code class="python">def parse_esummary(elem: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     Extract pubmed, journal, and date information from an eSummaryResult/DocSum
     &#34;&#34;&#34;
@@ -325,16 +332,16 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 </details>
 </dd>
 <dt id="pubmedpy.esummary.parse_esummary_article_info"><code class="name flex">
-<span>def <span class="ident">parse_esummary_article_info</span></span>(<span>elem)</span>
+<span>def <span class="ident">parse_esummary_article_info</span></span>(<span>elem: lxml.etree._Element) ‑> dict</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Extract general article information</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L107-L128" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L110-L131" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def parse_esummary_article_info(elem):
+<pre><code class="python">def parse_esummary_article_info(elem: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     Extract general article information
     &#34;&#34;&#34;
@@ -359,16 +366,16 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 </details>
 </dd>
 <dt id="pubmedpy.esummary.parse_esummary_history"><code class="name flex">
-<span>def <span class="ident">parse_esummary_history</span></span>(<span>docsum)</span>
+<span>def <span class="ident">parse_esummary_history</span></span>(<span>docsum: lxml.etree._Element) ‑> dict</span>
 </code></dt>
 <dd>
 <div class="desc"><p>docsum is an xml Element.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L55-L82" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L58-L85" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def parse_esummary_history(docsum):
+<pre><code class="python">def parse_esummary_history(docsum: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     docsum is an xml Element.
     &#34;&#34;&#34;
@@ -399,16 +406,16 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 </details>
 </dd>
 <dt id="pubmedpy.esummary.parse_esummary_pubdates"><code class="name flex">
-<span>def <span class="ident">parse_esummary_pubdates</span></span>(<span>docsum)</span>
+<span>def <span class="ident">parse_esummary_pubdates</span></span>(<span>docsum: lxml.etree._Element) ‑> dict</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Parse PubDate and EPubDate. Infer first published date.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L85-L104" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L88-L107" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def parse_esummary_pubdates(docsum):
+<pre><code class="python">def parse_esummary_pubdates(docsum: lxml.etree._Element) -&gt; dict:
     &#34;&#34;&#34;
     Parse PubDate and EPubDate. Infer first published date.
     &#34;&#34;&#34;
@@ -431,7 +438,7 @@ The time on the date is discarded. A <code>datetime.date</code> object is return
 </details>
 </dd>
 <dt id="pubmedpy.esummary.parse_pubdate_text"><code class="name flex">
-<span>def <span class="ident">parse_pubdate_text</span></span>(<span>text)</span>
+<span>def <span class="ident">parse_pubdate_text</span></span>(<span>text: str) ‑> datetime.date</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Parse the text contained by the following elements:</p>
@@ -442,9 +449,9 @@ A <code>datetime.date</code> object is returned.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L42-L52" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L45-L55" class="git-link">Browse git</a>
 </summary>
-<pre><code class="python">def parse_pubdate_text(text):
+<pre><code class="python">def parse_pubdate_text(text: str) -&gt; datetime.date:
     &#34;&#34;&#34;
     Parse the text contained by the following elements:
 
@@ -458,7 +465,7 @@ A <code>datetime.date</code> object is returned.</p></div>
 </details>
 </dd>
 <dt id="pubmedpy.esummary.setlocale"><code class="name flex">
-<span>def <span class="ident">setlocale</span></span>(<span>name)</span>
+<span>def <span class="ident">setlocale</span></span>(<span>name: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Context manager to temporarily set locale for datetime.datetime.strptime
@@ -466,10 +473,10 @@ A <code>datetime.date</code> object is returned.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/esummary.py#L18-L29" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/esummary.py#L21-L32" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">@contextlib.contextmanager
-def setlocale(name):
+def setlocale(name: str):
     &#34;&#34;&#34;
     Context manager to temporarily set locale for datetime.datetime.strptime
     https://stackoverflow.com/a/24070673/4651668

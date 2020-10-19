@@ -25,7 +25,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/tests/test_extraction.py#L0-L59" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/tests/test_extraction.py#L0-L65" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import os
 
@@ -86,7 +86,13 @@ def test_extract_from_efetch():
     assert len(articles) &gt; 0
     article_df = pandas.DataFrame(list(map(extract_all, articles)))
     path = os.path.join(directory, &#34;data&#34;, &#34;efetch.tsv&#34;)
-    article_df.to_csv(path, index=False, sep=&#34;\t&#34;)</code></pre>
+    article_df.to_csv(path, index=False, sep=&#34;\t&#34;)
+
+
+def test_iterparse_xml():
+    from ..xml import iterparse_xml
+
+    ret = iterparse_xml(esummary_path)</code></pre>
 </details>
 </section>
 <section>
@@ -104,7 +110,7 @@ def test_extract_from_efetch():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/tests/test_extraction.py#L30-L35" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/tests/test_extraction.py#L30-L35" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_efetch():
     &#34;&#34;&#34;
@@ -122,7 +128,7 @@ def test_extract_from_efetch():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/tests/test_extraction.py#L22-L27" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/tests/test_extraction.py#L22-L27" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_esummary():
     &#34;&#34;&#34;
@@ -140,7 +146,7 @@ def test_extract_from_efetch():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/tests/test_extraction.py#L52-L60" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/tests/test_extraction.py#L52-L60" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_extract_from_efetch():
     from ..xml import iter_extract_elems
@@ -161,7 +167,7 @@ def test_extract_from_efetch():
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/fc7b61b5b6e3fba59d9b91ffda29fc83318feecd/pubmedpy/tests/test_extraction.py#L38-L49" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/tests/test_extraction.py#L38-L49" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def test_extract_from_esummary():
     from ..esummary import (
@@ -175,6 +181,22 @@ def test_extract_from_efetch():
     article_df = articles_to_dataframe(articles)
     path = os.path.join(directory, &#34;data&#34;, &#34;esummary.tsv&#34;)
     article_df.to_csv(path, index=False, sep=&#34;\t&#34;)</code></pre>
+</details>
+</dd>
+<dt id="pubmedpy.tests.test_extraction.test_iterparse_xml"><code class="name flex">
+<span>def <span class="ident">test_iterparse_xml</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/dhimmel/pubmedpy/blob/129ea162214a00cebf561a8ddb011a2828a6ebbf/pubmedpy/tests/test_extraction.py#L63-L66" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def test_iterparse_xml():
+    from ..xml import iterparse_xml
+
+    ret = iterparse_xml(esummary_path)</code></pre>
 </details>
 </dd>
 </dl>
@@ -199,6 +221,7 @@ def test_extract_from_efetch():
 <li><code><a title="pubmedpy.tests.test_extraction.test_esummary" href="#pubmedpy.tests.test_extraction.test_esummary">test_esummary</a></code></li>
 <li><code><a title="pubmedpy.tests.test_extraction.test_extract_from_efetch" href="#pubmedpy.tests.test_extraction.test_extract_from_efetch">test_extract_from_efetch</a></code></li>
 <li><code><a title="pubmedpy.tests.test_extraction.test_extract_from_esummary" href="#pubmedpy.tests.test_extraction.test_extract_from_esummary">test_extract_from_esummary</a></code></li>
+<li><code><a title="pubmedpy.tests.test_extraction.test_iterparse_xml" href="#pubmedpy.tests.test_extraction.test_iterparse_xml">test_iterparse_xml</a></code></li>
 </ul>
 </li>
 </ul>
