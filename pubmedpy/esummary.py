@@ -106,7 +106,7 @@ def parse_esummary_pubdates(docsum):
 
 def parse_esummary_article_info(elem):
     """
-    Extract general article informaiton
+    Extract general article information
     """
     article = collections.OrderedDict()
     article["pubmed_id"] = int(elem.findtext("Id"))
@@ -118,6 +118,13 @@ def parse_esummary_article_info(elem):
     article["publication_types"] = " | ".join(
         x.text for x in elem.findall("Item[@Name='PubTypeList']/Item[@Name='PubType']")
     )
+    # get incoming citation count. https://github.com/dhimmel/pubmedpy/issues/2
+    pmc_cited_by_count = elem.findtext("Item[@Name='PmcRefCount']")
+    try:
+        pmc_cited_by_count = int(pmc_cited_by_count)
+    except (TypeError, ValueError):
+        pmc_cited_by_count = None
+    article["pmc_cited_by_count"] = pmc_cited_by_count
     return article
 
 
@@ -168,6 +175,7 @@ def articles_to_dataframe(articles):
         *sorted(x for x in columns if re.search("pub(?!med)", x)),
         *sorted(x for x in columns if re.search("_[0-9]+$", x)),
         "title",
+        "pmc_cited_by_count",
     ]
     article_df = article_df[columns]
     return article_df
