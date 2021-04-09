@@ -2,7 +2,7 @@ name: Documentation
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
 jobs:
   docs:
@@ -24,7 +24,7 @@ jobs:
             --output-dir=docs \
             pubmedpy
       - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'  && !github.event.repository.fork
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'  && !github.event.repository.fork
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
