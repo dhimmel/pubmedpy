@@ -15,6 +15,7 @@ def esearch_query(
     Return identifiers using the ESearch E-utility.
 
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
+    Set `tqdm=None` to disable the progress bar.
     """
     url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
     payload["rettype"] = "xml"
@@ -27,14 +28,16 @@ def esearch_query(
         response = requests.get(url, params=payload)
         tree = lxml.etree.fromstring(response.content)
         count = int(tree.findtext("Count"))
-        if not progress_bar:
+        if tqdm and not progress_bar:
             progress_bar = tqdm(total=count, unit="ids")
         add_ids = [id_.text for id_ in tree.findall("IdList/Id")]
         ids += add_ids
         payload["retstart"] += retmax
-        progress_bar.update(len(add_ids))
+        if tqdm:
+            progress_bar.update(len(add_ids))
         time.sleep(sleep)
-    progress_bar.close()
+    if tqdm:
+        progress_bar.close()
     return ids
 
 
