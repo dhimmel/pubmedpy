@@ -25,7 +25,7 @@
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/7d0c8926c67149f6d95ed621dd7740a7e2bfe0f8/pubmedpy/eutilities.py#L0-L112" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/9d716768f5ab798ec448154588e4fd99afd7584a/pubmedpy/eutilities.py#L0-L115" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">import time
 import collections
@@ -44,6 +44,7 @@ def esearch_query(
     Return identifiers using the ESearch E-utility.
 
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
+    Set `tqdm=None` to disable the progress bar.
     &#34;&#34;&#34;
     url = &#34;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi&#34;
     payload[&#34;rettype&#34;] = &#34;xml&#34;
@@ -56,14 +57,16 @@ def esearch_query(
         response = requests.get(url, params=payload)
         tree = lxml.etree.fromstring(response.content)
         count = int(tree.findtext(&#34;Count&#34;))
-        if not progress_bar:
+        if tqdm and not progress_bar:
             progress_bar = tqdm(total=count, unit=&#34;ids&#34;)
         add_ids = [id_.text for id_ in tree.findall(&#34;IdList/Id&#34;)]
         ids += add_ids
         payload[&#34;retstart&#34;] += retmax
-        progress_bar.update(len(add_ids))
+        if tqdm:
+            progress_bar.update(len(add_ids))
         time.sleep(sleep)
-    progress_bar.close()
+    if tqdm:
+        progress_bar.close()
     return ids
 
 
@@ -159,7 +162,7 @@ to write_file.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/7d0c8926c67149f6d95ed621dd7740a7e2bfe0f8/pubmedpy/eutilities.py#L41-L113" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/9d716768f5ab798ec448154588e4fd99afd7584a/pubmedpy/eutilities.py#L44-L116" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def download_pubmed_ids(
     ids: list,
@@ -241,11 +244,12 @@ to write_file.</p>
 </code></dt>
 <dd>
 <div class="desc"><p>Return identifiers using the ESearch E-utility.</p>
-<p>Set <code>tqdm=tqdm.notebook</code> to use the tqdm notebook interface.</p></div>
+<p>Set <code>tqdm=tqdm.notebook</code> to use the tqdm notebook interface.
+Set <code>tqdm=None</code> to disable the progress bar.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
-<a href="https://github.com/dhimmel/pubmedpy/blob/7d0c8926c67149f6d95ed621dd7740a7e2bfe0f8/pubmedpy/eutilities.py#L11-L38" class="git-link">Browse git</a>
+<a href="https://github.com/dhimmel/pubmedpy/blob/9d716768f5ab798ec448154588e4fd99afd7584a/pubmedpy/eutilities.py#L11-L41" class="git-link">Browse git</a>
 </summary>
 <pre><code class="python">def esearch_query(
     payload: dict, retmax: int = 10000, sleep: float = 0.34, tqdm=tqdm.tqdm
@@ -254,6 +258,7 @@ to write_file.</p>
     Return identifiers using the ESearch E-utility.
 
     Set `tqdm=tqdm.notebook` to use the tqdm notebook interface.
+    Set `tqdm=None` to disable the progress bar.
     &#34;&#34;&#34;
     url = &#34;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi&#34;
     payload[&#34;rettype&#34;] = &#34;xml&#34;
@@ -266,14 +271,16 @@ to write_file.</p>
         response = requests.get(url, params=payload)
         tree = lxml.etree.fromstring(response.content)
         count = int(tree.findtext(&#34;Count&#34;))
-        if not progress_bar:
+        if tqdm and not progress_bar:
             progress_bar = tqdm(total=count, unit=&#34;ids&#34;)
         add_ids = [id_.text for id_ in tree.findall(&#34;IdList/Id&#34;)]
         ids += add_ids
         payload[&#34;retstart&#34;] += retmax
-        progress_bar.update(len(add_ids))
+        if tqdm:
+            progress_bar.update(len(add_ids))
         time.sleep(sleep)
-    progress_bar.close()
+    if tqdm:
+        progress_bar.close()
     return ids</code></pre>
 </details>
 </dd>
